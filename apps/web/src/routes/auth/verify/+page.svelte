@@ -24,7 +24,7 @@
       }
     }
     // Replace the history entry, so the token doesn't linger in it
-    goto(next ?? '/dashboard', { replaceState: true });
+    goto(next ?? '/', { replaceState: true });
   });
 </script>
 

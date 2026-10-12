@@ -1,0 +1,6867 @@
+[
+  {
+    "id": "coffee",
+    "de": "Kaffee",
+    "en": "coffee",
+    "forms": {
+      "en": {
+        "form": "coffee",
+        "cognate": true
+      },
+      "fr": {
+        "form": "café",
+        "cognate": true
+      },
+      "es": {
+        "form": "café",
+        "cognate": true
+      },
+      "it": {
+        "form": "caffè",
+        "cognate": true
+      },
+      "pl": {
+        "form": "kawa",
+        "cognate": true
+      },
+      "ru": {
+        "form": "кофе",
+        "roman": "kofe",
+        "cognate": true
+      },
+      "el": {
+        "form": "καφές",
+        "roman": "kafés",
+        "cognate": true
+      },
+      "tr": {
+        "form": "kahve",
+        "cognate": true
+      },
+      "ar": {
+        "form": "قهوة",
+        "roman": "qahwa",
+        "cognate": true
+      },
+      "he": {
+        "form": "קפה",
+        "roman": "kafe",
+        "cognate": true
+      },
+      "hi": {
+        "form": "कॉफ़ी",
+        "roman": "kŏfī",
+        "cognate": true
+      },
+      "ja": {
+        "form": "コーヒー",
+        "roman": "kōhī",
+        "cognate": true
+      },
+      "ko": {
+        "form": "커피",
+        "roman": "keopi",
+        "cognate": true
+      },
+      "sw": {
+        "form": "kahawa",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "قهوة",
+        "roman": "qahwa",
+        "lang": {
+          "de": "Arabisch",
+          "en": "Arabic"
+        }
+      },
+      {
+        "form": "kahve",
+        "lang": {
+          "de": "Osmanisch",
+          "en": "Ottoman Turkish"
+        }
+      },
+      {
+        "form": "caffè",
+        "lang": {
+          "de": "Italienisch",
+          "en": "Italian"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Ein Wort, das mit dem Getränk über Handelswege gereist ist: Arabisch → Osmanisch → Venedig → ganz Europa.",
+      "en": "A word that travelled with the drink along trade routes: Arabic → Ottoman → Venice → all of Europe."
+    }
+  },
+  {
+    "id": "tea",
+    "de": "Tee",
+    "en": "tea",
+    "forms": {
+      "en": {
+        "form": "tea",
+        "cognate": true,
+        "group": "te"
+      },
+      "fr": {
+        "form": "thé",
+        "cognate": true,
+        "group": "te"
+      },
+      "es": {
+        "form": "té",
+        "cognate": true,
+        "group": "te"
+      },
+      "it": {
+        "form": "tè",
+        "cognate": true,
+        "group": "te"
+      },
+      "pl": {
+        "form": "herbata",
+        "cognate": true,
+        "group": "te"
+      },
+      "ru": {
+        "form": "чай",
+        "roman": "chai",
+        "cognate": true,
+        "group": "cha"
+      },
+      "el": {
+        "form": "τσάι",
+        "roman": "tsái",
+        "cognate": true,
+        "group": "cha"
+      },
+      "tr": {
+        "form": "çay",
+        "cognate": true,
+        "group": "cha"
+      },
+      "ar": {
+        "form": "شاي",
+        "roman": "shāy",
+        "cognate": true,
+        "group": "cha"
+      },
+      "he": {
+        "form": "תה",
+        "roman": "te",
+        "cognate": true,
+        "group": "te"
+      },
+      "hi": {
+        "form": "चाय",
+        "roman": "chāy",
+        "cognate": true,
+        "group": "cha"
+      },
+      "ja": {
+        "form": "茶",
+        "roman": "cha",
+        "cognate": true,
+        "group": "cha"
+      },
+      "ko": {
+        "form": "차",
+        "roman": "cha",
+        "cognate": true,
+        "group": "cha"
+      },
+      "sw": {
+        "form": "chai",
+        "cognate": true,
+        "group": "cha"
+      }
+    },
+    "etymology": [
+      {
+        "form": "茶 tê",
+        "lang": {
+          "de": "Min-Nan",
+          "en": "Min Nan"
+        }
+      },
+      {
+        "form": "thee",
+        "lang": {
+          "de": "Niederländisch",
+          "en": "Dutch"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Zwei Wege, zwei Wörter: Über das Meer kam »te« (Englisch, Hebräisch …), über Land »cha« (Russisch, Hindi, Swahili …). Polnisch »herbata« versteckt »thea« im Wort.",
+      "en": "Two routes, two words: by sea came \"te\" (English, Hebrew …), over land \"cha\" (Russian, Hindi, Swahili …). Polish \"herbata\" hides \"thea\" inside."
+    },
+    "groups": {
+      "te": {
+        "de": "te, übers Meer",
+        "en": "te, by sea"
+      },
+      "cha": {
+        "de": "cha, über Land",
+        "en": "cha, over land"
+      }
+    }
+  },
+  {
+    "id": "chocolate",
+    "de": "Schokolade",
+    "en": "chocolate",
+    "forms": {
+      "en": {
+        "form": "chocolate",
+        "cognate": true
+      },
+      "fr": {
+        "form": "chocolat",
+        "cognate": true
+      },
+      "es": {
+        "form": "chocolate",
+        "cognate": true
+      },
+      "it": {
+        "form": "cioccolato",
+        "cognate": true
+      },
+      "pl": {
+        "form": "czekolada",
+        "cognate": true
+      },
+      "ru": {
+        "form": "шоколад",
+        "roman": "shokolad",
+        "cognate": true
+      },
+      "el": {
+        "form": "σοκολάτα",
+        "roman": "sokoláta",
+        "cognate": true
+      },
+      "tr": {
+        "form": "çikolata",
+        "cognate": true
+      },
+      "ar": {
+        "form": "شوكولاتة",
+        "roman": "shūkūlāta",
+        "cognate": true
+      },
+      "he": {
+        "form": "שוקולד",
+        "roman": "shokolad",
+        "cognate": true
+      },
+      "hi": {
+        "form": "चॉकलेट",
+        "roman": "cŏkleṭ",
+        "cognate": true
+      },
+      "ja": {
+        "form": "チョコレート",
+        "roman": "chokorēto",
+        "cognate": true
+      },
+      "ko": {
+        "form": "초콜릿",
+        "roman": "chokollit",
+        "cognate": true
+      },
+      "sw": {
+        "form": "chokoleti",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "xocolatl",
+        "lang": {
+          "de": "Nahuatl",
+          "en": "Nahuatl"
+        }
+      },
+      {
+        "form": "chocolate",
+        "lang": {
+          "de": "Spanisch",
+          "en": "Spanish"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Aus Mexiko über Spanien in alle 14 Sprachen. Wer es einmal kennt, kann es fast überall lesen.",
+      "en": "From Mexico via Spain into all 14 languages. Learn it once and you can read it almost anywhere."
+    }
+  },
+  {
+    "id": "paprika",
+    "de": "Paprika",
+    "en": "paprika",
+    "forms": {
+      "en": {
+        "form": "paprika",
+        "cognate": true
+      },
+      "fr": {
+        "form": "paprika",
+        "cognate": true
+      },
+      "es": {
+        "form": "pimentón",
+        "cognate": false
+      },
+      "it": {
+        "form": "paprika",
+        "cognate": true
+      },
+      "pl": {
+        "form": "papryka",
+        "cognate": true
+      },
+      "ru": {
+        "form": "паприка",
+        "roman": "paprika",
+        "cognate": true
+      },
+      "el": {
+        "form": "πάπρικα",
+        "roman": "páprika",
+        "cognate": true
+      },
+      "tr": {
+        "form": "paprika",
+        "cognate": true
+      },
+      "ar": {
+        "form": "بابريكا",
+        "roman": "bābrīkā",
+        "cognate": true
+      },
+      "he": {
+        "form": "פפריקה",
+        "roman": "paprika",
+        "cognate": true
+      },
+      "hi": {
+        "form": "लाल मिर्च",
+        "roman": "lāl mirch",
+        "cognate": false
+      },
+      "ja": {
+        "form": "パプリカ",
+        "roman": "papurika",
+        "cognate": true
+      },
+      "ko": {
+        "form": "파프리카",
+        "roman": "papeurika",
+        "cognate": true
+      },
+      "sw": {
+        "form": "pilipili",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "piper",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      },
+      {
+        "form": "papar",
+        "lang": {
+          "de": "Serbisch",
+          "en": "Serbian"
+        }
+      },
+      {
+        "form": "paprika",
+        "lang": {
+          "de": "Ungarisch",
+          "en": "Hungarian"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Ungarn hat der Welt das Wort gegeben. Spanisch sagt »pimentón«, Hindi »lāl mirch«.",
+      "en": "Hungary gave the world this word. Spanish says \"pimentón\", Hindi \"lāl mirch\"."
+    }
+  },
+  {
+    "id": "sugar",
+    "de": "Zucker",
+    "en": "sugar",
+    "forms": {
+      "en": {
+        "form": "sugar",
+        "cognate": true
+      },
+      "fr": {
+        "form": "sucre",
+        "cognate": true
+      },
+      "es": {
+        "form": "azúcar",
+        "cognate": true
+      },
+      "it": {
+        "form": "zucchero",
+        "cognate": true
+      },
+      "pl": {
+        "form": "cukier",
+        "cognate": true
+      },
+      "ru": {
+        "form": "сахар",
+        "roman": "sakhar",
+        "cognate": true
+      },
+      "el": {
+        "form": "ζάχαρη",
+        "roman": "záchari",
+        "cognate": true
+      },
+      "tr": {
+        "form": "şeker",
+        "cognate": true
+      },
+      "ar": {
+        "form": "سكر",
+        "roman": "sukkar",
+        "cognate": true
+      },
+      "he": {
+        "form": "סוכר",
+        "roman": "sukar",
+        "cognate": true
+      },
+      "hi": {
+        "form": "शक्कर",
+        "roman": "shakkar",
+        "cognate": true
+      },
+      "ja": {
+        "form": "砂糖",
+        "roman": "satō",
+        "cognate": false
+      },
+      "ko": {
+        "form": "설탕",
+        "roman": "seoltang",
+        "cognate": false
+      },
+      "sw": {
+        "form": "sukari",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "śarkarā",
+        "lang": {
+          "de": "Sanskrit",
+          "en": "Sanskrit"
+        }
+      },
+      {
+        "form": "شکر",
+        "roman": "shakar",
+        "lang": {
+          "de": "Persisch",
+          "en": "Persian"
+        }
+      },
+      {
+        "form": "سكر",
+        "roman": "sukkar",
+        "lang": {
+          "de": "Arabisch",
+          "en": "Arabic"
+        }
+      },
+      {
+        "form": "zucchero",
+        "lang": {
+          "de": "Italienisch",
+          "en": "Italian"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Von Indien über Persien und Arabien nach Europa. Japanisch und Koreanisch gingen eigene Wege.",
+      "en": "From India via Persia and Arabia to Europe. Japanese and Korean went their own way."
+    }
+  },
+  {
+    "id": "taxi",
+    "de": "Taxi",
+    "en": "taxi",
+    "forms": {
+      "en": {
+        "form": "taxi",
+        "cognate": true
+      },
+      "fr": {
+        "form": "taxi",
+        "cognate": true
+      },
+      "es": {
+        "form": "taxi",
+        "cognate": true
+      },
+      "it": {
+        "form": "taxi",
+        "cognate": true
+      },
+      "pl": {
+        "form": "taxi",
+        "cognate": true
+      },
+      "ru": {
+        "form": "такси",
+        "roman": "taksi",
+        "cognate": true
+      },
+      "el": {
+        "form": "ταξί",
+        "roman": "taxí",
+        "cognate": true
+      },
+      "tr": {
+        "form": "taksi",
+        "cognate": true
+      },
+      "ar": {
+        "form": "تاكسي",
+        "roman": "tāksī",
+        "cognate": true
+      },
+      "he": {
+        "form": "מונית",
+        "roman": "monit",
+        "cognate": false
+      },
+      "hi": {
+        "form": "टैक्सी",
+        "roman": "ṭaiksī",
+        "cognate": true
+      },
+      "ja": {
+        "form": "タクシー",
+        "roman": "takushī",
+        "cognate": true
+      },
+      "ko": {
+        "form": "택시",
+        "roman": "taeksi",
+        "cognate": true
+      },
+      "sw": {
+        "form": "teksi",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "taxa",
+        "lang": {
+          "de": "Mittellatein",
+          "en": "Medieval Latin"
+        }
+      },
+      {
+        "form": "Taxameter",
+        "lang": {
+          "de": "Deutsch",
+          "en": "German"
+        }
+      },
+      {
+        "form": "taxi",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Ein deutsches Gerät, der Taxameter, gab fast allen Sprachen das Wort. Hebräisch sagt »monit«.",
+      "en": "A German device, the taximeter, gave nearly every language the word. Hebrew says \"monit\"."
+    }
+  },
+  {
+    "id": "banana",
+    "de": "Banane",
+    "en": "banana",
+    "forms": {
+      "en": {
+        "form": "banana",
+        "cognate": true
+      },
+      "fr": {
+        "form": "banane",
+        "cognate": true
+      },
+      "es": {
+        "form": "banana",
+        "cognate": true
+      },
+      "it": {
+        "form": "banana",
+        "cognate": true
+      },
+      "pl": {
+        "form": "banan",
+        "cognate": true
+      },
+      "ru": {
+        "form": "банан",
+        "roman": "banan",
+        "cognate": true
+      },
+      "el": {
+        "form": "μπανάνα",
+        "roman": "banána",
+        "cognate": true
+      },
+      "tr": {
+        "form": "muz",
+        "cognate": false
+      },
+      "ar": {
+        "form": "موزة",
+        "roman": "mawza",
+        "cognate": false
+      },
+      "he": {
+        "form": "בננה",
+        "roman": "banana",
+        "cognate": true
+      },
+      "hi": {
+        "form": "केला",
+        "roman": "kelā",
+        "cognate": false
+      },
+      "ja": {
+        "form": "バナナ",
+        "roman": "banana",
+        "cognate": true
+      },
+      "ko": {
+        "form": "바나나",
+        "roman": "banana",
+        "cognate": true
+      },
+      "sw": {
+        "form": "ndizi",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "banaana",
+        "lang": {
+          "de": "Wolof",
+          "en": "Wolof"
+        }
+      },
+      {
+        "form": "banana",
+        "lang": {
+          "de": "Portugiesisch",
+          "en": "Portuguese"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Portugiesische Seefahrer brachten das Wort aus Westafrika mit. Türkisch und Arabisch sagen »muz/mawz«.",
+      "en": "Portuguese sailors brought the word back from West Africa. Turkish and Arabic say \"muz/mawz\"."
+    }
+  },
+  {
+    "id": "tomato",
+    "de": "Tomate",
+    "en": "tomato",
+    "forms": {
+      "en": {
+        "form": "tomato",
+        "cognate": true
+      },
+      "fr": {
+        "form": "tomate",
+        "cognate": true
+      },
+      "es": {
+        "form": "tomate",
+        "cognate": true
+      },
+      "it": {
+        "form": "pomodoro",
+        "cognate": false
+      },
+      "pl": {
+        "form": "pomidor",
+        "cognate": false
+      },
+      "ru": {
+        "form": "помидор",
+        "roman": "pomidor",
+        "cognate": false
+      },
+      "el": {
+        "form": "ντομάτα",
+        "roman": "ntomáta",
+        "cognate": true
+      },
+      "tr": {
+        "form": "domates",
+        "cognate": true
+      },
+      "ar": {
+        "form": "بندورة",
+        "roman": "bandūra",
+        "cognate": false
+      },
+      "he": {
+        "form": "עגבניה",
+        "roman": "agvaniya",
+        "cognate": false
+      },
+      "hi": {
+        "form": "टमाटर",
+        "roman": "ṭamāṭar",
+        "cognate": true
+      },
+      "ja": {
+        "form": "トマト",
+        "roman": "tomato",
+        "cognate": true
+      },
+      "ko": {
+        "form": "토마토",
+        "roman": "tomato",
+        "cognate": true
+      },
+      "sw": {
+        "form": "nyanya",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "tomatl",
+        "lang": {
+          "de": "Nahuatl",
+          "en": "Nahuatl"
+        }
+      },
+      {
+        "form": "tomate",
+        "lang": {
+          "de": "Spanisch",
+          "en": "Spanish"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Italienisch nennt sie »pomodoro«, goldener Apfel, und Polnisch und Russisch haben das übernommen.",
+      "en": "Italian calls it \"pomodoro\", golden apple, and Polish and Russian took that over."
+    }
+  },
+  {
+    "id": "hotel",
+    "de": "Hotel",
+    "en": "hotel",
+    "forms": {
+      "en": {
+        "form": "hotel",
+        "cognate": true
+      },
+      "fr": {
+        "form": "hôtel",
+        "cognate": true
+      },
+      "es": {
+        "form": "hotel",
+        "cognate": true
+      },
+      "it": {
+        "form": "albergo",
+        "cognate": false
+      },
+      "pl": {
+        "form": "hotel",
+        "cognate": true
+      },
+      "ru": {
+        "form": "гостиница",
+        "roman": "gostinitsa",
+        "cognate": false
+      },
+      "el": {
+        "form": "ξενοδοχείο",
+        "roman": "xenodocheío",
+        "cognate": false
+      },
+      "tr": {
+        "form": "otel",
+        "cognate": true
+      },
+      "ar": {
+        "form": "فندق",
+        "roman": "funduq",
+        "cognate": false
+      },
+      "he": {
+        "form": "מלון",
+        "roman": "malon",
+        "cognate": false
+      },
+      "hi": {
+        "form": "होटल",
+        "roman": "hoṭal",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ホテル",
+        "roman": "hoteru",
+        "cognate": true
+      },
+      "ko": {
+        "form": "호텔",
+        "roman": "hotel",
+        "cognate": true
+      },
+      "sw": {
+        "form": "hoteli",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "hospitale",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      },
+      {
+        "form": "hostel",
+        "lang": {
+          "de": "Altfranzösisch",
+          "en": "Old French"
+        }
+      },
+      {
+        "form": "hôtel",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Hotel und Hospital sind Geschwister: Beide kommen von lateinisch hospes, Gast.",
+      "en": "Hotel and hospital are siblings: both come from Latin hospes, guest."
+    }
+  },
+  {
+    "id": "radio",
+    "de": "Radio",
+    "en": "radio",
+    "forms": {
+      "en": {
+        "form": "radio",
+        "cognate": true
+      },
+      "fr": {
+        "form": "radio",
+        "cognate": true
+      },
+      "es": {
+        "form": "radio",
+        "cognate": true
+      },
+      "it": {
+        "form": "radio",
+        "cognate": true
+      },
+      "pl": {
+        "form": "radio",
+        "cognate": true
+      },
+      "ru": {
+        "form": "радио",
+        "roman": "radio",
+        "cognate": true
+      },
+      "el": {
+        "form": "ραδιόφωνο",
+        "roman": "radiófono",
+        "cognate": true
+      },
+      "tr": {
+        "form": "radyo",
+        "cognate": true
+      },
+      "ar": {
+        "form": "راديو",
+        "roman": "rādyū",
+        "cognate": true
+      },
+      "he": {
+        "form": "רדיו",
+        "roman": "radyo",
+        "cognate": true
+      },
+      "hi": {
+        "form": "रेडियो",
+        "roman": "reḍiyo",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ラジオ",
+        "roman": "rajio",
+        "cognate": true
+      },
+      "ko": {
+        "form": "라디오",
+        "roman": "radio",
+        "cognate": true
+      },
+      "sw": {
+        "form": "redio",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "radius",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Von lateinisch radius, Strahl: Das Radio schickt Wellen in alle Richtungen.",
+      "en": "From Latin radius, ray: radio sends waves out in every direction."
+    }
+  },
+  {
+    "id": "music",
+    "de": "Musik",
+    "en": "music",
+    "forms": {
+      "en": {
+        "form": "music",
+        "cognate": true
+      },
+      "fr": {
+        "form": "musique",
+        "cognate": true
+      },
+      "es": {
+        "form": "música",
+        "cognate": true
+      },
+      "it": {
+        "form": "musica",
+        "cognate": true
+      },
+      "pl": {
+        "form": "muzyka",
+        "cognate": true
+      },
+      "ru": {
+        "form": "музыка",
+        "roman": "muzyka",
+        "cognate": true
+      },
+      "el": {
+        "form": "μουσική",
+        "roman": "mousikí",
+        "cognate": true
+      },
+      "tr": {
+        "form": "müzik",
+        "cognate": true
+      },
+      "ar": {
+        "form": "موسيقى",
+        "roman": "mūsīqā",
+        "cognate": true
+      },
+      "he": {
+        "form": "מוזיקה",
+        "roman": "muzika",
+        "cognate": true
+      },
+      "hi": {
+        "form": "संगीत",
+        "roman": "saṅgīt",
+        "cognate": false
+      },
+      "ja": {
+        "form": "音楽",
+        "roman": "ongaku",
+        "cognate": false
+      },
+      "ko": {
+        "form": "음악",
+        "roman": "eumak",
+        "cognate": false
+      },
+      "sw": {
+        "form": "muziki",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "mousikē",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "musica",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Von den Musen, den griechischen Göttinnen der Künste. Japanisch 音楽 heißt wörtlich »Klang-Freude«.",
+      "en": "From the Muses, the Greek goddesses of the arts. Japanese 音楽 literally means \"sound joy\"."
+    }
+  },
+  {
+    "id": "telephone",
+    "de": "Telefon",
+    "en": "telephone",
+    "forms": {
+      "en": {
+        "form": "telephone",
+        "cognate": true
+      },
+      "fr": {
+        "form": "téléphone",
+        "cognate": true
+      },
+      "es": {
+        "form": "teléfono",
+        "cognate": true
+      },
+      "it": {
+        "form": "telefono",
+        "cognate": true
+      },
+      "pl": {
+        "form": "telefon",
+        "cognate": true
+      },
+      "ru": {
+        "form": "телефон",
+        "roman": "telefon",
+        "cognate": true
+      },
+      "el": {
+        "form": "τηλέφωνο",
+        "roman": "tiléfono",
+        "cognate": true
+      },
+      "tr": {
+        "form": "telefon",
+        "cognate": true
+      },
+      "ar": {
+        "form": "هاتف",
+        "roman": "hātif",
+        "cognate": false
+      },
+      "he": {
+        "form": "טלפון",
+        "roman": "telefon",
+        "cognate": true
+      },
+      "hi": {
+        "form": "दूरभाष",
+        "roman": "dūrbhāṣ",
+        "cognate": false
+      },
+      "ja": {
+        "form": "電話",
+        "roman": "denwa",
+        "cognate": false
+      },
+      "ko": {
+        "form": "전화",
+        "roman": "jeonhwa",
+        "cognate": false
+      },
+      "sw": {
+        "form": "simu",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "tēle + phōnē",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "téléphone",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Griechisch für »Fernstimme«. Japanisch 電話 denwa heißt »elektrisches Gespräch«.",
+      "en": "Greek for \"far voice\". Japanese 電話 denwa means \"electric talk\"."
+    }
+  },
+  {
+    "id": "computer",
+    "de": "Computer",
+    "en": "computer",
+    "forms": {
+      "en": {
+        "form": "computer",
+        "cognate": true
+      },
+      "fr": {
+        "form": "ordinateur",
+        "cognate": false
+      },
+      "es": {
+        "form": "computador",
+        "cognate": true
+      },
+      "it": {
+        "form": "calcolatore",
+        "cognate": false
+      },
+      "pl": {
+        "form": "komputer",
+        "cognate": true
+      },
+      "ru": {
+        "form": "компьютер",
+        "roman": "kompyuter",
+        "cognate": true
+      },
+      "el": {
+        "form": "υπολογιστής",
+        "roman": "ypologistís",
+        "cognate": false
+      },
+      "tr": {
+        "form": "bilgisayar",
+        "cognate": false
+      },
+      "ar": {
+        "form": "حاسوب",
+        "roman": "ḥāsūb",
+        "cognate": false
+      },
+      "he": {
+        "form": "מחשב",
+        "roman": "makhshev",
+        "cognate": false
+      },
+      "hi": {
+        "form": "संगणक",
+        "roman": "saṅgṇak",
+        "cognate": false
+      },
+      "ja": {
+        "form": "コンピュータ",
+        "roman": "kompyūta",
+        "cognate": true
+      },
+      "ko": {
+        "form": "컴퓨터",
+        "roman": "keompyuteo",
+        "cognate": true
+      },
+      "sw": {
+        "form": "kompyuta",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "computare",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      },
+      {
+        "form": "computer",
+        "lang": {
+          "de": "Englisch",
+          "en": "English"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Lateinisch computare heißt zusammenrechnen. Französisch sagt »ordinateur«, der Ordnende.",
+      "en": "Latin computare means to reckon together. French says \"ordinateur\", the one that puts in order."
+    }
+  },
+  {
+    "id": "bus",
+    "de": "Bus",
+    "en": "bus",
+    "forms": {
+      "en": {
+        "form": "bus",
+        "cognate": true
+      },
+      "fr": {
+        "form": "autobus",
+        "cognate": true
+      },
+      "es": {
+        "form": "autobús",
+        "cognate": true
+      },
+      "it": {
+        "form": "autobus",
+        "cognate": true
+      },
+      "pl": {
+        "form": "autobus",
+        "cognate": true
+      },
+      "ru": {
+        "form": "автобус",
+        "roman": "avtobus",
+        "cognate": true
+      },
+      "el": {
+        "form": "λεωφορείο",
+        "roman": "leoforeío",
+        "cognate": false
+      },
+      "tr": {
+        "form": "otobüs",
+        "cognate": true
+      },
+      "ar": {
+        "form": "حافلة",
+        "roman": "ḥāfila",
+        "cognate": false
+      },
+      "he": {
+        "form": "אוטובוס",
+        "roman": "otobus",
+        "cognate": true
+      },
+      "hi": {
+        "form": "बस",
+        "roman": "bas",
+        "cognate": true
+      },
+      "ja": {
+        "form": "バス",
+        "roman": "basu",
+        "cognate": true
+      },
+      "ko": {
+        "form": "버스",
+        "roman": "beoseu",
+        "cognate": true
+      },
+      "sw": {
+        "form": "basi",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "omnibus",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      },
+      {
+        "form": "omnibus",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      },
+      {
+        "form": "bus",
+        "lang": {
+          "de": "Englisch",
+          "en": "English"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Kurz für lateinisch omnibus, »für alle«. Viele Sprachen sagen »autobus«.",
+      "en": "Short for Latin omnibus, \"for all\". Many languages say \"autobus\"."
+    }
+  },
+  {
+    "id": "bank",
+    "de": "Bank",
+    "en": "bank",
+    "forms": {
+      "en": {
+        "form": "bank",
+        "cognate": true
+      },
+      "fr": {
+        "form": "banque",
+        "cognate": true
+      },
+      "es": {
+        "form": "banca",
+        "cognate": true
+      },
+      "it": {
+        "form": "banca",
+        "cognate": true
+      },
+      "pl": {
+        "form": "bank",
+        "cognate": true
+      },
+      "ru": {
+        "form": "банк",
+        "roman": "bank",
+        "cognate": true
+      },
+      "el": {
+        "form": "τράπεζα",
+        "roman": "trápeza",
+        "cognate": false
+      },
+      "tr": {
+        "form": "banka",
+        "cognate": true
+      },
+      "ar": {
+        "form": "مصرف",
+        "roman": "maṣrif",
+        "cognate": false
+      },
+      "he": {
+        "form": "בנק",
+        "roman": "bank",
+        "cognate": true
+      },
+      "hi": {
+        "form": "बैंक",
+        "roman": "baiṅk",
+        "cognate": true
+      },
+      "ja": {
+        "form": "銀行",
+        "roman": "ginkō",
+        "cognate": false
+      },
+      "ko": {
+        "form": "은행",
+        "roman": "eunhaeng",
+        "cognate": false
+      },
+      "sw": {
+        "form": "benki",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "banca",
+        "lang": {
+          "de": "Italienisch",
+          "en": "Italian"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Italienische Geldwechsler saßen an einer »banca«, einer Bank. Ging einer pleite, zerbrach man sie: banca rotta.",
+      "en": "Italian money changers sat at a \"banca\", a bench. When one went broke, the bench was broken: banca rotta."
+    }
+  },
+  {
+    "id": "police",
+    "de": "Polizei",
+    "en": "police",
+    "forms": {
+      "en": {
+        "form": "police",
+        "cognate": true
+      },
+      "fr": {
+        "form": "police",
+        "cognate": true
+      },
+      "es": {
+        "form": "policía",
+        "cognate": true
+      },
+      "it": {
+        "form": "polizia",
+        "cognate": true
+      },
+      "pl": {
+        "form": "policja",
+        "cognate": true
+      },
+      "ru": {
+        "form": "полиция",
+        "roman": "politsiya",
+        "cognate": true
+      },
+      "el": {
+        "form": "αστυνομία",
+        "roman": "astynomía",
+        "cognate": false
+      },
+      "tr": {
+        "form": "polis",
+        "cognate": true
+      },
+      "ar": {
+        "form": "شرطة",
+        "roman": "shurṭa",
+        "cognate": false
+      },
+      "he": {
+        "form": "משטרה",
+        "roman": "mishtara",
+        "cognate": false
+      },
+      "hi": {
+        "form": "आरक्षी",
+        "roman": "ārakṣī",
+        "cognate": false
+      },
+      "ja": {
+        "form": "警察",
+        "roman": "keisatsu",
+        "cognate": false
+      },
+      "ko": {
+        "form": "경찰",
+        "roman": "gyeongchal",
+        "cognate": false
+      },
+      "sw": {
+        "form": "polisi",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "polis",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "politia",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      },
+      {
+        "form": "police",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Von griechisch polis, Stadt, wie Politik und Metropole.",
+      "en": "From Greek polis, city, like politics and metropolis."
+    }
+  },
+  {
+    "id": "cinema",
+    "de": "Kino",
+    "en": "cinema",
+    "forms": {
+      "en": {
+        "form": "cinema",
+        "cognate": true
+      },
+      "fr": {
+        "form": "cinéma",
+        "cognate": true
+      },
+      "es": {
+        "form": "cine",
+        "cognate": true
+      },
+      "it": {
+        "form": "cinema",
+        "cognate": true
+      },
+      "pl": {
+        "form": "kino",
+        "cognate": true
+      },
+      "ru": {
+        "form": "кинотеатр",
+        "roman": "kinoteatr",
+        "cognate": true
+      },
+      "el": {
+        "form": "σινεμά",
+        "roman": "sinemá",
+        "cognate": true
+      },
+      "tr": {
+        "form": "sinema",
+        "cognate": true
+      },
+      "ar": {
+        "form": "سينما",
+        "roman": "sīnamā",
+        "cognate": true
+      },
+      "he": {
+        "form": "בית קולנוע",
+        "roman": "bet kolnoa",
+        "cognate": false
+      },
+      "hi": {
+        "form": "सिनेमा",
+        "roman": "sinemā",
+        "cognate": true
+      },
+      "ja": {
+        "form": "映画館",
+        "roman": "eigakan",
+        "cognate": false
+      },
+      "ko": {
+        "form": "영화관",
+        "roman": "yeonghwagwan",
+        "cognate": false
+      },
+      "sw": {
+        "form": "sinema",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "kinēma",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "cinématographe",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Griechisch kinema heißt Bewegung. Deutsch, Polnisch und Russisch kürzten zu »Kino«, die anderen zu »cinema«.",
+      "en": "Greek kinema means movement. German, Polish and Russian shortened it to \"kino\", the others to \"cinema\"."
+    }
+  },
+  {
+    "id": "theater",
+    "de": "Theater",
+    "en": "theater",
+    "forms": {
+      "en": {
+        "form": "theater",
+        "cognate": true
+      },
+      "fr": {
+        "form": "théâtre",
+        "cognate": true
+      },
+      "es": {
+        "form": "teatro",
+        "cognate": true
+      },
+      "it": {
+        "form": "teatro",
+        "cognate": true
+      },
+      "pl": {
+        "form": "teatr",
+        "cognate": true
+      },
+      "ru": {
+        "form": "театр",
+        "roman": "teatr",
+        "cognate": true
+      },
+      "el": {
+        "form": "θέατρο",
+        "roman": "théatro",
+        "cognate": true
+      },
+      "tr": {
+        "form": "tiyatro",
+        "cognate": true
+      },
+      "ar": {
+        "form": "مسرح",
+        "roman": "masraḥ",
+        "cognate": false
+      },
+      "he": {
+        "form": "תאטרון",
+        "roman": "teatron",
+        "cognate": true
+      },
+      "hi": {
+        "form": "थिएटर",
+        "roman": "thieṭar",
+        "cognate": true
+      },
+      "ja": {
+        "form": "劇場",
+        "roman": "gekijō",
+        "cognate": false
+      },
+      "ko": {
+        "form": "극장",
+        "roman": "geukjang",
+        "cognate": false
+      },
+      "sw": {
+        "form": "ukumbi",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "theatron",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "theatrum",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Griechisch theatron ist der Ort zum Schauen.",
+      "en": "Greek theatron is the place for watching."
+    }
+  },
+  {
+    "id": "museum",
+    "de": "Museum",
+    "en": "museum",
+    "forms": {
+      "en": {
+        "form": "museum",
+        "cognate": true
+      },
+      "fr": {
+        "form": "musée",
+        "cognate": true
+      },
+      "es": {
+        "form": "museo",
+        "cognate": true
+      },
+      "it": {
+        "form": "museo",
+        "cognate": true
+      },
+      "pl": {
+        "form": "muzeum",
+        "cognate": true
+      },
+      "ru": {
+        "form": "музей",
+        "roman": "muzey",
+        "cognate": true
+      },
+      "el": {
+        "form": "μουσείο",
+        "roman": "mouseío",
+        "cognate": true
+      },
+      "tr": {
+        "form": "müze",
+        "cognate": true
+      },
+      "ar": {
+        "form": "متحف",
+        "roman": "matḥaf",
+        "cognate": false
+      },
+      "he": {
+        "form": "מוזיאון",
+        "roman": "muze'on",
+        "cognate": true
+      },
+      "hi": {
+        "form": "संग्रहालय",
+        "roman": "saṅgrahālay",
+        "cognate": false
+      },
+      "ja": {
+        "form": "博物館",
+        "roman": "hakubutsukan",
+        "cognate": false
+      },
+      "ko": {
+        "form": "박물관",
+        "roman": "bangmulgwan",
+        "cognate": false
+      },
+      "sw": {
+        "form": "makumbusho",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "Mouseion",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "museum",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Das Mouseion in Alexandria war ein Tempel der Musen und eine Forschungsstätte.",
+      "en": "The Mouseion of Alexandria was a temple of the Muses and a place of research."
+    }
+  },
+  {
+    "id": "university",
+    "de": "Universität",
+    "en": "university",
+    "forms": {
+      "en": {
+        "form": "university",
+        "cognate": true
+      },
+      "fr": {
+        "form": "université",
+        "cognate": true
+      },
+      "es": {
+        "form": "universidad",
+        "cognate": true
+      },
+      "it": {
+        "form": "università",
+        "cognate": true
+      },
+      "pl": {
+        "form": "uniwersytet",
+        "cognate": true
+      },
+      "ru": {
+        "form": "университет",
+        "roman": "universitet",
+        "cognate": true
+      },
+      "el": {
+        "form": "πανεπιστήμιο",
+        "roman": "panepistímio",
+        "cognate": false
+      },
+      "tr": {
+        "form": "üniversite",
+        "cognate": true
+      },
+      "ar": {
+        "form": "جامعة",
+        "roman": "jāmiʿa",
+        "cognate": false
+      },
+      "he": {
+        "form": "אוניברסיטה",
+        "roman": "universita",
+        "cognate": true
+      },
+      "hi": {
+        "form": "विश्वविद्यालय",
+        "roman": "viśvavidyālay",
+        "cognate": false
+      },
+      "ja": {
+        "form": "大学",
+        "roman": "daigaku",
+        "cognate": false
+      },
+      "ko": {
+        "form": "대학",
+        "roman": "daehak",
+        "cognate": false
+      },
+      "sw": {
+        "form": "chuo kikuu",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "universitas",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      },
+      {
+        "form": "université",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Lateinisch universitas heißt Gesamtheit, gemeint war die Gemeinschaft der Lehrenden und Lernenden.",
+      "en": "Latin universitas means the whole, here the community of teachers and students."
+    }
+  },
+  {
+    "id": "sport",
+    "de": "Sport",
+    "en": "sport",
+    "forms": {
+      "en": {
+        "form": "sport",
+        "cognate": true
+      },
+      "fr": {
+        "form": "sport",
+        "cognate": true
+      },
+      "es": {
+        "form": "deporte",
+        "cognate": false
+      },
+      "it": {
+        "form": "sport",
+        "cognate": true
+      },
+      "pl": {
+        "form": "sport",
+        "cognate": true
+      },
+      "ru": {
+        "form": "спорт",
+        "roman": "sport",
+        "cognate": true
+      },
+      "el": {
+        "form": "άθλημα",
+        "roman": "áthlima",
+        "cognate": false
+      },
+      "tr": {
+        "form": "spor",
+        "cognate": true
+      },
+      "ar": {
+        "form": "رياضة",
+        "roman": "riyāḍa",
+        "cognate": false
+      },
+      "he": {
+        "form": "ספורט",
+        "roman": "sport",
+        "cognate": true
+      },
+      "hi": {
+        "form": "वर्ज़िश",
+        "roman": "varziś",
+        "cognate": false
+      },
+      "ja": {
+        "form": "運動",
+        "roman": "undō",
+        "cognate": false
+      },
+      "ko": {
+        "form": "운동",
+        "roman": "undong",
+        "cognate": false
+      },
+      "sw": {
+        "form": "spoti",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "desport",
+        "lang": {
+          "de": "Altfranzösisch",
+          "en": "Old French"
+        }
+      },
+      {
+        "form": "sport",
+        "lang": {
+          "de": "Englisch",
+          "en": "English"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Altfranzösisch desport hieß Zerstreuung. Englisch kürzte es zu sport, Spanisch blieb bei »deporte«.",
+      "en": "Old French desport meant amusement. English shortened it to sport, Spanish kept \"deporte\"."
+    }
+  },
+  {
+    "id": "tennis",
+    "de": "Tennis",
+    "en": "tennis",
+    "forms": {
+      "en": {
+        "form": "tennis",
+        "cognate": true
+      },
+      "fr": {
+        "form": "tennis",
+        "cognate": true
+      },
+      "es": {
+        "form": "tenis",
+        "cognate": true
+      },
+      "it": {
+        "form": "tennis",
+        "cognate": true
+      },
+      "pl": {
+        "form": "tenis",
+        "cognate": true
+      },
+      "ru": {
+        "form": "теннис",
+        "roman": "tennis",
+        "cognate": true
+      },
+      "el": {
+        "form": "αντισφαίριση",
+        "roman": "antisfaírisi",
+        "cognate": false
+      },
+      "tr": {
+        "form": "tenis",
+        "cognate": true
+      },
+      "ar": {
+        "form": "تنس",
+        "roman": "tanis",
+        "cognate": true
+      },
+      "he": {
+        "form": "טניס",
+        "roman": "tenis",
+        "cognate": true
+      },
+      "hi": {
+        "form": "टेनिस",
+        "roman": "ṭenis",
+        "cognate": true
+      },
+      "ja": {
+        "form": "テニス",
+        "roman": "tenisu",
+        "cognate": true
+      },
+      "ko": {
+        "form": "테니스",
+        "roman": "teniseu",
+        "cognate": true
+      },
+      "sw": {
+        "form": "tenisi",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "tenez !",
+        "lang": {
+          "de": "Altfranzösisch",
+          "en": "Old French"
+        }
+      },
+      {
+        "form": "tennis",
+        "lang": {
+          "de": "Englisch",
+          "en": "English"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Wohl vom Ruf »tenez!«, »nehmt!«, beim Aufschlag im französischen Ballspiel.",
+      "en": "Probably from the call \"tenez!\", \"take this!\", at the serve in the French ball game."
+    }
+  },
+  {
+    "id": "golf",
+    "de": "Golf",
+    "en": "golf",
+    "forms": {
+      "en": {
+        "form": "golf",
+        "cognate": true
+      },
+      "fr": {
+        "form": "golf",
+        "cognate": true
+      },
+      "es": {
+        "form": "golf",
+        "cognate": true
+      },
+      "it": {
+        "form": "golf",
+        "cognate": true
+      },
+      "pl": {
+        "form": "golf",
+        "cognate": true
+      },
+      "ru": {
+        "form": "гольф",
+        "roman": "golf",
+        "cognate": true
+      },
+      "el": {
+        "form": "γκολφ",
+        "roman": "gkolf",
+        "cognate": true
+      },
+      "tr": {
+        "form": "golf",
+        "cognate": true
+      },
+      "ar": {
+        "form": "جولف",
+        "roman": "jūlf",
+        "cognate": true
+      },
+      "he": {
+        "form": "גולף",
+        "roman": "golf",
+        "cognate": true
+      },
+      "hi": {
+        "form": "गोल्फ़",
+        "roman": "golf",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ゴルフ",
+        "roman": "gorufu",
+        "cognate": true
+      },
+      "ko": {
+        "form": "골프",
+        "roman": "golpeu",
+        "cognate": true
+      },
+      "sw": {
+        "form": "gofu",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "kolf",
+        "lang": {
+          "de": "Niederländisch",
+          "en": "Dutch"
+        }
+      },
+      {
+        "form": "golf",
+        "lang": {
+          "de": "Schottisch",
+          "en": "Scots"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Wohl von niederländisch kolf, Schläger. In Schottland wurde daraus das Spiel.",
+      "en": "Probably from Dutch kolf, club. Scotland made the game out of it."
+    }
+  },
+  {
+    "id": "guitar",
+    "de": "Gitarre",
+    "en": "guitar",
+    "forms": {
+      "en": {
+        "form": "guitar",
+        "cognate": true
+      },
+      "fr": {
+        "form": "guitare",
+        "cognate": true
+      },
+      "es": {
+        "form": "guitarra",
+        "cognate": true
+      },
+      "it": {
+        "form": "chitarra",
+        "cognate": true
+      },
+      "pl": {
+        "form": "gitara",
+        "cognate": true
+      },
+      "ru": {
+        "form": "гитара",
+        "roman": "gitara",
+        "cognate": true
+      },
+      "el": {
+        "form": "κιθάρα",
+        "roman": "kithára",
+        "cognate": true
+      },
+      "tr": {
+        "form": "gitar",
+        "cognate": true
+      },
+      "ar": {
+        "form": "قيثارة",
+        "roman": "qīthāra",
+        "cognate": true
+      },
+      "he": {
+        "form": "גיטרה",
+        "roman": "gitara",
+        "cognate": true
+      },
+      "hi": {
+        "form": "गिटार",
+        "roman": "giṭār",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ギター",
+        "roman": "gitā",
+        "cognate": true
+      },
+      "ko": {
+        "form": "기타",
+        "roman": "gita",
+        "cognate": true
+      },
+      "sw": {
+        "form": "gitaa",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "kithara",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "قيثارة",
+        "roman": "qīthāra",
+        "lang": {
+          "de": "Arabisch",
+          "en": "Arabic"
+        }
+      },
+      {
+        "form": "guitarra",
+        "lang": {
+          "de": "Spanisch",
+          "en": "Spanish"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Von der griechischen Kithara über das arabische Spanien. Italienisch »chitarra« sieht anders aus, klingt aber fast gleich.",
+      "en": "From the Greek kithara via Arabic Spain. Italian \"chitarra\" looks different but sounds almost the same."
+    }
+  },
+  {
+    "id": "camera",
+    "de": "Kamera",
+    "en": "camera",
+    "forms": {
+      "en": {
+        "form": "camera",
+        "cognate": true
+      },
+      "fr": {
+        "form": "appareil photo",
+        "cognate": false
+      },
+      "es": {
+        "form": "cámara",
+        "cognate": true
+      },
+      "it": {
+        "form": "fotocamera",
+        "cognate": true
+      },
+      "pl": {
+        "form": "aparat fotograficzny",
+        "cognate": false
+      },
+      "ru": {
+        "form": "фотоаппарат",
+        "roman": "fotoapparat",
+        "cognate": false
+      },
+      "el": {
+        "form": "φωτογραφική μηχανή",
+        "roman": "fotografikí michaní",
+        "cognate": false
+      },
+      "tr": {
+        "form": "fotoğraf makinesi",
+        "cognate": false
+      },
+      "ar": {
+        "form": "كمرة",
+        "roman": "kamira",
+        "cognate": true
+      },
+      "he": {
+        "form": "מצלמה",
+        "roman": "matslema",
+        "cognate": false
+      },
+      "hi": {
+        "form": "कैमरा",
+        "roman": "kaimrā",
+        "cognate": true
+      },
+      "ja": {
+        "form": "カメラ",
+        "roman": "kamera",
+        "cognate": true
+      },
+      "ko": {
+        "form": "카메라",
+        "roman": "kamera",
+        "cognate": true
+      },
+      "sw": {
+        "form": "kamera",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "camera",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      },
+      {
+        "form": "camera obscura",
+        "lang": {
+          "de": "Mittellatein",
+          "en": "Medieval Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Lateinisch camera ist eine Kammer, wie in der camera obscura, der dunklen Kammer.",
+      "en": "Latin camera is a chamber, as in camera obscura, the dark chamber."
+    }
+  },
+  {
+    "id": "video",
+    "de": "Video",
+    "en": "video",
+    "forms": {
+      "en": {
+        "form": "video",
+        "cognate": true
+      },
+      "fr": {
+        "form": "vidéo",
+        "cognate": true
+      },
+      "es": {
+        "form": "vídeo",
+        "cognate": true
+      },
+      "it": {
+        "form": "video",
+        "cognate": true
+      },
+      "pl": {
+        "form": "wideo",
+        "cognate": true
+      },
+      "ru": {
+        "form": "видео",
+        "roman": "video",
+        "cognate": true
+      },
+      "el": {
+        "form": "βίντεο",
+        "roman": "vínteo",
+        "cognate": true
+      },
+      "tr": {
+        "form": "video",
+        "cognate": true
+      },
+      "ar": {
+        "form": "فيديو",
+        "roman": "fīdiyū",
+        "cognate": true
+      },
+      "he": {
+        "form": "וידאו",
+        "roman": "vide'o",
+        "cognate": true
+      },
+      "hi": {
+        "form": "वीडियो",
+        "roman": "vīḍiyo",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ビデオ",
+        "roman": "bideo",
+        "cognate": true
+      },
+      "ko": {
+        "form": "비디오",
+        "roman": "bidio",
+        "cognate": true
+      },
+      "sw": {
+        "form": "filamu",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "videō",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Lateinisch für »ich sehe«.",
+      "en": "Latin for \"I see\"."
+    }
+  },
+  {
+    "id": "robot",
+    "de": "Roboter",
+    "en": "robot",
+    "forms": {
+      "en": {
+        "form": "robot",
+        "cognate": true
+      },
+      "fr": {
+        "form": "robot",
+        "cognate": true
+      },
+      "es": {
+        "form": "robot",
+        "cognate": true
+      },
+      "it": {
+        "form": "robot",
+        "cognate": true
+      },
+      "pl": {
+        "form": "robot",
+        "cognate": true
+      },
+      "ru": {
+        "form": "робот",
+        "roman": "robot",
+        "cognate": true
+      },
+      "el": {
+        "form": "ρομπότ",
+        "roman": "rompót",
+        "cognate": true
+      },
+      "tr": {
+        "form": "robot",
+        "cognate": true
+      },
+      "ar": {
+        "form": "روبوت",
+        "roman": "rōbōt",
+        "cognate": true
+      },
+      "he": {
+        "form": "רובוט",
+        "roman": "robot",
+        "cognate": true
+      },
+      "hi": {
+        "form": "रोबोट",
+        "roman": "roboṭ",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ロボット",
+        "roman": "robotto",
+        "cognate": true
+      },
+      "ko": {
+        "form": "로봇",
+        "roman": "robot",
+        "cognate": true
+      },
+      "sw": {
+        "form": "roboti",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "robota",
+        "lang": {
+          "de": "Tschechisch",
+          "en": "Czech"
+        }
+      },
+      {
+        "form": "robot",
+        "lang": {
+          "de": "Tschechisch",
+          "en": "Czech"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Erfunden 1920 für Karel Čapeks Theaterstück R.U.R., nach tschechisch robota, Fronarbeit. Polnisch »robota« heißt bis heute Arbeit.",
+      "en": "Coined in 1920 for Karel Čapek's play R.U.R., from Czech robota, forced labour. In Polish \"robota\" still means work."
+    }
+  },
+  {
+    "id": "salad",
+    "de": "Salat",
+    "en": "salad",
+    "forms": {
+      "en": {
+        "form": "salad",
+        "cognate": true
+      },
+      "fr": {
+        "form": "salade",
+        "cognate": true
+      },
+      "es": {
+        "form": "ensalada",
+        "cognate": true
+      },
+      "it": {
+        "form": "insalata",
+        "cognate": true
+      },
+      "pl": {
+        "form": "sałatka",
+        "cognate": true
+      },
+      "ru": {
+        "form": "салат",
+        "roman": "salat",
+        "cognate": true
+      },
+      "el": {
+        "form": "σαλάτα",
+        "roman": "saláta",
+        "cognate": true
+      },
+      "tr": {
+        "form": "salata",
+        "cognate": true
+      },
+      "ar": {
+        "form": "سلطة",
+        "roman": "salaṭa",
+        "cognate": true
+      },
+      "he": {
+        "form": "סלט",
+        "roman": "salat",
+        "cognate": true
+      },
+      "hi": {
+        "form": "सलाद",
+        "roman": "salād",
+        "cognate": true
+      },
+      "ja": {
+        "form": "サラダ",
+        "roman": "sarada",
+        "cognate": true
+      },
+      "ko": {
+        "form": "샐러드",
+        "roman": "saelleodeu",
+        "cognate": true
+      },
+      "sw": {
+        "form": "saladi",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "sal",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      },
+      {
+        "form": "insalata",
+        "lang": {
+          "de": "Italienisch",
+          "en": "Italian"
+        }
+      },
+      {
+        "form": "salade",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Von lateinisch sal, Salz: gesalzenes Grünzeug.",
+      "en": "From Latin sal, salt: salted greens."
+    }
+  },
+  {
+    "id": "soup",
+    "de": "Suppe",
+    "en": "soup",
+    "forms": {
+      "en": {
+        "form": "soup",
+        "cognate": true
+      },
+      "fr": {
+        "form": "potage",
+        "cognate": false
+      },
+      "es": {
+        "form": "sopa",
+        "cognate": true
+      },
+      "it": {
+        "form": "minestra",
+        "cognate": false
+      },
+      "pl": {
+        "form": "zupa",
+        "cognate": true
+      },
+      "ru": {
+        "form": "суп",
+        "roman": "sup",
+        "cognate": true
+      },
+      "el": {
+        "form": "σούπα",
+        "roman": "soúpa",
+        "cognate": true
+      },
+      "tr": {
+        "form": "çorba",
+        "cognate": false
+      },
+      "ar": {
+        "form": "شوربة",
+        "roman": "shūraba",
+        "cognate": false
+      },
+      "he": {
+        "form": "מרק",
+        "roman": "marak",
+        "cognate": false
+      },
+      "hi": {
+        "form": "सूप",
+        "roman": "sūp",
+        "cognate": true
+      },
+      "ja": {
+        "form": "汁",
+        "roman": "shiru",
+        "cognate": false
+      },
+      "ko": {
+        "form": "국",
+        "roman": "guk",
+        "cognate": false
+      },
+      "sw": {
+        "form": "supu",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "*suppa",
+        "lang": {
+          "de": "Germanisch",
+          "en": "Germanic"
+        }
+      },
+      {
+        "form": "soupe",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Ursprünglich das Brot, das man in die Brühe tunkte.",
+      "en": "Originally the bread you dipped into the broth."
+    }
+  },
+  {
+    "id": "tobacco",
+    "de": "Tabak",
+    "en": "tobacco",
+    "forms": {
+      "en": {
+        "form": "tobacco",
+        "cognate": true
+      },
+      "fr": {
+        "form": "tabac",
+        "cognate": true
+      },
+      "es": {
+        "form": "tabaco",
+        "cognate": true
+      },
+      "it": {
+        "form": "tabacco",
+        "cognate": true
+      },
+      "pl": {
+        "form": "tytoń",
+        "cognate": false
+      },
+      "ru": {
+        "form": "табак",
+        "roman": "tabak",
+        "cognate": true
+      },
+      "el": {
+        "form": "καπνός",
+        "roman": "kapnós",
+        "cognate": false
+      },
+      "tr": {
+        "form": "tütün",
+        "cognate": false
+      },
+      "ar": {
+        "form": "تبغ",
+        "roman": "tibgh",
+        "cognate": true
+      },
+      "he": {
+        "form": "טבק",
+        "roman": "tabak",
+        "cognate": true
+      },
+      "hi": {
+        "form": "तम्बाकू",
+        "roman": "tambākū",
+        "cognate": true
+      },
+      "ja": {
+        "form": "タバコ",
+        "roman": "tabako",
+        "cognate": true
+      },
+      "ko": {
+        "form": "담배",
+        "roman": "dambae",
+        "cognate": false
+      },
+      "sw": {
+        "form": "mtumbaku",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "tabaco",
+        "lang": {
+          "de": "Spanisch",
+          "en": "Spanish"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Spanisch tabaco, vielleicht aus dem Taíno der Karibik. Polnisch »tytoń« und Türkisch »tütün« kommen vom Rauch.",
+      "en": "Spanish tabaco, perhaps from the Taíno of the Caribbean. Polish \"tytoń\" and Turkish \"tütün\" come from a word for smoke."
+    }
+  },
+  {
+    "id": "cigarette",
+    "de": "Zigarette",
+    "en": "cigarette",
+    "forms": {
+      "en": {
+        "form": "cigarette",
+        "cognate": true
+      },
+      "fr": {
+        "form": "cigarette",
+        "cognate": true
+      },
+      "es": {
+        "form": "cigarrillo",
+        "cognate": true
+      },
+      "it": {
+        "form": "sigaretta",
+        "cognate": true
+      },
+      "pl": {
+        "form": "papieros",
+        "cognate": false
+      },
+      "ru": {
+        "form": "сигарета",
+        "roman": "sigareta",
+        "cognate": true
+      },
+      "el": {
+        "form": "τσιγάρο",
+        "roman": "tsigáro",
+        "cognate": true
+      },
+      "tr": {
+        "form": "sigara",
+        "cognate": true
+      },
+      "ar": {
+        "form": "سيجارة",
+        "roman": "sigāra",
+        "cognate": true
+      },
+      "he": {
+        "form": "סיגריה",
+        "roman": "sigarya",
+        "cognate": true
+      },
+      "hi": {
+        "form": "सिगरेट",
+        "roman": "sigreṭ",
+        "cognate": true
+      },
+      "ja": {
+        "form": "タバコ",
+        "roman": "tabako",
+        "cognate": false
+      },
+      "ko": {
+        "form": "담배",
+        "roman": "dambae",
+        "cognate": false
+      },
+      "sw": {
+        "form": "sigara",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "cigarro",
+        "lang": {
+          "de": "Spanisch",
+          "en": "Spanish"
+        }
+      },
+      {
+        "form": "cigarette",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Französisch für »kleine Zigarre«. Japanisch sagt einfach »tabako«.",
+      "en": "French for \"little cigar\". Japanese simply says \"tabako\"."
+    }
+  },
+  {
+    "id": "alcohol",
+    "de": "Alkohol",
+    "en": "alcohol",
+    "forms": {
+      "en": {
+        "form": "alcohol",
+        "cognate": true
+      },
+      "fr": {
+        "form": "alcool",
+        "cognate": true
+      },
+      "es": {
+        "form": "alcohol",
+        "cognate": true
+      },
+      "it": {
+        "form": "alcol",
+        "cognate": true
+      },
+      "pl": {
+        "form": "alkohol",
+        "cognate": true
+      },
+      "ru": {
+        "form": "спирт",
+        "roman": "spirt",
+        "cognate": false
+      },
+      "el": {
+        "form": "οινόπνευμα",
+        "roman": "oinópnevma",
+        "cognate": false
+      },
+      "tr": {
+        "form": "alkol",
+        "cognate": true
+      },
+      "ar": {
+        "form": "كحول",
+        "roman": "kuḥūl",
+        "cognate": true
+      },
+      "he": {
+        "form": "אלכוהול",
+        "roman": "alkohol",
+        "cognate": true
+      },
+      "hi": {
+        "form": "सुरासार",
+        "roman": "surāsār",
+        "cognate": false
+      },
+      "ja": {
+        "form": "アルコール",
+        "roman": "arukōru",
+        "cognate": true
+      },
+      "ko": {
+        "form": "알코올",
+        "roman": "alkool",
+        "cognate": true
+      },
+      "sw": {
+        "form": "pombe kali",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "الكحل",
+        "roman": "al-kuḥl",
+        "lang": {
+          "de": "Arabisch",
+          "en": "Arabic"
+        }
+      },
+      {
+        "form": "alcohol",
+        "lang": {
+          "de": "Mittellatein",
+          "en": "Medieval Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Arabisch al-kuhl war feines Pulver für die Augen. Alchemisten nannten so jede Essenz, später den Weingeist.",
+      "en": "Arabic al-kuhl was a fine eye powder. Alchemists used the word for any essence, later for spirits of wine."
+    }
+  },
+  {
+    "id": "sushi",
+    "de": "Sushi",
+    "en": "sushi",
+    "forms": {
+      "en": {
+        "form": "sushi",
+        "cognate": true
+      },
+      "fr": {
+        "form": "sushi",
+        "cognate": true
+      },
+      "es": {
+        "form": "sushi",
+        "cognate": true
+      },
+      "it": {
+        "form": "sushi",
+        "cognate": true
+      },
+      "pl": {
+        "form": "sushi",
+        "cognate": true
+      },
+      "ru": {
+        "form": "суши",
+        "roman": "sushi",
+        "cognate": true
+      },
+      "el": {
+        "form": "σούσι",
+        "roman": "soúsi",
+        "cognate": true
+      },
+      "tr": {
+        "form": "suşi",
+        "cognate": true
+      },
+      "ar": {
+        "form": "سوشي",
+        "roman": "sūshī",
+        "cognate": true
+      },
+      "he": {
+        "form": "סושי",
+        "roman": "sushi",
+        "cognate": true
+      },
+      "hi": {
+        "form": "सुशी",
+        "roman": "suśī",
+        "cognate": true
+      },
+      "ja": {
+        "form": "寿司",
+        "roman": "sushi",
+        "cognate": true
+      },
+      "ko": {
+        "form": "초밥",
+        "roman": "chobap",
+        "cognate": false
+      },
+      "sw": {
+        "form": "sushi",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "鮨",
+        "roman": "sushi",
+        "lang": {
+          "de": "Japanisch",
+          "en": "Japanese"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Heißt ursprünglich »sauer«: Fisch wurde in gesäuertem Reis haltbar gemacht.",
+      "en": "Originally means \"sour\": fish was preserved in fermented rice."
+    }
+  },
+  {
+    "id": "mango",
+    "de": "Mango",
+    "en": "mango",
+    "forms": {
+      "en": {
+        "form": "mango",
+        "cognate": true
+      },
+      "fr": {
+        "form": "mangue",
+        "cognate": true
+      },
+      "es": {
+        "form": "mango",
+        "cognate": true
+      },
+      "it": {
+        "form": "mango",
+        "cognate": true
+      },
+      "pl": {
+        "form": "mango",
+        "cognate": true
+      },
+      "ru": {
+        "form": "манго",
+        "roman": "mango",
+        "cognate": true
+      },
+      "el": {
+        "form": "μάνγκο",
+        "roman": "mángko",
+        "cognate": true
+      },
+      "tr": {
+        "form": "Hint kirazı",
+        "cognate": false
+      },
+      "ar": {
+        "form": "منجو",
+        "roman": "mangū",
+        "cognate": true
+      },
+      "he": {
+        "form": "מנגו",
+        "roman": "mango",
+        "cognate": true
+      },
+      "hi": {
+        "form": "आम",
+        "roman": "ām",
+        "cognate": false
+      },
+      "ja": {
+        "form": "マンゴー",
+        "roman": "mangō",
+        "cognate": true
+      },
+      "ko": {
+        "form": "망고",
+        "roman": "manggo",
+        "cognate": true
+      },
+      "sw": {
+        "form": "embe",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "மாங்காய்",
+        "roman": "māṅkāy",
+        "lang": {
+          "de": "Tamil",
+          "en": "Tamil"
+        }
+      },
+      {
+        "form": "manga",
+        "lang": {
+          "de": "Portugiesisch",
+          "en": "Portuguese"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Portugiesen brachten das Wort aus Südindien mit. Hindi sagt »ām«, Swahili »embe«.",
+      "en": "The Portuguese brought the word from southern India. Hindi says \"ām\", Swahili \"embe\"."
+    }
+  },
+  {
+    "id": "avocado",
+    "de": "Avocado",
+    "en": "avocado",
+    "forms": {
+      "en": {
+        "form": "avocado",
+        "cognate": true
+      },
+      "fr": {
+        "form": "avocat",
+        "cognate": true
+      },
+      "es": {
+        "form": "aguacate",
+        "cognate": true
+      },
+      "it": {
+        "form": "avocado",
+        "cognate": true
+      },
+      "pl": {
+        "form": "awokado",
+        "cognate": true
+      },
+      "ru": {
+        "form": "авокадо",
+        "roman": "avokado",
+        "cognate": true
+      },
+      "el": {
+        "form": "αβοκάντο",
+        "roman": "avokánto",
+        "cognate": true
+      },
+      "tr": {
+        "form": "avokado",
+        "cognate": true
+      },
+      "ar": {
+        "form": "أفوكادو",
+        "roman": "afukādū",
+        "cognate": true
+      },
+      "he": {
+        "form": "אבוקדו",
+        "roman": "avokado",
+        "cognate": true
+      },
+      "hi": {
+        "form": "रुचिरा",
+        "roman": "rucirā",
+        "cognate": false
+      },
+      "ja": {
+        "form": "アボカド",
+        "roman": "abokado",
+        "cognate": true
+      },
+      "ko": {
+        "form": "아보카도",
+        "roman": "abokado",
+        "cognate": true
+      },
+      "sw": {
+        "form": "parachichi",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "āhuacatl",
+        "lang": {
+          "de": "Nahuatl",
+          "en": "Nahuatl"
+        }
+      },
+      {
+        "form": "aguacate",
+        "lang": {
+          "de": "Spanisch",
+          "en": "Spanish"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Aus dem Nahuatl über Spanisch. Französisch »avocat« heißt auch Anwalt.",
+      "en": "From Nahuatl via Spanish. French \"avocat\" also means lawyer."
+    }
+  },
+  {
+    "id": "shampoo",
+    "de": "Shampoo",
+    "en": "shampoo",
+    "forms": {
+      "en": {
+        "form": "shampoo",
+        "cognate": true
+      },
+      "fr": {
+        "form": "shampoing",
+        "cognate": true
+      },
+      "es": {
+        "form": "champú",
+        "cognate": true
+      },
+      "it": {
+        "form": "sciampo",
+        "cognate": true
+      },
+      "pl": {
+        "form": "szampon",
+        "cognate": true
+      },
+      "ru": {
+        "form": "шампунь",
+        "roman": "shampun",
+        "cognate": true
+      },
+      "el": {
+        "form": "σαμπουάν",
+        "roman": "sampouán",
+        "cognate": true
+      },
+      "tr": {
+        "form": "şampuan",
+        "cognate": true
+      },
+      "ar": {
+        "form": "شامبو",
+        "roman": "shāmbū",
+        "cognate": true
+      },
+      "he": {
+        "form": "שמפו",
+        "roman": "shampu",
+        "cognate": true
+      },
+      "hi": {
+        "form": "शैंपू",
+        "roman": "śaimpū",
+        "cognate": true
+      },
+      "ja": {
+        "form": "シャンプー",
+        "roman": "shanpū",
+        "cognate": true
+      },
+      "ko": {
+        "form": "샴푸",
+        "roman": "syampu",
+        "cognate": true
+      },
+      "sw": {
+        "form": "shampuu",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "चाँपो",
+        "roman": "chāmpo",
+        "lang": {
+          "de": "Hindi",
+          "en": "Hindi"
+        }
+      },
+      {
+        "form": "shampoo",
+        "lang": {
+          "de": "Englisch",
+          "en": "English"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Hindi chāmpo heißt »drück!«, gemeint war eine Kopfmassage. Über England kam das Wort zurück nach Indien.",
+      "en": "Hindi chāmpo means \"press!\", meaning a head massage. Via England the word came back to India."
+    }
+  },
+  {
+    "id": "balcony",
+    "de": "Balkon",
+    "en": "balcony",
+    "forms": {
+      "en": {
+        "form": "balcony",
+        "cognate": true
+      },
+      "fr": {
+        "form": "balcon",
+        "cognate": true
+      },
+      "es": {
+        "form": "balcón",
+        "cognate": true
+      },
+      "it": {
+        "form": "balcone",
+        "cognate": true
+      },
+      "pl": {
+        "form": "balkon",
+        "cognate": true
+      },
+      "ru": {
+        "form": "балкон",
+        "roman": "balkon",
+        "cognate": true
+      },
+      "el": {
+        "form": "μπαλκόνι",
+        "roman": "balkóni",
+        "cognate": true
+      },
+      "tr": {
+        "form": "balkon",
+        "cognate": true
+      },
+      "ar": {
+        "form": "شرفة",
+        "roman": "shurfa",
+        "cognate": false
+      },
+      "he": {
+        "form": "מרפסת",
+        "roman": "mirpeset",
+        "cognate": false
+      },
+      "hi": {
+        "form": "छज्जा",
+        "roman": "chajjā",
+        "cognate": false
+      },
+      "ja": {
+        "form": "バルコニー",
+        "roman": "barukonī",
+        "cognate": true
+      },
+      "ko": {
+        "form": "발코니",
+        "roman": "balkoni",
+        "cognate": true
+      },
+      "sw": {
+        "form": "roshani",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "*balko",
+        "lang": {
+          "de": "Langobardisch",
+          "en": "Lombardic"
+        }
+      },
+      {
+        "form": "balcone",
+        "lang": {
+          "de": "Italienisch",
+          "en": "Italian"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Italienisch balcone kommt von einem germanischen Wort für Balken.",
+      "en": "Italian balcone comes from a Germanic word for beam."
+    }
+  },
+  {
+    "id": "visa",
+    "de": "Visum",
+    "en": "visa",
+    "forms": {
+      "en": {
+        "form": "visa",
+        "cognate": true
+      },
+      "fr": {
+        "form": "visa",
+        "cognate": true
+      },
+      "es": {
+        "form": "visa",
+        "cognate": true
+      },
+      "it": {
+        "form": "visto",
+        "cognate": true
+      },
+      "pl": {
+        "form": "wiza",
+        "cognate": true
+      },
+      "ru": {
+        "form": "виза",
+        "roman": "viza",
+        "cognate": true
+      },
+      "el": {
+        "form": "βίζα",
+        "roman": "víza",
+        "cognate": true
+      },
+      "tr": {
+        "form": "vize",
+        "cognate": true
+      },
+      "ar": {
+        "form": "تأشيرة",
+        "roman": "taʔshīra",
+        "cognate": false
+      },
+      "he": {
+        "form": "ויזה",
+        "roman": "viza",
+        "cognate": true
+      },
+      "hi": {
+        "form": "वीज़ा",
+        "roman": "vīzā",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ビザ",
+        "roman": "biza",
+        "cognate": true
+      },
+      "ko": {
+        "form": "비자",
+        "roman": "bija",
+        "cognate": true
+      },
+      "sw": {
+        "form": "viza",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "charta visa",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      },
+      {
+        "form": "visa",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Lateinisch charta visa: ein Papier, das gesehen, also geprüft wurde.",
+      "en": "Latin charta visa: a paper that has been seen, that is, checked."
+    }
+  },
+  {
+    "id": "yoga",
+    "de": "Yoga",
+    "en": "yoga",
+    "forms": {
+      "en": {
+        "form": "yoga",
+        "cognate": true
+      },
+      "fr": {
+        "form": "yoga",
+        "cognate": true
+      },
+      "es": {
+        "form": "yoga",
+        "cognate": true
+      },
+      "it": {
+        "form": "yoga",
+        "cognate": true
+      },
+      "pl": {
+        "form": "joga",
+        "cognate": true
+      },
+      "ru": {
+        "form": "йога",
+        "roman": "yoga",
+        "cognate": true
+      },
+      "el": {
+        "form": "γιόγκα",
+        "roman": "giógka",
+        "cognate": true
+      },
+      "tr": {
+        "form": "yoga",
+        "cognate": true
+      },
+      "ar": {
+        "form": "يوغا",
+        "roman": "yūghā",
+        "cognate": true
+      },
+      "he": {
+        "form": "יוגה",
+        "roman": "yoga",
+        "cognate": true
+      },
+      "hi": {
+        "form": "योग",
+        "roman": "yog",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ヨーガ",
+        "roman": "yōga",
+        "cognate": true
+      },
+      "ko": {
+        "form": "요가",
+        "roman": "yoga",
+        "cognate": true
+      },
+      "sw": {
+        "form": "yoga",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "योग",
+        "roman": "yoga",
+        "lang": {
+          "de": "Sanskrit",
+          "en": "Sanskrit"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Sanskrit yoga heißt Joch, verwandt mit dem deutschen Wort: Körper und Geist werden zusammengespannt.",
+      "en": "Sanskrit yoga means yoke, related to the English word: body and mind are harnessed together."
+    }
+  },
+  {
+    "id": "tsunami",
+    "de": "Tsunami",
+    "en": "tsunami",
+    "forms": {
+      "en": {
+        "form": "tsunami",
+        "cognate": true
+      },
+      "fr": {
+        "form": "tsunami",
+        "cognate": true
+      },
+      "es": {
+        "form": "tsunami",
+        "cognate": true
+      },
+      "it": {
+        "form": "tsunami",
+        "cognate": true
+      },
+      "pl": {
+        "form": "tsunami",
+        "cognate": true
+      },
+      "ru": {
+        "form": "цунами",
+        "roman": "tsunami",
+        "cognate": true
+      },
+      "el": {
+        "form": "τσουνάμι",
+        "roman": "tsounámi",
+        "cognate": true
+      },
+      "tr": {
+        "form": "tsunami",
+        "cognate": true
+      },
+      "ar": {
+        "form": "تسونامي",
+        "roman": "tsunāmī",
+        "cognate": true
+      },
+      "he": {
+        "form": "צונמי",
+        "roman": "tsunami",
+        "cognate": true
+      },
+      "hi": {
+        "form": "सूनामी",
+        "roman": "sūnāmī",
+        "cognate": true
+      },
+      "ja": {
+        "form": "津波",
+        "roman": "tsunami",
+        "cognate": true
+      },
+      "ko": {
+        "form": "지진해일",
+        "roman": "jijinhaeil",
+        "cognate": false
+      },
+      "sw": {
+        "form": "tsunami",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "津波",
+        "roman": "tsunami",
+        "lang": {
+          "de": "Japanisch",
+          "en": "Japanese"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Japanisch tsu, Hafen, und nami, Welle. Koreanisch sagt »Erdbeben-Meereswelle«.",
+      "en": "Japanese tsu, harbour, and nami, wave. Korean says \"earthquake sea wave\"."
+    }
+  },
+  {
+    "id": "safari",
+    "de": "Safari",
+    "en": "safari",
+    "forms": {
+      "en": {
+        "form": "safari",
+        "cognate": true
+      },
+      "fr": {
+        "form": "safari",
+        "cognate": true
+      },
+      "es": {
+        "form": "safari",
+        "cognate": true
+      },
+      "it": {
+        "form": "safari",
+        "cognate": true
+      },
+      "pl": {
+        "form": "safari",
+        "cognate": true
+      },
+      "ru": {
+        "form": "сафари",
+        "roman": "safari",
+        "cognate": true
+      },
+      "el": {
+        "form": "σαφάρι",
+        "roman": "safári",
+        "cognate": true
+      },
+      "tr": {
+        "form": "safari",
+        "cognate": true
+      },
+      "ar": {
+        "form": "سفاري",
+        "roman": "safārī",
+        "cognate": true
+      },
+      "he": {
+        "form": "ספארי",
+        "roman": "safari",
+        "cognate": true
+      },
+      "hi": {
+        "form": "सफ़ारी",
+        "roman": "safārī",
+        "cognate": true
+      },
+      "ja": {
+        "form": "サファリ",
+        "roman": "safari",
+        "cognate": true
+      },
+      "ko": {
+        "form": "사파리",
+        "roman": "sapari",
+        "cognate": true
+      },
+      "sw": {
+        "form": "safari",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "سفر",
+        "roman": "safar",
+        "lang": {
+          "de": "Arabisch",
+          "en": "Arabic"
+        }
+      },
+      {
+        "form": "safari",
+        "lang": {
+          "de": "Swahili",
+          "en": "Swahili"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Ein Wort aus dem Swahili, dort heißt es einfach Reise. Es stammt vom arabischen safar.",
+      "en": "A Swahili word that simply means journey, from Arabic safar."
+    }
+  },
+  {
+    "id": "algebra",
+    "de": "Algebra",
+    "en": "algebra",
+    "forms": {
+      "en": {
+        "form": "algebra",
+        "cognate": true
+      },
+      "fr": {
+        "form": "algèbre",
+        "cognate": true
+      },
+      "es": {
+        "form": "álgebra",
+        "cognate": true
+      },
+      "it": {
+        "form": "algebra",
+        "cognate": true
+      },
+      "pl": {
+        "form": "algebra",
+        "cognate": true
+      },
+      "ru": {
+        "form": "алгебра",
+        "roman": "algebra",
+        "cognate": true
+      },
+      "el": {
+        "form": "άλγεβρα",
+        "roman": "álgevra",
+        "cognate": true
+      },
+      "tr": {
+        "form": "cebir",
+        "cognate": false
+      },
+      "ar": {
+        "form": "علم الجبر",
+        "roman": "ʿilm al-jabr",
+        "cognate": true
+      },
+      "he": {
+        "form": "אלגברה",
+        "roman": "algebra",
+        "cognate": true
+      },
+      "hi": {
+        "form": "बीजगणित",
+        "roman": "bījagṇit",
+        "cognate": false
+      },
+      "ja": {
+        "form": "代数",
+        "roman": "daisū",
+        "cognate": false
+      },
+      "ko": {
+        "form": "대수",
+        "roman": "daesu",
+        "cognate": false
+      },
+      "sw": {
+        "form": "aljebra",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "الجبر",
+        "roman": "al-jabr",
+        "lang": {
+          "de": "Arabisch",
+          "en": "Arabic"
+        }
+      },
+      {
+        "form": "algebra",
+        "lang": {
+          "de": "Mittellatein",
+          "en": "Medieval Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Aus dem Titel eines Buchs von al-Chwarizmi um 820. Al-jabr heißt das Einrenken gebrochener Teile.",
+      "en": "From the title of a book by al-Khwarizmi around 820. Al-jabr means setting broken parts back together."
+    }
+  },
+  {
+    "id": "giraffe",
+    "de": "Giraffe",
+    "en": "giraffe",
+    "forms": {
+      "en": {
+        "form": "giraffe",
+        "cognate": true
+      },
+      "fr": {
+        "form": "girafe",
+        "cognate": true
+      },
+      "es": {
+        "form": "jirafa",
+        "cognate": true
+      },
+      "it": {
+        "form": "giraffa",
+        "cognate": true
+      },
+      "pl": {
+        "form": "żyrafa",
+        "cognate": true
+      },
+      "ru": {
+        "form": "жираф",
+        "roman": "zhiraf",
+        "cognate": true
+      },
+      "el": {
+        "form": "καμηλοπάρδαλη",
+        "roman": "kamilopárdali",
+        "cognate": false
+      },
+      "tr": {
+        "form": "zürafa",
+        "cognate": true
+      },
+      "ar": {
+        "form": "زرافة",
+        "roman": "zarāfa",
+        "cognate": true
+      },
+      "he": {
+        "form": "ג׳ירפה",
+        "roman": "dzhirafa",
+        "cognate": true
+      },
+      "hi": {
+        "form": "जिराफ़",
+        "roman": "jirāf",
+        "cognate": true
+      },
+      "ja": {
+        "form": "麒麟",
+        "roman": "kirin",
+        "cognate": false
+      },
+      "ko": {
+        "form": "기린",
+        "roman": "girin",
+        "cognate": false
+      },
+      "sw": {
+        "form": "twiga",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "زرافة",
+        "roman": "zarāfa",
+        "lang": {
+          "de": "Arabisch",
+          "en": "Arabic"
+        }
+      },
+      {
+        "form": "giraffa",
+        "lang": {
+          "de": "Italienisch",
+          "en": "Italian"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Vom arabischen zarafa. Japanisch und Koreanisch nennen sie nach dem Fabeltier Kirin.",
+      "en": "From Arabic zarafa. Japanese and Korean name it after the mythical kirin."
+    }
+  },
+  {
+    "id": "zebra",
+    "de": "Zebra",
+    "en": "zebra",
+    "forms": {
+      "en": {
+        "form": "zebra",
+        "cognate": true
+      },
+      "fr": {
+        "form": "zèbre",
+        "cognate": true
+      },
+      "es": {
+        "form": "cebra",
+        "cognate": true
+      },
+      "it": {
+        "form": "zebra",
+        "cognate": true
+      },
+      "pl": {
+        "form": "zebra",
+        "cognate": true
+      },
+      "ru": {
+        "form": "зебра",
+        "roman": "zebra",
+        "cognate": true
+      },
+      "el": {
+        "form": "ζέβρος",
+        "roman": "zévros",
+        "cognate": true
+      },
+      "tr": {
+        "form": "zebra",
+        "cognate": true
+      },
+      "ar": {
+        "form": "حمار وحشي",
+        "roman": "ḥimār waḥshiyy",
+        "cognate": false
+      },
+      "he": {
+        "form": "זברה",
+        "roman": "zebra",
+        "cognate": true
+      },
+      "hi": {
+        "form": "ज़ीब्रा",
+        "roman": "zībrā",
+        "cognate": true
+      },
+      "ja": {
+        "form": "縞馬",
+        "roman": "shimauma",
+        "cognate": false
+      },
+      "ko": {
+        "form": "얼룩말",
+        "roman": "eollungmal",
+        "cognate": false
+      },
+      "sw": {
+        "form": "punda milia",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "zevra",
+        "lang": {
+          "de": "Altportugiesisch",
+          "en": "Old Portuguese"
+        }
+      },
+      {
+        "form": "zebra",
+        "lang": {
+          "de": "Portugiesisch",
+          "en": "Portuguese"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Portugiesisch, ursprünglich ein Wildesel. Japanisch sagt »shimauma«, Streifenpferd.",
+      "en": "Portuguese, originally a wild ass. Japanese says \"shimauma\", striped horse."
+    }
+  },
+  {
+    "id": "tiger",
+    "de": "Tiger",
+    "en": "tiger",
+    "forms": {
+      "en": {
+        "form": "tiger",
+        "cognate": true
+      },
+      "fr": {
+        "form": "tigre",
+        "cognate": true
+      },
+      "es": {
+        "form": "tigre",
+        "cognate": true
+      },
+      "it": {
+        "form": "tigre",
+        "cognate": true
+      },
+      "pl": {
+        "form": "tygrys",
+        "cognate": true
+      },
+      "ru": {
+        "form": "тигр",
+        "roman": "tigr",
+        "cognate": true
+      },
+      "el": {
+        "form": "τίγρη",
+        "roman": "tígri",
+        "cognate": true
+      },
+      "tr": {
+        "form": "kaplan",
+        "cognate": false
+      },
+      "ar": {
+        "form": "نمر",
+        "roman": "nimr",
+        "cognate": false
+      },
+      "he": {
+        "form": "טיגריס",
+        "roman": "tigris",
+        "cognate": true
+      },
+      "hi": {
+        "form": "बाघ",
+        "roman": "bāgh",
+        "cognate": false
+      },
+      "ja": {
+        "form": "虎",
+        "roman": "tora",
+        "cognate": false
+      },
+      "ko": {
+        "form": "호랑이",
+        "roman": "horang'i",
+        "cognate": false
+      },
+      "sw": {
+        "form": "chui milia",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "tigris",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "tigris",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Über Griechisch und Latein, vermutlich aus dem Iranischen. Türkisch »kaplan« ist ein eigenes Wort.",
+      "en": "Via Greek and Latin, probably from Iranian. Turkish \"kaplan\" is a word of its own."
+    }
+  },
+  {
+    "id": "crocodile",
+    "de": "Krokodil",
+    "en": "crocodile",
+    "forms": {
+      "en": {
+        "form": "crocodile",
+        "cognate": true
+      },
+      "fr": {
+        "form": "crocodile",
+        "cognate": true
+      },
+      "es": {
+        "form": "cocodrilo",
+        "cognate": true
+      },
+      "it": {
+        "form": "coccodrillo",
+        "cognate": true
+      },
+      "pl": {
+        "form": "krokodyl",
+        "cognate": true
+      },
+      "ru": {
+        "form": "крокодил",
+        "roman": "krokodil",
+        "cognate": true
+      },
+      "el": {
+        "form": "κροκόδειλος",
+        "roman": "krokódeilos",
+        "cognate": true
+      },
+      "tr": {
+        "form": "timsah",
+        "cognate": false
+      },
+      "ar": {
+        "form": "تمساح",
+        "roman": "timsāḥ",
+        "cognate": false
+      },
+      "he": {
+        "form": "תנין",
+        "roman": "tanin",
+        "cognate": false
+      },
+      "hi": {
+        "form": "मगर",
+        "roman": "magar",
+        "cognate": false
+      },
+      "ja": {
+        "form": "鰐",
+        "roman": "wani",
+        "cognate": false
+      },
+      "ko": {
+        "form": "악어",
+        "roman": "ageo",
+        "cognate": false
+      },
+      "sw": {
+        "form": "mamba",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "krokodeilos",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "crocodilus",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Griechisch krokodeilos, »Kieselwurm«: eigentlich eine Eidechse, die sich auf Steinen sonnt.",
+      "en": "Greek krokodeilos, \"pebble worm\": a lizard basking on stones."
+    }
+  },
+  {
+    "id": "kangaroo",
+    "de": "Känguru",
+    "en": "kangaroo",
+    "forms": {
+      "en": {
+        "form": "kangaroo",
+        "cognate": true
+      },
+      "fr": {
+        "form": "kangourou",
+        "cognate": true
+      },
+      "es": {
+        "form": "canguro",
+        "cognate": true
+      },
+      "it": {
+        "form": "canguro",
+        "cognate": true
+      },
+      "pl": {
+        "form": "kangur",
+        "cognate": true
+      },
+      "ru": {
+        "form": "кенгуру",
+        "roman": "kenguru",
+        "cognate": true
+      },
+      "el": {
+        "form": "καγκουρό",
+        "roman": "kagkouró",
+        "cognate": true
+      },
+      "tr": {
+        "form": "kanguru",
+        "cognate": true
+      },
+      "ar": {
+        "form": "كنغر",
+        "roman": "kanghar",
+        "cognate": true
+      },
+      "he": {
+        "form": "קנגורו",
+        "roman": "kenguru",
+        "cognate": true
+      },
+      "hi": {
+        "form": "कंगारू",
+        "roman": "kaṅgārū",
+        "cognate": true
+      },
+      "ja": {
+        "form": "カンガルー",
+        "roman": "kangarū",
+        "cognate": true
+      },
+      "ko": {
+        "form": "캥거루",
+        "roman": "kaenggeoru",
+        "cognate": true
+      },
+      "sw": {
+        "form": "kangaruu",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "gangurru",
+        "lang": {
+          "de": "Guugu Yimidhirr",
+          "en": "Guugu Yimithirr"
+        }
+      },
+      {
+        "form": "kangaroo",
+        "lang": {
+          "de": "Englisch",
+          "en": "English"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Aus der australischen Sprache Guugu Yimidhirr, notiert 1770 von James Cooks Mannschaft.",
+      "en": "From the Australian language Guugu Yimithirr, noted down by James Cook's crew in 1770."
+    }
+  },
+  {
+    "id": "gorilla",
+    "de": "Gorilla",
+    "en": "gorilla",
+    "forms": {
+      "en": {
+        "form": "gorilla",
+        "cognate": true
+      },
+      "fr": {
+        "form": "gorille",
+        "cognate": true
+      },
+      "es": {
+        "form": "gorila",
+        "cognate": true
+      },
+      "it": {
+        "form": "gorilla",
+        "cognate": true
+      },
+      "pl": {
+        "form": "goryl",
+        "cognate": true
+      },
+      "ru": {
+        "form": "горилла",
+        "roman": "gorilla",
+        "cognate": true
+      },
+      "el": {
+        "form": "γορίλας",
+        "roman": "gorílas",
+        "cognate": true
+      },
+      "tr": {
+        "form": "goril",
+        "cognate": true
+      },
+      "ar": {
+        "form": "غوريلا",
+        "roman": "ghūrīlā",
+        "cognate": true
+      },
+      "he": {
+        "form": "גורילה",
+        "roman": "gorila",
+        "cognate": true
+      },
+      "hi": {
+        "form": "गोरिल्ला",
+        "roman": "gorillā",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ゴリラ",
+        "roman": "gorira",
+        "cognate": true
+      },
+      "ko": {
+        "form": "고릴라",
+        "roman": "gorilla",
+        "cognate": true
+      },
+      "sw": {
+        "form": "ngagi",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "gorillai",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "gorilla",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Der karthagische Seefahrer Hanno beschrieb um 500 v. Chr. behaarte »Gorillai« in Westafrika. 1847 bekam der Affe den Namen.",
+      "en": "The Carthaginian navigator Hanno described hairy \"gorillai\" in West Africa around 500 BC. In 1847 the ape got the name."
+    }
+  },
+  {
+    "id": "planet",
+    "de": "Planet",
+    "en": "planet",
+    "forms": {
+      "en": {
+        "form": "planet",
+        "cognate": true
+      },
+      "fr": {
+        "form": "planète",
+        "cognate": true
+      },
+      "es": {
+        "form": "planeta",
+        "cognate": true
+      },
+      "it": {
+        "form": "pianeta",
+        "cognate": true
+      },
+      "pl": {
+        "form": "planeta",
+        "cognate": true
+      },
+      "ru": {
+        "form": "планета",
+        "roman": "planeta",
+        "cognate": true
+      },
+      "el": {
+        "form": "πλανήτης",
+        "roman": "planítis",
+        "cognate": true
+      },
+      "tr": {
+        "form": "gezegen",
+        "cognate": false
+      },
+      "ar": {
+        "form": "كوكب سيار",
+        "roman": "kawkab sayyār",
+        "cognate": false
+      },
+      "he": {
+        "form": "כוכב לכת",
+        "roman": "kokhav lekhet",
+        "cognate": false
+      },
+      "hi": {
+        "form": "ग्रह",
+        "roman": "grah",
+        "cognate": false
+      },
+      "ja": {
+        "form": "惑星",
+        "roman": "wakusei",
+        "cognate": false
+      },
+      "ko": {
+        "form": "행성",
+        "roman": "haengseong",
+        "cognate": false
+      },
+      "sw": {
+        "form": "sayari",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "planētēs",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "planeta",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Griechisch planetes heißt Wanderer: Sterne, die am Himmel umherziehen.",
+      "en": "Greek planetes means wanderer: stars that roam the sky."
+    }
+  },
+  {
+    "id": "atom",
+    "de": "Atom",
+    "en": "atom",
+    "forms": {
+      "en": {
+        "form": "atom",
+        "cognate": true
+      },
+      "fr": {
+        "form": "atome",
+        "cognate": true
+      },
+      "es": {
+        "form": "átomo",
+        "cognate": true
+      },
+      "it": {
+        "form": "atomo",
+        "cognate": true
+      },
+      "pl": {
+        "form": "atom",
+        "cognate": true
+      },
+      "ru": {
+        "form": "атом",
+        "roman": "atom",
+        "cognate": true
+      },
+      "el": {
+        "form": "άτομο",
+        "roman": "átomo",
+        "cognate": true
+      },
+      "tr": {
+        "form": "atom",
+        "cognate": true
+      },
+      "ar": {
+        "form": "ذرة",
+        "roman": "dharra",
+        "cognate": false
+      },
+      "he": {
+        "form": "אטום",
+        "roman": "atom",
+        "cognate": true
+      },
+      "hi": {
+        "form": "परमाणु",
+        "roman": "parmāṇu",
+        "cognate": false
+      },
+      "ja": {
+        "form": "原子",
+        "roman": "genshi",
+        "cognate": false
+      },
+      "ko": {
+        "form": "원자",
+        "roman": "wonja",
+        "cognate": false
+      },
+      "sw": {
+        "form": "atomi",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "atomos",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Griechisch atomos heißt unteilbar. Ganz gestimmt hat das nicht.",
+      "en": "Greek atomos means uncuttable. That turned out not quite true."
+    }
+  },
+  {
+    "id": "problem",
+    "de": "Problem",
+    "en": "problem",
+    "forms": {
+      "en": {
+        "form": "problem",
+        "cognate": true
+      },
+      "fr": {
+        "form": "problème",
+        "cognate": true
+      },
+      "es": {
+        "form": "problema",
+        "cognate": true
+      },
+      "it": {
+        "form": "problema",
+        "cognate": true
+      },
+      "pl": {
+        "form": "problem",
+        "cognate": true
+      },
+      "ru": {
+        "form": "проблема",
+        "roman": "problema",
+        "cognate": true
+      },
+      "el": {
+        "form": "πρόβλημα",
+        "roman": "próvlima",
+        "cognate": true
+      },
+      "tr": {
+        "form": "sorun",
+        "cognate": false
+      },
+      "ar": {
+        "form": "مشكلة",
+        "roman": "mushkila",
+        "cognate": false
+      },
+      "he": {
+        "form": "בעיה",
+        "roman": "be'aya",
+        "cognate": false
+      },
+      "hi": {
+        "form": "समस्या",
+        "roman": "samasyā",
+        "cognate": false
+      },
+      "ja": {
+        "form": "問題",
+        "roman": "mondai",
+        "cognate": false
+      },
+      "ko": {
+        "form": "문제",
+        "roman": "munje",
+        "cognate": false
+      },
+      "sw": {
+        "form": "tatizo",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "problēma",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "problema",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Griechisch problema ist das, was einem vorgelegt wird.",
+      "en": "Greek problema is something put before you."
+    }
+  },
+  {
+    "id": "system",
+    "de": "System",
+    "en": "system",
+    "forms": {
+      "en": {
+        "form": "system",
+        "cognate": true
+      },
+      "fr": {
+        "form": "système",
+        "cognate": true
+      },
+      "es": {
+        "form": "sistema",
+        "cognate": true
+      },
+      "it": {
+        "form": "sistema",
+        "cognate": true
+      },
+      "pl": {
+        "form": "układ",
+        "cognate": false
+      },
+      "ru": {
+        "form": "система",
+        "roman": "sistema",
+        "cognate": true
+      },
+      "el": {
+        "form": "σύστημα",
+        "roman": "sýstima",
+        "cognate": true
+      },
+      "tr": {
+        "form": "usul",
+        "cognate": false
+      },
+      "ar": {
+        "form": "نظام",
+        "roman": "niẓām",
+        "cognate": false
+      },
+      "he": {
+        "form": "שיטה",
+        "roman": "shita",
+        "cognate": false
+      },
+      "hi": {
+        "form": "रीति",
+        "roman": "rīti",
+        "cognate": false
+      },
+      "ja": {
+        "form": "系統",
+        "roman": "keitō",
+        "cognate": false
+      },
+      "ko": {
+        "form": "체계",
+        "roman": "chegye",
+        "cognate": false
+      },
+      "sw": {
+        "form": "mfumo",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "systēma",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "systema",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Griechisch systema: das Zusammengestellte.",
+      "en": "Greek systema: something put together."
+    }
+  },
+  {
+    "id": "telescope",
+    "de": "Teleskop",
+    "en": "telescope",
+    "forms": {
+      "en": {
+        "form": "telescope",
+        "cognate": true
+      },
+      "fr": {
+        "form": "lunette",
+        "cognate": false
+      },
+      "es": {
+        "form": "telescopio",
+        "cognate": true
+      },
+      "it": {
+        "form": "telescopio",
+        "cognate": true
+      },
+      "pl": {
+        "form": "teleskop",
+        "cognate": true
+      },
+      "ru": {
+        "form": "телескоп",
+        "roman": "teleskop",
+        "cognate": true
+      },
+      "el": {
+        "form": "τηλεσκόπιο",
+        "roman": "tileskópio",
+        "cognate": true
+      },
+      "tr": {
+        "form": "teleskop",
+        "cognate": true
+      },
+      "ar": {
+        "form": "تلسكوب",
+        "roman": "tiliskūb",
+        "cognate": true
+      },
+      "he": {
+        "form": "טלסקופ",
+        "roman": "teleskop",
+        "cognate": true
+      },
+      "hi": {
+        "form": "दूरदर्शी",
+        "roman": "dūrdarśī",
+        "cognate": false
+      },
+      "ja": {
+        "form": "望遠鏡",
+        "roman": "bōenkyō",
+        "cognate": false
+      },
+      "ko": {
+        "form": "망원경",
+        "roman": "mang'won'gyeong",
+        "cognate": false
+      },
+      "sw": {
+        "form": "darubini",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "tēle + skopein",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "telescopio",
+        "lang": {
+          "de": "Italienisch",
+          "en": "Italian"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Griechisch »fern« und »schauen«, geprägt 1611 für Galileis Fernrohr.",
+      "en": "Greek for \"far\" and \"look\", coined in 1611 for Galileo's instrument."
+    }
+  },
+  {
+    "id": "democracy",
+    "de": "Demokratie",
+    "en": "democracy",
+    "forms": {
+      "en": {
+        "form": "democracy",
+        "cognate": true
+      },
+      "fr": {
+        "form": "démocratie",
+        "cognate": true
+      },
+      "es": {
+        "form": "democracia",
+        "cognate": true
+      },
+      "it": {
+        "form": "democrazia",
+        "cognate": true
+      },
+      "pl": {
+        "form": "demokracja",
+        "cognate": true
+      },
+      "ru": {
+        "form": "демократия",
+        "roman": "demokratiya",
+        "cognate": true
+      },
+      "el": {
+        "form": "δημοκρατία",
+        "roman": "dimokratía",
+        "cognate": true
+      },
+      "tr": {
+        "form": "el erki",
+        "cognate": false
+      },
+      "ar": {
+        "form": "ديمقراطية",
+        "roman": "dīmuqrāṭiyya",
+        "cognate": true
+      },
+      "he": {
+        "form": "דמוקרטיה",
+        "roman": "demokratya",
+        "cognate": true
+      },
+      "hi": {
+        "form": "लोकतंत्र",
+        "roman": "loktantra",
+        "cognate": false
+      },
+      "ja": {
+        "form": "民主主義",
+        "roman": "minshushugi",
+        "cognate": false
+      },
+      "ko": {
+        "form": "민주주의",
+        "roman": "minjujuui",
+        "cognate": false
+      },
+      "sw": {
+        "form": "demokrasia",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "dēmokratia",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "democratia",
+        "lang": {
+          "de": "Mittellatein",
+          "en": "Medieval Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Griechisch demos, Volk, und kratos, Macht. Japanisch und Koreanisch übersetzen es Silbe für Silbe als »Volk-Herr-Lehre«.",
+      "en": "Greek demos, people, and kratos, power. Japanese and Korean translate it syllable by syllable as \"people-master-doctrine\"."
+    }
+  },
+  {
+    "id": "philosophy",
+    "de": "Philosophie",
+    "en": "philosophy",
+    "forms": {
+      "en": {
+        "form": "philosophy",
+        "cognate": true
+      },
+      "fr": {
+        "form": "philosophie",
+        "cognate": true
+      },
+      "es": {
+        "form": "filosofía",
+        "cognate": true
+      },
+      "it": {
+        "form": "filosofia",
+        "cognate": true
+      },
+      "pl": {
+        "form": "filozofia",
+        "cognate": true
+      },
+      "ru": {
+        "form": "философия",
+        "roman": "filosofiya",
+        "cognate": true
+      },
+      "el": {
+        "form": "φιλοσοφία",
+        "roman": "filosofía",
+        "cognate": true
+      },
+      "tr": {
+        "form": "felsefe",
+        "cognate": true
+      },
+      "ar": {
+        "form": "فلسفة",
+        "roman": "falsafa",
+        "cognate": true
+      },
+      "he": {
+        "form": "פילוסופיה",
+        "roman": "filosofya",
+        "cognate": true
+      },
+      "hi": {
+        "form": "दर्शन",
+        "roman": "darśan",
+        "cognate": false
+      },
+      "ja": {
+        "form": "哲学",
+        "roman": "tetsugaku",
+        "cognate": false
+      },
+      "ko": {
+        "form": "철학",
+        "roman": "cheolhak",
+        "cognate": false
+      },
+      "sw": {
+        "form": "falsafa",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "philosophia",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "فلسفة",
+        "roman": "falsafa",
+        "lang": {
+          "de": "Arabisch",
+          "en": "Arabic"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Griechisch »Liebe zur Weisheit«. Über das arabische falsafa kam das Wort bis nach Ostafrika.",
+      "en": "Greek for \"love of wisdom\". Through Arabic falsafa the word reached East Africa."
+    }
+  },
+  {
+    "id": "pilot",
+    "de": "Pilot",
+    "en": "pilot",
+    "forms": {
+      "en": {
+        "form": "pilot",
+        "cognate": true
+      },
+      "fr": {
+        "form": "pilote",
+        "cognate": true
+      },
+      "es": {
+        "form": "piloto",
+        "cognate": true
+      },
+      "it": {
+        "form": "pilota",
+        "cognate": true
+      },
+      "pl": {
+        "form": "pilot",
+        "cognate": true
+      },
+      "ru": {
+        "form": "лётчик",
+        "roman": "lyotchik",
+        "cognate": false
+      },
+      "el": {
+        "form": "πιλότος",
+        "roman": "pilótos",
+        "cognate": true
+      },
+      "tr": {
+        "form": "pilot",
+        "cognate": true
+      },
+      "ar": {
+        "form": "طيار",
+        "roman": "ṭayyār",
+        "cognate": false
+      },
+      "he": {
+        "form": "טייס",
+        "roman": "tayas",
+        "cognate": false
+      },
+      "hi": {
+        "form": "पायलट",
+        "roman": "pāylaṭ",
+        "cognate": true
+      },
+      "ja": {
+        "form": "パイロット",
+        "roman": "pairotto",
+        "cognate": true
+      },
+      "ko": {
+        "form": "파일럿",
+        "roman": "pailleot",
+        "cognate": true
+      },
+      "sw": {
+        "form": "rubani",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "pēdon",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "pilota",
+        "lang": {
+          "de": "Italienisch",
+          "en": "Italian"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Ursprünglich der Steuermann eines Schiffs, vom griechischen Wort für Ruderblatt.",
+      "en": "Originally the helmsman of a ship, from the Greek word for oar blade."
+    }
+  },
+  {
+    "id": "kilogram",
+    "de": "Kilogramm",
+    "en": "kilogram",
+    "forms": {
+      "en": {
+        "form": "kilogram",
+        "cognate": true
+      },
+      "fr": {
+        "form": "kilogramme",
+        "cognate": true
+      },
+      "es": {
+        "form": "kilogramo",
+        "cognate": true
+      },
+      "it": {
+        "form": "chilogrammo",
+        "cognate": true
+      },
+      "pl": {
+        "form": "kilogram",
+        "cognate": true
+      },
+      "ru": {
+        "form": "килограмм",
+        "roman": "kilogramm",
+        "cognate": true
+      },
+      "el": {
+        "form": "χιλιόγραμμο",
+        "roman": "chiliógrammo",
+        "cognate": true
+      },
+      "tr": {
+        "form": "kilogram",
+        "cognate": true
+      },
+      "ar": {
+        "form": "كيلوغرام",
+        "roman": "kīlūghrām",
+        "cognate": true
+      },
+      "he": {
+        "form": "קילוגרם",
+        "roman": "kilogram",
+        "cognate": true
+      },
+      "hi": {
+        "form": "किलो",
+        "roman": "kilo",
+        "cognate": true
+      },
+      "ja": {
+        "form": "キログラム",
+        "roman": "kiroguramu",
+        "cognate": true
+      },
+      "ko": {
+        "form": "킬로그램",
+        "roman": "killogeuraem",
+        "cognate": true
+      },
+      "sw": {
+        "form": "kilo",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "chilioi + gramma",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "kilogramme",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "1795 in Frankreich erfunden, aus griechisch chilioi, tausend, und gramma.",
+      "en": "Invented in France in 1795, from Greek chilioi, thousand, and gramma."
+    }
+  },
+  {
+    "id": "kilometre",
+    "de": "Kilometer",
+    "en": "kilometre",
+    "forms": {
+      "en": {
+        "form": "kilometre",
+        "cognate": true
+      },
+      "fr": {
+        "form": "kilomètre",
+        "cognate": true
+      },
+      "es": {
+        "form": "kilómetro",
+        "cognate": true
+      },
+      "it": {
+        "form": "chilometro",
+        "cognate": true
+      },
+      "pl": {
+        "form": "kilometr",
+        "cognate": true
+      },
+      "ru": {
+        "form": "километр",
+        "roman": "kilometr",
+        "cognate": true
+      },
+      "el": {
+        "form": "χιλιόμετρο",
+        "roman": "chiliómetro",
+        "cognate": true
+      },
+      "tr": {
+        "form": "kilometre",
+        "cognate": true
+      },
+      "ar": {
+        "form": "كيلومتر",
+        "roman": "kīlomitr",
+        "cognate": true
+      },
+      "he": {
+        "form": "קילומטר",
+        "roman": "kilometer",
+        "cognate": true
+      },
+      "hi": {
+        "form": "किलोमीटर",
+        "roman": "kilomīṭar",
+        "cognate": true
+      },
+      "ja": {
+        "form": "キロメートル",
+        "roman": "kiromētoru",
+        "cognate": true
+      },
+      "ko": {
+        "form": "킬로미터",
+        "roman": "killomiteo",
+        "cognate": true
+      },
+      "sw": {
+        "form": "kilometa",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "kilomètre",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Aus dem metrischen System der Französischen Revolution. Fast jede Sprache hat es übernommen.",
+      "en": "From the metric system of the French Revolution. Almost every language took it over."
+    }
+  },
+  {
+    "id": "metre",
+    "de": "Meter",
+    "en": "metre",
+    "forms": {
+      "en": {
+        "form": "metre",
+        "cognate": true
+      },
+      "fr": {
+        "form": "mètre",
+        "cognate": true
+      },
+      "es": {
+        "form": "metro",
+        "cognate": true
+      },
+      "it": {
+        "form": "metro",
+        "cognate": true
+      },
+      "pl": {
+        "form": "metr",
+        "cognate": true
+      },
+      "ru": {
+        "form": "метр",
+        "roman": "metr",
+        "cognate": true
+      },
+      "el": {
+        "form": "μέτρο",
+        "roman": "métro",
+        "cognate": true
+      },
+      "tr": {
+        "form": "metre",
+        "cognate": true
+      },
+      "ar": {
+        "form": "متر",
+        "roman": "mitr",
+        "cognate": true
+      },
+      "he": {
+        "form": "מטר",
+        "roman": "meter",
+        "cognate": true
+      },
+      "hi": {
+        "form": "मीटर",
+        "roman": "mīṭar",
+        "cognate": true
+      },
+      "ja": {
+        "form": "メートル",
+        "roman": "mētoru",
+        "cognate": true
+      },
+      "ko": {
+        "form": "미터",
+        "roman": "miteo",
+        "cognate": true
+      },
+      "sw": {
+        "form": "mita",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "metron",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "mètre",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Griechisch metron, Maß. 1793 sollte ein Meter der zehnmillionste Teil der Strecke vom Pol zum Äquator sein.",
+      "en": "Greek metron, measure. In 1793 a metre was set as one ten-millionth of the distance from the pole to the equator."
+    }
+  },
+  {
+    "id": "marathon",
+    "de": "Marathon",
+    "en": "marathon",
+    "forms": {
+      "en": {
+        "form": "marathon",
+        "cognate": true
+      },
+      "fr": {
+        "form": "marathon",
+        "cognate": true
+      },
+      "es": {
+        "form": "maratón",
+        "cognate": true
+      },
+      "it": {
+        "form": "maratona",
+        "cognate": true
+      },
+      "pl": {
+        "form": "maraton",
+        "cognate": true
+      },
+      "ru": {
+        "form": "марафон",
+        "roman": "marafon",
+        "cognate": true
+      },
+      "el": {
+        "form": "μαραθώνιος",
+        "roman": "marathónios",
+        "cognate": true
+      },
+      "tr": {
+        "form": "maraton",
+        "cognate": true
+      },
+      "ar": {
+        "form": "ماراثون",
+        "roman": "mārāthūn",
+        "cognate": true
+      },
+      "he": {
+        "form": "מרתון",
+        "roman": "maraton",
+        "cognate": true
+      },
+      "hi": {
+        "form": "मैराथन",
+        "roman": "mairāthan",
+        "cognate": true
+      },
+      "ja": {
+        "form": "マラソン",
+        "roman": "marason",
+        "cognate": true
+      },
+      "ko": {
+        "form": "마라톤",
+        "roman": "maraton",
+        "cognate": true
+      },
+      "sw": {
+        "form": "marathoni",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "Marathōn",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Nach dem Ort Marathon, von dem ein Bote die Siegesnachricht nach Athen gelaufen sein soll.",
+      "en": "After the town of Marathon, from which a messenger is said to have run the news of victory to Athens."
+    }
+  },
+  {
+    "id": "judo",
+    "de": "Judo",
+    "en": "judo",
+    "forms": {
+      "en": {
+        "form": "judo",
+        "cognate": true
+      },
+      "fr": {
+        "form": "judo",
+        "cognate": true
+      },
+      "es": {
+        "form": "yudo",
+        "cognate": true
+      },
+      "it": {
+        "form": "judo",
+        "cognate": true
+      },
+      "pl": {
+        "form": "dżudo",
+        "cognate": true
+      },
+      "ru": {
+        "form": "дзюдо",
+        "roman": "dzyudo",
+        "cognate": true
+      },
+      "el": {
+        "form": "τζούντο",
+        "roman": "tzoúnto",
+        "cognate": true
+      },
+      "tr": {
+        "form": "judo",
+        "cognate": true
+      },
+      "ar": {
+        "form": "جودو",
+        "roman": "jūdū",
+        "cognate": true
+      },
+      "he": {
+        "form": "ג׳ודו",
+        "roman": "judo",
+        "cognate": true
+      },
+      "hi": {
+        "form": "जूडो",
+        "roman": "jūḍo",
+        "cognate": true
+      },
+      "ja": {
+        "form": "柔道",
+        "roman": "jūdō",
+        "cognate": true
+      },
+      "ko": {
+        "form": "유도",
+        "roman": "yudo",
+        "cognate": true
+      },
+      "sw": {
+        "form": "judo",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "柔道",
+        "roman": "jūdō",
+        "lang": {
+          "de": "Japanisch",
+          "en": "Japanese"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Japanisch jū, sanft, und dō, Weg. 1882 von Kanō Jigorō begründet.",
+      "en": "Japanese jū, gentle, and dō, way. Founded in 1882 by Kanō Jigorō."
+    }
+  },
+  {
+    "id": "tourist",
+    "de": "Tourist",
+    "en": "tourist",
+    "forms": {
+      "en": {
+        "form": "tourist",
+        "cognate": true
+      },
+      "fr": {
+        "form": "touriste",
+        "cognate": true
+      },
+      "es": {
+        "form": "turista",
+        "cognate": true
+      },
+      "it": {
+        "form": "turista",
+        "cognate": true
+      },
+      "pl": {
+        "form": "turysta",
+        "cognate": true
+      },
+      "ru": {
+        "form": "турист",
+        "roman": "turist",
+        "cognate": true
+      },
+      "el": {
+        "form": "τουρίστας",
+        "roman": "tourístas",
+        "cognate": true
+      },
+      "tr": {
+        "form": "turist",
+        "cognate": true
+      },
+      "ar": {
+        "form": "سائح",
+        "roman": "sāʔiḥ",
+        "cognate": false
+      },
+      "he": {
+        "form": "תייר",
+        "roman": "tayar",
+        "cognate": false
+      },
+      "hi": {
+        "form": "पर्यटक",
+        "roman": "paryaṭak",
+        "cognate": false
+      },
+      "ja": {
+        "form": "旅行者",
+        "roman": "ryokōsha",
+        "cognate": false
+      },
+      "ko": {
+        "form": "관광객",
+        "roman": "gwan'gwanggaek",
+        "cognate": false
+      },
+      "sw": {
+        "form": "mtalii",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "tour",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      },
+      {
+        "form": "tourist",
+        "lang": {
+          "de": "Englisch",
+          "en": "English"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Von der Grand Tour, der Bildungsreise junger Engländer durch Europa.",
+      "en": "From the Grand Tour, the educational journey of young Englishmen through Europe."
+    }
+  },
+  {
+    "id": "restaurant",
+    "de": "Restaurant",
+    "en": "restaurant",
+    "forms": {
+      "en": {
+        "form": "restaurant",
+        "cognate": true
+      },
+      "fr": {
+        "form": "restaurant",
+        "cognate": true
+      },
+      "es": {
+        "form": "restaurante",
+        "cognate": true
+      },
+      "it": {
+        "form": "ristorante",
+        "cognate": true
+      },
+      "pl": {
+        "form": "restauracja",
+        "cognate": true
+      },
+      "ru": {
+        "form": "ресторан",
+        "roman": "restoran",
+        "cognate": true
+      },
+      "el": {
+        "form": "εστιατόριο",
+        "roman": "estiatório",
+        "cognate": false
+      },
+      "tr": {
+        "form": "lokanta",
+        "cognate": false
+      },
+      "ar": {
+        "form": "مطعم",
+        "roman": "maṭʿam",
+        "cognate": false
+      },
+      "he": {
+        "form": "מסעדה",
+        "roman": "mis'ada",
+        "cognate": false
+      },
+      "hi": {
+        "form": "भोजनालय",
+        "roman": "bhojnālay",
+        "cognate": false
+      },
+      "ja": {
+        "form": "レストラン",
+        "roman": "resutoran",
+        "cognate": true
+      },
+      "ko": {
+        "form": "식당",
+        "roman": "sikdang",
+        "cognate": false
+      },
+      "sw": {
+        "form": "mkahawa",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "restaurer",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      },
+      {
+        "form": "restaurant",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Französisch für »stärkend«. Erst gab es Kraftbrühen, dann den Ort, an dem man sie aß.",
+      "en": "French for \"restoring\". First there were strengthening broths, then the place where you ate them."
+    }
+  },
+  {
+    "id": "champagne",
+    "de": "Champagner",
+    "en": "champagne",
+    "forms": {
+      "en": {
+        "form": "champagne",
+        "cognate": true
+      },
+      "fr": {
+        "form": "champagne",
+        "cognate": true
+      },
+      "es": {
+        "form": "champaña",
+        "cognate": true
+      },
+      "it": {
+        "form": "champagne",
+        "cognate": true
+      },
+      "pl": {
+        "form": "szampan",
+        "cognate": true
+      },
+      "ru": {
+        "form": "шампанское",
+        "roman": "shampanskoye",
+        "cognate": true
+      },
+      "el": {
+        "form": "σαμπάνια",
+        "roman": "sampánia",
+        "cognate": true
+      },
+      "tr": {
+        "form": "şampanya",
+        "cognate": true
+      },
+      "ar": {
+        "form": "شمبانيا",
+        "roman": "shambānyā",
+        "cognate": true
+      },
+      "he": {
+        "form": "שמפניה",
+        "roman": "sham'pania",
+        "cognate": true
+      },
+      "hi": {
+        "form": "शैंपेन",
+        "roman": "śa͠ipen",
+        "cognate": true
+      },
+      "ja": {
+        "form": "シャンパン",
+        "roman": "shanpan",
+        "cognate": true
+      },
+      "ko": {
+        "form": "샴페인",
+        "roman": "syampein",
+        "cognate": true
+      },
+      "sw": {
+        "form": "shampeni",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "campania",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      },
+      {
+        "form": "Champagne",
+        "lang": {
+          "de": "Französisch",
+          "en": "French"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Nach der Weinregion Champagne, lateinisch campania, flaches Land.",
+      "en": "After the wine region of Champagne, Latin campania, open country."
+    }
+  },
+  {
+    "id": "vodka",
+    "de": "Wodka",
+    "en": "vodka",
+    "forms": {
+      "en": {
+        "form": "vodka",
+        "cognate": true
+      },
+      "fr": {
+        "form": "vodka",
+        "cognate": true
+      },
+      "es": {
+        "form": "vodka",
+        "cognate": true
+      },
+      "it": {
+        "form": "vodka",
+        "cognate": true
+      },
+      "pl": {
+        "form": "wódka",
+        "cognate": true
+      },
+      "ru": {
+        "form": "водка",
+        "roman": "vodka",
+        "cognate": true
+      },
+      "el": {
+        "form": "βότκα",
+        "roman": "vótka",
+        "cognate": true
+      },
+      "tr": {
+        "form": "votka",
+        "cognate": true
+      },
+      "ar": {
+        "form": "فودكا",
+        "roman": "vodkā",
+        "cognate": true
+      },
+      "he": {
+        "form": "וודקה",
+        "roman": "vodka",
+        "cognate": true
+      },
+      "hi": {
+        "form": "वोदका",
+        "roman": "vodkā",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ウォッカ",
+        "roman": "wokka",
+        "cognate": true
+      },
+      "ko": {
+        "form": "보드카",
+        "roman": "bodeuka",
+        "cognate": true
+      },
+      "sw": {
+        "form": "vodka",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "вода",
+        "roman": "voda",
+        "lang": {
+          "de": "Russisch",
+          "en": "Russian"
+        }
+      },
+      {
+        "form": "водка",
+        "roman": "vodka",
+        "lang": {
+          "de": "Russisch",
+          "en": "Russian"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Russisch für »Wässerchen«.",
+      "en": "Russian for \"little water\"."
+    }
+  },
+  {
+    "id": "yogurt",
+    "de": "Joghurt",
+    "en": "yogurt",
+    "forms": {
+      "en": {
+        "form": "yogurt",
+        "cognate": true
+      },
+      "fr": {
+        "form": "yaourt",
+        "cognate": true
+      },
+      "es": {
+        "form": "yogur",
+        "cognate": true
+      },
+      "it": {
+        "form": "yogurt",
+        "cognate": true
+      },
+      "pl": {
+        "form": "jogurt",
+        "cognate": true
+      },
+      "ru": {
+        "form": "йогурт",
+        "roman": "yogurt",
+        "cognate": true
+      },
+      "el": {
+        "form": "γιαούρτι",
+        "roman": "giaoúrti",
+        "cognate": true
+      },
+      "tr": {
+        "form": "yoğurt",
+        "cognate": true
+      },
+      "ar": {
+        "form": "لبن",
+        "roman": "laban",
+        "cognate": false
+      },
+      "he": {
+        "form": "יוגורט",
+        "roman": "yogurt",
+        "cognate": true
+      },
+      "hi": {
+        "form": "दही",
+        "roman": "dahī",
+        "cognate": false
+      },
+      "ja": {
+        "form": "ヨーグルト",
+        "roman": "yōguruto",
+        "cognate": true
+      },
+      "ko": {
+        "form": "요구르트",
+        "roman": "yogureuteu",
+        "cognate": true
+      },
+      "sw": {
+        "form": "maziwa ya mgando",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "yoğurt",
+        "lang": {
+          "de": "Türkisch",
+          "en": "Turkish"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Türkisch, verwandt mit yoğun, dick. Eines der wenigen türkischen Wörter in fast allen Sprachen.",
+      "en": "Turkish, related to yoğun, thick. One of the few Turkish words found in almost every language."
+    }
+  },
+  {
+    "id": "kebab",
+    "de": "Kebab",
+    "en": "kebab",
+    "forms": {
+      "en": {
+        "form": "kebab",
+        "cognate": true
+      },
+      "fr": {
+        "form": "kebab",
+        "cognate": true
+      },
+      "es": {
+        "form": "kebab",
+        "cognate": true
+      },
+      "it": {
+        "form": "kebab",
+        "cognate": true
+      },
+      "pl": {
+        "form": "kebab",
+        "cognate": true
+      },
+      "ru": {
+        "form": "кебаб",
+        "roman": "kebab",
+        "cognate": true
+      },
+      "el": {
+        "form": "κεμπάπ",
+        "roman": "kempáp",
+        "cognate": true
+      },
+      "tr": {
+        "form": "kebap",
+        "cognate": true
+      },
+      "ar": {
+        "form": "كباب",
+        "roman": "kabāb",
+        "cognate": true
+      },
+      "he": {
+        "form": "כבב",
+        "roman": "kabab",
+        "cognate": true
+      },
+      "hi": {
+        "form": "कबाब",
+        "roman": "kabāb",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ケバブ",
+        "roman": "kebabu",
+        "cognate": true
+      },
+      "ko": {
+        "form": "케밥",
+        "roman": "kebap",
+        "cognate": true
+      },
+      "sw": {
+        "form": "mshikaki",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "كباب",
+        "roman": "kabāb",
+        "lang": {
+          "de": "Arabisch",
+          "en": "Arabic"
+        }
+      },
+      {
+        "form": "kebap",
+        "lang": {
+          "de": "Türkisch",
+          "en": "Turkish"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Arabischen Ursprungs, über das Türkische in die Welt gekommen.",
+      "en": "Of Arabic origin, it reached the world through Turkish."
+    }
+  },
+  {
+    "id": "typhoon",
+    "de": "Taifun",
+    "en": "typhoon",
+    "forms": {
+      "en": {
+        "form": "typhoon",
+        "cognate": true
+      },
+      "fr": {
+        "form": "typhon",
+        "cognate": true
+      },
+      "es": {
+        "form": "tifón",
+        "cognate": true
+      },
+      "it": {
+        "form": "tifone",
+        "cognate": true
+      },
+      "pl": {
+        "form": "tajfun",
+        "cognate": true
+      },
+      "ru": {
+        "form": "тайфун",
+        "roman": "tayfun",
+        "cognate": true
+      },
+      "el": {
+        "form": "τυφώνας",
+        "roman": "tyfónas",
+        "cognate": true
+      },
+      "tr": {
+        "form": "tayfun",
+        "cognate": true
+      },
+      "ar": {
+        "form": "تايفون",
+        "roman": "tayfūn",
+        "cognate": true
+      },
+      "he": {
+        "form": "טיפון",
+        "roman": "tifun",
+        "cognate": true
+      },
+      "hi": {
+        "form": "आंधी",
+        "roman": "āndhī",
+        "cognate": false
+      },
+      "ja": {
+        "form": "台風",
+        "roman": "taifū",
+        "cognate": true
+      },
+      "ko": {
+        "form": "태풍",
+        "roman": "taepung",
+        "cognate": true
+      },
+      "sw": {
+        "form": "taifuni",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "طوفان",
+        "roman": "ṭūfān",
+        "lang": {
+          "de": "Arabisch",
+          "en": "Arabic"
+        }
+      },
+      {
+        "form": "大風",
+        "roman": "tai fung",
+        "lang": {
+          "de": "Chinesisch",
+          "en": "Chinese"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Zwei Quellen treffen sich: arabisch tufan, Sturmflut, und chinesisch tai fung, großer Wind.",
+      "en": "Two sources meet: Arabic tufan, flood, and Chinese tai fung, great wind."
+    }
+  },
+  {
+    "id": "pineapple",
+    "de": "Ananas",
+    "en": "pineapple",
+    "forms": {
+      "en": {
+        "form": "pineapple",
+        "cognate": false
+      },
+      "fr": {
+        "form": "ananas",
+        "cognate": true
+      },
+      "es": {
+        "form": "piña",
+        "cognate": false
+      },
+      "it": {
+        "form": "ananas",
+        "cognate": true
+      },
+      "pl": {
+        "form": "ananas",
+        "cognate": true
+      },
+      "ru": {
+        "form": "ананас",
+        "roman": "ananas",
+        "cognate": true
+      },
+      "el": {
+        "form": "ανανάς",
+        "roman": "ananás",
+        "cognate": true
+      },
+      "tr": {
+        "form": "ananas",
+        "cognate": true
+      },
+      "ar": {
+        "form": "أناناس",
+        "roman": "anānās",
+        "cognate": true
+      },
+      "he": {
+        "form": "אננס",
+        "roman": "ananas",
+        "cognate": true
+      },
+      "hi": {
+        "form": "अनानास",
+        "roman": "anānās",
+        "cognate": true
+      },
+      "ja": {
+        "form": "パイナップル",
+        "roman": "painappuru",
+        "cognate": false
+      },
+      "ko": {
+        "form": "파인애플",
+        "roman": "painaepeul",
+        "cognate": false
+      },
+      "sw": {
+        "form": "mnanasi",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "nanas",
+        "lang": {
+          "de": "Tupi",
+          "en": "Tupi"
+        }
+      },
+      {
+        "form": "ananás",
+        "lang": {
+          "de": "Portugiesisch",
+          "en": "Portuguese"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Aus dem Tupi Brasiliens. Englisch »pineapple« und Spanisch »piña« sehen in ihr einen Kiefernzapfen.",
+      "en": "From the Tupi of Brazil. English \"pineapple\" and Spanish \"piña\" see a pine cone in it."
+    }
+  },
+  {
+    "id": "cactus",
+    "de": "Kaktus",
+    "en": "cactus",
+    "forms": {
+      "en": {
+        "form": "cactus",
+        "cognate": true
+      },
+      "fr": {
+        "form": "cactus",
+        "cognate": true
+      },
+      "es": {
+        "form": "cacto",
+        "cognate": true
+      },
+      "it": {
+        "form": "cactus",
+        "cognate": true
+      },
+      "pl": {
+        "form": "kaktus",
+        "cognate": true
+      },
+      "ru": {
+        "form": "кактус",
+        "roman": "kaktus",
+        "cognate": true
+      },
+      "el": {
+        "form": "κάκτος",
+        "roman": "káktos",
+        "cognate": true
+      },
+      "tr": {
+        "form": "kaktüs",
+        "cognate": true
+      },
+      "ar": {
+        "form": "صبار",
+        "roman": "ṣabbār",
+        "cognate": false
+      },
+      "he": {
+        "form": "צבר",
+        "roman": "tsabar",
+        "cognate": false
+      },
+      "hi": {
+        "form": "कैक्टस",
+        "roman": "kaikṭas",
+        "cognate": true
+      },
+      "ja": {
+        "form": "仙人掌",
+        "roman": "saboten",
+        "cognate": false
+      },
+      "ko": {
+        "form": "선인장",
+        "roman": "seoninjang",
+        "cognate": false
+      },
+      "sw": {
+        "form": "cactus",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "kaktos",
+        "lang": {
+          "de": "Altgriechisch",
+          "en": "Ancient Greek"
+        }
+      },
+      {
+        "form": "cactus",
+        "lang": {
+          "de": "Latein",
+          "en": "Latin"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Griechisch kaktos war eine stachelige Distel.",
+      "en": "Greek kaktos was a prickly thistle."
+    }
+  },
+  {
+    "id": "popcorn",
+    "de": "Popcorn",
+    "en": "popcorn",
+    "forms": {
+      "en": {
+        "form": "popcorn",
+        "cognate": true
+      },
+      "fr": {
+        "form": "popcorn",
+        "cognate": true
+      },
+      "es": {
+        "form": "palomitas de maíz",
+        "cognate": false
+      },
+      "it": {
+        "form": "popcorn",
+        "cognate": true
+      },
+      "pl": {
+        "form": "popcorn",
+        "cognate": true
+      },
+      "ru": {
+        "form": "попкорн",
+        "roman": "popkorn",
+        "cognate": true
+      },
+      "el": {
+        "form": "ποπ κορν",
+        "roman": "pop korn",
+        "cognate": true
+      },
+      "tr": {
+        "form": "patlamış mısır",
+        "cognate": false
+      },
+      "ar": {
+        "form": "فشار",
+        "roman": "fishār",
+        "cognate": false
+      },
+      "he": {
+        "form": "פופקורן",
+        "roman": "popkorn",
+        "cognate": true
+      },
+      "hi": {
+        "form": "पॉपकॉर्न",
+        "roman": "pŏpkŏrn",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ポップコーン",
+        "roman": "poppukōn",
+        "cognate": true
+      },
+      "ko": {
+        "form": "팝콘",
+        "roman": "papkon",
+        "cognate": true
+      },
+      "sw": {
+        "form": "bisi",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "popcorn",
+        "lang": {
+          "de": "Englisch",
+          "en": "English"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Englisch pop, knallen, und corn, Mais. Türkisch sagt »geplatzter Mais«.",
+      "en": "English pop and corn. Turkish says \"burst corn\"."
+    }
+  },
+  {
+    "id": "steak",
+    "de": "Steak",
+    "en": "steak",
+    "forms": {
+      "en": {
+        "form": "steak",
+        "cognate": true
+      },
+      "fr": {
+        "form": "bifteck",
+        "cognate": true
+      },
+      "es": {
+        "form": "bistec",
+        "cognate": true
+      },
+      "it": {
+        "form": "bistecca",
+        "cognate": true
+      },
+      "pl": {
+        "form": "stek",
+        "cognate": true
+      },
+      "ru": {
+        "form": "бифштекс",
+        "roman": "bifshteks",
+        "cognate": true
+      },
+      "el": {
+        "form": "μπριζόλα",
+        "roman": "brizóla",
+        "cognate": false
+      },
+      "tr": {
+        "form": "biftek",
+        "cognate": true
+      },
+      "ar": {
+        "form": "ستيك",
+        "roman": "stayk",
+        "cognate": true
+      },
+      "he": {
+        "form": "אומצה",
+        "roman": "umtsa",
+        "cognate": false
+      },
+      "hi": {
+        "form": "स्टेक",
+        "roman": "sṭek",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ステーキ",
+        "roman": "sutēki",
+        "cognate": true
+      },
+      "ko": {
+        "form": "스테이크",
+        "roman": "seuteikeu",
+        "cognate": true
+      },
+      "sw": {
+        "form": "steki",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "steik",
+        "lang": {
+          "de": "Altnordisch",
+          "en": "Old Norse"
+        }
+      },
+      {
+        "form": "beefsteak",
+        "lang": {
+          "de": "Englisch",
+          "en": "English"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Altnordisch steik, ein Bratenstück. Viele Sprachen nahmen »beefsteak« und machten »bifteck« daraus.",
+      "en": "Old Norse steik, a piece of roast. Many languages took \"beefsteak\" and made \"bifteck\" out of it."
+    }
+  },
+  {
+    "id": "spinach",
+    "de": "Spinat",
+    "en": "spinach",
+    "forms": {
+      "en": {
+        "form": "spinach",
+        "cognate": true
+      },
+      "fr": {
+        "form": "épinards",
+        "cognate": true
+      },
+      "es": {
+        "form": "espinaca",
+        "cognate": true
+      },
+      "it": {
+        "form": "spinacio",
+        "cognate": true
+      },
+      "pl": {
+        "form": "szpinak",
+        "cognate": true
+      },
+      "ru": {
+        "form": "шпинат",
+        "roman": "shpinat",
+        "cognate": true
+      },
+      "el": {
+        "form": "σπανάκι",
+        "roman": "spanáki",
+        "cognate": true
+      },
+      "tr": {
+        "form": "ıspanak",
+        "cognate": true
+      },
+      "ar": {
+        "form": "سبانخ",
+        "roman": "sabānikh",
+        "cognate": true
+      },
+      "he": {
+        "form": "תרד",
+        "roman": "tered",
+        "cognate": false
+      },
+      "hi": {
+        "form": "पालक",
+        "roman": "pālak",
+        "cognate": false
+      },
+      "ja": {
+        "form": "菠薐草",
+        "roman": "hōrensō",
+        "cognate": false
+      },
+      "ko": {
+        "form": "시금치",
+        "roman": "sigeumchi",
+        "cognate": false
+      },
+      "sw": {
+        "form": "mchicha",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "اسپاناخ",
+        "roman": "aspanākh",
+        "lang": {
+          "de": "Persisch",
+          "en": "Persian"
+        }
+      },
+      {
+        "form": "إسبانخ",
+        "roman": "isbānakh",
+        "lang": {
+          "de": "Arabisch",
+          "en": "Arabic"
+        }
+      },
+      {
+        "form": "spinaci",
+        "lang": {
+          "de": "Italienisch",
+          "en": "Italian"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Aus dem Persischen über Arabisch und Spanien nach Europa.",
+      "en": "From Persian via Arabic and Spain to Europe."
+    }
+  },
+  {
+    "id": "chimpanzee",
+    "de": "Schimpanse",
+    "en": "chimpanzee",
+    "forms": {
+      "en": {
+        "form": "chimpanzee",
+        "cognate": true
+      },
+      "fr": {
+        "form": "chimpanzé",
+        "cognate": true
+      },
+      "es": {
+        "form": "chimpancé",
+        "cognate": true
+      },
+      "it": {
+        "form": "scimpanzé",
+        "cognate": true
+      },
+      "pl": {
+        "form": "szympans",
+        "cognate": true
+      },
+      "ru": {
+        "form": "шимпанзе",
+        "roman": "shimpanze",
+        "cognate": true
+      },
+      "el": {
+        "form": "χιμπατζής",
+        "roman": "chimpatzís",
+        "cognate": true
+      },
+      "tr": {
+        "form": "şempanze",
+        "cognate": true
+      },
+      "ar": {
+        "form": "شمبانزي",
+        "roman": "shimbanzī",
+        "cognate": true
+      },
+      "he": {
+        "form": "שימפנזה",
+        "roman": "shimpanze",
+        "cognate": true
+      },
+      "hi": {
+        "form": "चिंपांजी",
+        "roman": "cimpāñjī",
+        "cognate": true
+      },
+      "ja": {
+        "form": "チンパンジー",
+        "roman": "chinpanjī",
+        "cognate": true
+      },
+      "ko": {
+        "form": "침팬지",
+        "roman": "chimpaenji",
+        "cognate": true
+      },
+      "sw": {
+        "form": "sokwe",
+        "cognate": false
+      }
+    },
+    "etymology": [
+      {
+        "form": "chimpenze",
+        "lang": {
+          "de": "Kikongo",
+          "en": "Kikongo"
+        }
+      },
+      {
+        "form": "chimpanzee",
+        "lang": {
+          "de": "Englisch",
+          "en": "English"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Aus einer Bantusprache am Kongo, im 18. Jahrhundert nach Europa gebracht.",
+      "en": "From a Bantu language of the Congo, brought to Europe in the 18th century."
+    }
+  },
+  {
+    "id": "jaguar",
+    "de": "Jaguar",
+    "en": "jaguar",
+    "forms": {
+      "en": {
+        "form": "jaguar",
+        "cognate": true
+      },
+      "fr": {
+        "form": "jaguar",
+        "cognate": true
+      },
+      "es": {
+        "form": "jaguar",
+        "cognate": true
+      },
+      "it": {
+        "form": "giaguaro",
+        "cognate": true
+      },
+      "pl": {
+        "form": "jaguar",
+        "cognate": true
+      },
+      "ru": {
+        "form": "ягуар",
+        "roman": "yaguar",
+        "cognate": true
+      },
+      "el": {
+        "form": "ιαγουάρος",
+        "roman": "iagouáros",
+        "cognate": true
+      },
+      "tr": {
+        "form": "jaguar",
+        "cognate": true
+      },
+      "ar": {
+        "form": "يغور",
+        "roman": "yaghwar",
+        "cognate": true
+      },
+      "he": {
+        "form": "יגואר",
+        "roman": "yaguar",
+        "cognate": true
+      },
+      "hi": {
+        "form": "जैगुआर",
+        "roman": "jaiguār",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ジャガー",
+        "roman": "jagā",
+        "cognate": true
+      },
+      "ko": {
+        "form": "재규어",
+        "roman": "jaegyueo",
+        "cognate": true
+      },
+      "sw": {
+        "form": "jagwa",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "yaguara",
+        "lang": {
+          "de": "Tupi",
+          "en": "Tupi"
+        }
+      },
+      {
+        "form": "jaguar",
+        "lang": {
+          "de": "Portugiesisch",
+          "en": "Portuguese"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Aus dem Tupi Brasiliens, über das Portugiesische.",
+      "en": "From the Tupi of Brazil, via Portuguese."
+    }
+  },
+  {
+    "id": "pizza",
+    "de": "Pizza",
+    "en": "pizza",
+    "forms": {
+      "en": {
+        "form": "pizza",
+        "cognate": true
+      },
+      "fr": {
+        "form": "pizza",
+        "cognate": true
+      },
+      "es": {
+        "form": "pizza",
+        "cognate": true
+      },
+      "it": {
+        "form": "pizza",
+        "cognate": true
+      },
+      "pl": {
+        "form": "pizza",
+        "cognate": true
+      },
+      "ru": {
+        "form": "пицца",
+        "roman": "pitstsa",
+        "cognate": true
+      },
+      "el": {
+        "form": "πίτσα",
+        "roman": "pítsa",
+        "cognate": true
+      },
+      "tr": {
+        "form": "pizza",
+        "cognate": true
+      },
+      "ar": {
+        "form": "بيتزا",
+        "roman": "bītzā",
+        "cognate": true
+      },
+      "he": {
+        "form": "פיצה",
+        "roman": "pitsa",
+        "cognate": true
+      },
+      "hi": {
+        "form": "पिज़्ज़ा",
+        "roman": "pizzā",
+        "cognate": true
+      },
+      "ja": {
+        "form": "ピザ",
+        "roman": "piza",
+        "cognate": true
+      },
+      "ko": {
+        "form": "피자",
+        "roman": "pija",
+        "cognate": true
+      },
+      "sw": {
+        "form": "piza",
+        "cognate": true
+      }
+    },
+    "etymology": [
+      {
+        "form": "pizza",
+        "lang": {
+          "de": "Italienisch",
+          "en": "Italian"
+        }
+      }
+    ],
+    "fact": {
+      "de": "Das Wort ist über tausend Jahre alt: Zuerst belegt ist es 997 im italienischen Gaeta.",
+      "en": "The word is over a thousand years old: it first appears in 997 in Gaeta, Italy."
+    }
+  }
+]

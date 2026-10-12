@@ -1,27 +1,27 @@
-# starter
-
-Diese Datei ist zugleich die Vorlage für neue Projekte. Dort ersetzen Titel, „Zweck & Links“, die Prüf-URL unter „Deploy“ und „Fallen“ die Angaben zur Vorlage. „Konventionen“ bleibt und folgt den Änderungen hier, das Nacht-Review prüft alle Prototypen dagegen.
+# Isoglossa
 
 ## Zweck & Links
 
-- Vorlage für Web- und Mobile-Prototypen: Bun, Hono, SvelteKit, Drizzle, Postgres, optional Flutter in `apps/mobile`. Neue Projekte: README.md, „Neues Projekt“.
-- Selbst nicht deployt. Im Projekt: Live-URL `https://<slug>.pleasance.org`, ab 1.0 eine eigene Domain (README, „Live als 1.0“), Coolify-Projekt `pleasance-<slug>` oder `privat-<slug>`, Ressource `<slug>`.
+- Sprach-Entdeckungs-App: Wer ein Wort lernt, das in vielen Sprachen gleich oder fast gleich ist (Kaffee, Taxi, Schokolade), macht in all diesen Sprachen zugleich Fortschritt. Kein Sprachkurs. Kernabläufe: Tagesrunde mit 5 Lese-Rätseln (`/`), Karte mit 14 Sprachen (`/map`, `/map/<lang>`), Wortliste (`/words`), Wort-Detail mit Netz und Herkunft über jeder Seite als `?word=<id>`.
+- Live: https://isoglossa.pleasance.org. Coolify-Projekt `pleasance-isoglossa`, Ressource `isoglossa`. Domain `isoglossa.app` ist frei, gekauft wird erst zu 1.0.
+- Aus `robinchoice/starter`, nur Web. Eine Flutter-App kommt erst, wenn die Tagesrunde trägt.
 
 ## Checks
 
-`bun run check && bun run test && bun run build`, bei App-Änderungen zusätzlich `flutter analyze && flutter test` in `apps/mobile`. Die Browser-Tests starten API und Web auf eigenen Ports (53100, 54100). Testet ein anderer Worktree gleichzeitig, mit anderen Ports aufrufen: `TEST_API_PORT=53101 TEST_WEB_PORT=54101 bun run test`.
+`bun run check && bun run test && bun run build`. Die Browser-Tests starten API und Web auf eigenen Ports (53100, 54100). Testet ein anderer Worktree gleichzeitig, mit anderen Ports aufrufen: `TEST_API_PORT=53101 TEST_WEB_PORT=54101 bun run test`.
 
 ## Deploy
 
-- Ein Push auf `main` baut nach grüner CI die Images und deployt sie über die Coolify-API. Danach fotografiert sie die Live-Seite nach `docs/screenshots/`, committet geänderte Bilder mit `[skip ci]` und meldet den Deploy an `robinchoice/pleasance` (README, „Screenshots“). Ohne das Secret `COOLIFY_TOKEN` überspringt die CI Deploy, Screenshots und Meldung, so auch hier in der Vorlage. Ohne `PLEASANCE_DISPATCH_TOKEN` entfällt nur die Meldung.
-- App (`apps/mobile`): Ein Push auf `main` baut das Android-AAB, iOS geht nur bei einem Tag `v*` oder mit `gh workflow run mobile.yml` zu TestFlight (macOS-Minuten zählen zehnfach).
-- Prüfen: `gh run watch`. Der Deploy-Job ist erst grün, wenn `https://<slug>.pleasance.org/api/health` den Commit als `revision` meldet.
-- Nur hier in der Vorlage: `.github/workflows/standards.yml` baut `standards/` als Image `starter-site` und deployt es über das Tailnet nach https://standards.pleasance.org (Coolify VPS 3, nur aus dem Tailnet). Aus der Vorlage erzeugte Repos überspringen den Workflow und können ihn mit `standards/` löschen.
+- Ein Push auf `main` baut nach grüner CI die Images und deployt sie über die Coolify-API. Danach fotografiert sie die Live-Seite nach `docs/screenshots/`, committet geänderte Bilder mit `[skip ci]` und meldet den Deploy an `robinchoice/pleasance` (README, „Screenshots“). Ohne `PLEASANCE_DISPATCH_TOKEN` entfällt nur die Meldung.
+- Prüfen: `gh run watch`. Der Deploy-Job ist erst grün, wenn `https://isoglossa.pleasance.org/api/health` den Commit als `revision` meldet.
 
 ## Fallen
 
-- Was hier geändert wird, landet in jedem neuen Projekt und über das Nacht-Review als Befund in allen bestehenden. Konventionen nur ändern, wenn sie für alle Prototypen gelten.
-- `standards/` liest die Tabellen „Farbband“ und „Produktfarbe“ aus DESIGN.md: Spaltenreihenfolge und Ausschnitte im Format `1,00–1,35` beibehalten. Zeichnungen der Zeichen stehen in `SIGNS` in `standards/main.js`, ein neues Produkt bekommt dort bis dahin einen Punkt.
+- Die Wörter stehen in `packages/db/src/seed/words.json`, die API spielt sie bei jedem Start per Upsert in die Tabelle `words` ein. Wörter ändern heißt die Datei ändern, nie die Datenbank. Aus der Datei gelöschte Wörter bleiben in der Tabelle, damit niemand Fortschritt verliert.
+- Neue Wörter entwirft `bun scripts/kaikki.ts <englische Lemmata>` in `packages/db` aus Wiktionary (kaikki.org). Der Entwurf ist nur ein Anfang: `cognate`, deutsche Bedeutung, Umschrift, Herkunftskette und `fact` (DE/EN) von Hand prüfen und schreiben. Jedes Wort braucht alle 14 Sprachen aus `LANGS`. Die Daten sind CC BY-SA, die Quelle steht auf `/words`. CogNet nicht verwenden, es ist nur NC-lizenziert.
+- `cognate` heißt: man erkennt das Wort wieder. Fernverwandte wie koreanisch 담배 (aus tabaco) zählen nicht.
+- Ohne Login liegt der Fortschritt in `localStorage` (`progress`, `round`). Beim Login schickt der Browser ihn an `POST /api/v1/progress`, die API vereinigt ihn mit dem Konto. Abmelden löscht die lokale Kopie.
+- Tage sind lokale Daten des Browsers (`localDay` in `$lib/words.ts`), keine UTC-Zeitstempel. Die Tagesrunde ist pro Tag fest (Seed aus dem Datum), Extrarunden heißen `<tag>#2` usw.
 
 ## Konventionen
 
@@ -49,3 +49,9 @@ Stack und Aufbau: siehe README.md. Gestaltung: siehe DESIGN.md.
 - Link-Vorschau: Das Layout setzt die `og:`-Tags, das Bild rendert `bun run og-image` in `apps/web` (DESIGN.md, „Vorschaubild“). Danach neu rendern und committen, wenn sich `APP_NAME`, `APP_BAND`, `tagline` oder die Kachel ändern. Die Kachel liegt als `static/favicon.svg`, dieselbe wie `img/werkzeuge/<slug>.svg` im pleasance-Repo. Öffentliche Seiten mit eigenem Inhalt, etwa geteilte Links, geben im Server-Load `meta` mit Titel, Beschreibung und optional einem absoluten Bild-URL zurück. Private Inhalte, Links mit Passwort, abgelaufene und ungültige Links bekommen die allgemeine Vorschau. Link-Crawler führen kein JavaScript aus, also wirkt `meta` nur in `+page.server.ts` bzw. `+page.ts` auf Seiten mit SSR, nicht unter `routes/(app)` (`ssr = false`). WhatsApp speichert Vorschauen lange zwischen.
 - Formatierung und Lint: Biome, Regeln in `biome.json`. `bun run format` behebt das meiste selbst.
 - Apple-Zugangsdaten der Prototype Factory stehen zentral in `~/.secrets`: `APPLE_TEAM_ID`, `ASC_KEY_ID`, `ASC_ISSUER_ID`, `ASC_KEY_P8` (base64), dazu das CI-Signing-Zertifikat `APPLE_CI_DEV_CERTIFICATE_BASE64` (base64-PKCS12) und `APPLE_CI_DEV_CERTIFICATE_PASSWORD`. Ablage und Kopien: `~/dev/kontor/infra.md`, Abschnitt „Zugangsdaten: wo liegt was“. Im selben Aufruf mit `set -a; . ~/.secrets; set +a` laden; Werte nie ausgeben oder ins Repo schreiben. Nach Freigabe richtet `~/dev/kontor/apple-ci-secrets.sh robinchoice/<repo>` die GitHub-CI ein: ASC-IDs als Variablen, `ASC_KEY_P8`, `IOS_DEV_CERTIFICATE` und `IOS_DEV_CERTIFICATE_PASSWORD` als Secrets.
+
+## Abweichungen vom Standard
+
+- Kein `routes/(app)`: Die Tagesrunde ist ohne Login spielbar, alle Seiten liegen öffentlich und server-gerendert unter `routes/(main)`. Käfer und „Feedback geben“ (Seitenleiste) erscheinen dort für Eingeloggte.
+- Wörter in fremden Schriften stehen in einer Serifen-Systemschrift (`--script`), damit Hebräisch, Devanagari, Japanisch usw. ohne Webfonts von Dritten lesbar sind.
+- Lokale Datenbank auf Port 5443 (`docker-compose.yml`), 5433 belegt der starter.

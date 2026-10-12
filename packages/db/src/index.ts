@@ -27,3 +27,4 @@ export async function migrateDb(connectionString: string) {
 }
 
 export * from './schema';
+export * from './seed';

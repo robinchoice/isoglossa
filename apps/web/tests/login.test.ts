@@ -42,7 +42,7 @@ test('the language button switches to English and keeps it', async ({ page }) =>
   await expect(page.getByRole('heading', { name: 'Einloggen' })).toBeVisible();
 });
 
-test('a magic link opens the dashboard until logout', async ({ page }) => {
+test('a magic link logs in until logout', async ({ page }) => {
   // Stored like the API does it: only the hash of the token
   const email = freshEmail();
   const token = randomBytes(32).toString('hex');
@@ -51,11 +51,9 @@ test('a magic link opens the dashboard until logout', async ({ page }) => {
     values (${email}, ${tokenHash}, ${new Date(Date.now() + 15 * 60_000)})`;
 
   await page.goto(`/auth/verify?token=${token}`);
-  await expect(page).toHaveURL(/\/dashboard$/);
-  await expect(page.getByRole('heading', { name: `Hallo ${email.split('@')[0]}` })).toBeVisible();
+  await expect(page).toHaveURL(/\/$/);
+  await expect(page.getByText(`Angemeldet als ${email}`)).toBeVisible();
 
   await page.getByRole('button', { name: 'Abmelden' }).click();
-  await expect(page).toHaveURL(/\/$/);
-  await page.goto('/dashboard');
-  await expect(page).toHaveURL(/\/login\?next=%2Fdashboard$/);
+  await expect(page.getByRole('link', { name: 'Einloggen' })).toBeVisible();
 });

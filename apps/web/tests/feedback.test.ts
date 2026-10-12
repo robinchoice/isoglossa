@@ -23,7 +23,7 @@ async function logIn(page: Page) {
   await sql`insert into magic_links (email, token_hash, expires_at)
     values (${email}, ${tokenHash}, ${new Date(Date.now() + 15 * 60_000)})`;
   await page.goto(`/auth/verify?token=${token}`);
-  await expect(page).toHaveURL(/\/dashboard$/);
+  await expect(page.getByText(`Angemeldet als ${email}`)).toBeVisible();
   return email;
 }
 
@@ -54,7 +54,7 @@ test('the bug button sends a marked screenshot of the page', async ({ page }) =>
   const [report] = await reports(email);
   expect(report).toMatchObject({ kind: 'bug', message: 'Speichern hängt' });
   expect([...report!.screenshot.subarray(0, 3)]).toEqual([0xff, 0xd8, 0xff]);
-  expect(report!.context).toMatchObject({ platform: 'web', page: '/dashboard', locale: 'de' });
+  expect(report!.context).toMatchObject({ platform: 'web', page: '/', locale: 'de' });
 });
 
 test('the header takes ideas without a screenshot', async ({ page }) => {

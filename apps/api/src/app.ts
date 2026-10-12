@@ -7,6 +7,8 @@ import { t } from './lib/i18n';
 import { captureException } from './monitoring';
 import { authRoutes } from './routes/auth';
 import { feedbackRoutes } from './routes/feedback';
+import { progressRoutes } from './routes/progress';
+import { wordRoutes } from './routes/words';
 import type { AppEnv } from './types';
 
 export function createApp(db: Database) {
@@ -33,5 +35,7 @@ export function createApp(db: Database) {
       .basePath('/api/v1')
       .route('/auth', authRoutes)
       .route('/feedback', feedbackRoutes)
+      .route('/words', wordRoutes)
+      .route('/progress', progressRoutes)
   );
 }

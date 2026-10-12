@@ -1,5 +1,16 @@
-import type { FeedbackContext } from '@app/shared';
-import { customType, integer, jsonb, pgTable, text, timestamp, uuid, varchar } from 'drizzle-orm/pg-core';
+import type { FeedbackContext, WordData } from '@app/shared';
+import {
+  customType,
+  date,
+  integer,
+  jsonb,
+  pgTable,
+  primaryKey,
+  text,
+  timestamp,
+  uuid,
+  varchar,
+} from 'drizzle-orm/pg-core';
 
 const bytea = customType<{ data: Buffer }>({ dataType: () => 'bytea' });
 
@@ -61,3 +72,39 @@ export const feedback = pgTable('feedback', {
   issueUrl: varchar('issue_url', { length: 300 }),
   createdAt: timestamp('created_at').defaultNow().notNull(),
 });
+
+// The curated words from src/seed/words.json, upserted on every API start.
+// The id is the English lemma, data holds forms, etymology and fact.
+export const words = pgTable('words', {
+  id: varchar('id', { length: 100 }).primaryKey(),
+  data: jsonb('data').$type<WordData>().notNull(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+});
+
+// Progress of logged-in users. Without login it stays in the browser.
+// day is the user's local date when they learned the word.
+export const userWords = pgTable(
+  'user_words',
+  {
+    userId: uuid('user_id')
+      .references(() => users.id, { onDelete: 'cascade' })
+      .notNull(),
+    wordId: varchar('word_id', { length: 100 })
+      .references(() => words.id, { onDelete: 'cascade' })
+      .notNull(),
+    day: date('day').notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.wordId] })],
+);
+
+// Days with a finished round, for the streak
+export const userDays = pgTable(
+  'user_days',
+  {
+    userId: uuid('user_id')
+      .references(() => users.id, { onDelete: 'cascade' })
+      .notNull(),
+    day: date('day').notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.day] })],
+);

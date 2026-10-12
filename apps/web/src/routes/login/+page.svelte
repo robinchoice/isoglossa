@@ -17,7 +17,7 @@
 
   onMount(async () => {
     await checkAuth();
-    if (auth.user) goto(next ?? '/dashboard', { replaceState: true });
+    if (auth.user) goto(next ?? '/', { replaceState: true });
   });
 
   async function submit(e: SubmitEvent) {

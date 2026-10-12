@@ -3,13 +3,13 @@ import type { Band } from './band';
 
 export * from './band';
 export * from './messages';
+export * from './words';
 
 // The one place to rename a new project. API mails and web titles read it.
-export const APP_NAME = 'Starter';
+export const APP_NAME = 'Isoglossa';
 
-// Section of the family colour band for this product, see DESIGN.md. The
-// starter shows the whole band until a project picks its own.
-export const APP_BAND: Band = { from: 1, to: 7 };
+// Section of the family colour band for this product, see DESIGN.md
+export const APP_BAND: Band = { from: 5, to: 5.65 };
 
 // True once the project is live as 1.0 (README, "Live als 1.0"). From then on
 // the bug button waits for the test mode switch, see testMode in the web's feedback.svelte.ts.
