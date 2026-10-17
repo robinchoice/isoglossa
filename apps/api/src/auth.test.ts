@@ -1,5 +1,5 @@
 import { afterAll, beforeAll, expect, spyOn, test } from 'bun:test';
-import { createDb, migrateDb, sessions, users } from '@app/db';
+import { createDb, loginCodes, magicLinks, migrateDb, sessions, users } from '@app/db';
 import { eq } from 'drizzle-orm';
 import { createApp } from './app';
 import { generateToken, hashToken } from './middleware/auth';
@@ -10,10 +10,18 @@ const db = createDb(process.env.DATABASE_URL!);
 const app = createApp(db);
 const log = spyOn(console, 'log');
 
-beforeAll(() => migrateDb(process.env.DATABASE_URL!));
+beforeAll(() => {
+  delete process.env.SIGNUP_OPEN;
+  delete process.env.SIGNUP_ALLOWLIST;
+  return migrateDb(process.env.DATABASE_URL!);
+});
 afterAll(() => db.$client.end());
 
-const freshEmail = () => `test-${crypto.randomUUID()}@example.com`;
+const freshEmail = () => {
+  const email = `test-${crypto.randomUUID()}@example.com`;
+  process.env.SIGNUP_ALLOWLIST = `${process.env.SIGNUP_ALLOWLIST ?? ''},${email}`;
+  return email;
+};
 
 // Rate limits live in the database, so each run counts against its own address
 const ip = crypto.randomUUID();
@@ -175,4 +183,46 @@ test('a session in use is renewed', async () => {
   // Renewed sessions are left alone for a day
   const again = await app.request('/api/v1/auth/me', { headers: { cookie: `session=${token}` } });
   expect(again.headers.get('set-cookie')).toBeNull();
+});
+
+test('closed signup sends no mail or credential and creates no account for strangers', async () => {
+  const email = `blocked-${crypto.randomUUID()}@example.com`;
+  const mailsBefore = log.mock.calls.filter(([line]) => String(line).startsWith('[mail]')).length;
+  for (const path of ['/auth/magic-link', '/auth/code']) {
+    const response = await post(path, { email }, { 'accept-language': 'en' });
+    expect(response.status).toBe(403);
+    expect(await body(response)).toEqual({ error: 'Registration is currently closed.' });
+  }
+  expect(log.mock.calls.filter(([line]) => String(line).startsWith('[mail]')).length).toBe(mailsBefore);
+  expect(await db.select().from(magicLinks).where(eq(magicLinks.email, email))).toHaveLength(0);
+  expect(await db.select().from(loginCodes).where(eq(loginCodes.email, email))).toHaveLength(0);
+  expect(await db.select().from(users).where(eq(users.email, email))).toHaveLength(0);
+});
+
+test('existing accounts can still log in without an allowlist entry', async () => {
+  const email = `existing-${crypto.randomUUID()}@example.com`;
+  await db.insert(users).values({ email, name: 'Tester' });
+  expect((await post('/auth/magic-link', { email })).status).toBe(200);
+  expect((await post('/auth/verify', { token: lastMailedToken() })).status).toBe(200);
+  expect((await post('/auth/code', { email })).status).toBe(200);
+  expect((await post('/auth/code/verify', { email, code: lastMailedCode() })).status).toBe(200);
+});
+
+test('allowlist accepts normalized addresses and blocks credentials after removal', async () => {
+  const email = `revoked-${crypto.randomUUID()}@example.com`;
+  const previous = process.env.SIGNUP_ALLOWLIST;
+  process.env.SIGNUP_ALLOWLIST = ` ${email.toUpperCase()} , ${previous ?? ''}`;
+  try {
+    expect((await post('/auth/magic-link', { email })).status).toBe(200);
+    const token = lastMailedToken();
+    expect((await post('/auth/code', { email })).status).toBe(200);
+    const code = lastMailedCode();
+    process.env.SIGNUP_ALLOWLIST = previous;
+    expect((await post('/auth/verify', { token })).status).toBe(403);
+    expect((await post('/auth/code/verify', { email, code })).status).toBe(403);
+    expect(await db.select().from(users).where(eq(users.email, email))).toHaveLength(0);
+  } finally {
+    if (previous === undefined) delete process.env.SIGNUP_ALLOWLIST;
+    else process.env.SIGNUP_ALLOWLIST = previous;
+  }
 });

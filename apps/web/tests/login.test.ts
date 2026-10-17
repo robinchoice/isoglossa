@@ -25,7 +25,9 @@ async function openHydrated(page: Page, path: string) {
 
 test('the login form sends a magic link', async ({ page }) => {
   await openHydrated(page, '/login');
-  await page.getByLabel('E-Mail').fill(freshEmail());
+  const email = freshEmail();
+  await sql`insert into users (email, name) values (${email}, 'Tester')`;
+  await page.getByLabel('E-Mail').fill(email);
   await page.getByRole('button', { name: 'Login-Link senden' }).click();
   await expect(page.getByText('Check deine E-Mails')).toBeVisible();
 });
@@ -47,6 +49,7 @@ test('a magic link logs in until logout', async ({ page }) => {
   const email = freshEmail();
   const token = randomBytes(32).toString('hex');
   const tokenHash = createHash('sha256').update(token).digest('hex');
+  await sql`insert into users (email, name) values (${email}, 'Tester')`;
   await sql`insert into magic_links (email, token_hash, expires_at)
     values (${email}, ${tokenHash}, ${new Date(Date.now() + 15 * 60_000)})`;
 

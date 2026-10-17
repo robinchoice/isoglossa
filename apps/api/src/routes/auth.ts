@@ -13,6 +13,7 @@ import { deleteCookie } from 'hono/cookie';
 import { t } from '../lib/i18n';
 import { sendLoginCodeEmail, sendMagicLinkEmail } from '../lib/mail';
 import { clientIp, rateLimit, tooManyRequests } from '../lib/rate-limit';
+import { mayLogIn } from '../lib/signup';
 import { validJson } from '../lib/validate';
 import {
   currentUser,
@@ -59,6 +60,8 @@ export const authRoutes = new Hono<AppEnv>()
     const { email, next } = c.req.valid('json');
     if (!(await mailsPerIp.hit(c, clientIp(c))) || !(await mailsPerAddress.hit(c, email))) return tooManyRequests(c);
 
+    if (!(await mayLogIn(c.get('db'), email))) return c.json({ error: t(c).signupClosed }, 403);
+
     const token = generateToken();
     await c
       .get('db')
@@ -90,6 +93,8 @@ export const authRoutes = new Hono<AppEnv>()
       .returning({ email: magicLinks.email });
     if (!link) return c.json({ error: t(c).linkExpired }, 400);
 
+    if (!(await mayLogIn(db, link.email))) return c.json({ error: t(c).signupClosed }, 403);
+
     const { user, token } = await startSession(db, link.email, SESSION_DAYS);
     setSessionCookie(c, token);
     return c.json({ user });
@@ -99,6 +104,8 @@ export const authRoutes = new Hono<AppEnv>()
   .post('/code', validJson(loginCodeSchema), async (c) => {
     const { email } = c.req.valid('json');
     if (!(await mailsPerIp.hit(c, clientIp(c))) || !(await mailsPerAddress.hit(c, email))) return tooManyRequests(c);
+
+    if (!(await mayLogIn(c.get('db'), email))) return c.json({ error: t(c).signupClosed }, 403);
 
     const code = String(crypto.getRandomValues(new Uint32Array(1))[0]! % 1_000_000).padStart(6, '0');
     await c
@@ -142,6 +149,8 @@ export const authRoutes = new Hono<AppEnv>()
       .where(and(eq(loginCodes.id, match.id), isNull(loginCodes.usedAt)))
       .returning({ id: loginCodes.id });
     if (!used) return c.json({ error: t(c).codeWrong }, 400);
+
+    if (!(await mayLogIn(db, email))) return c.json({ error: t(c).signupClosed }, 403);
 
     return c.json(await startSession(db, email, APP_SESSION_DAYS));
   })
