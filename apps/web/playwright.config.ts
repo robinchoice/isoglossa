@@ -32,10 +32,20 @@ export default defineConfig({
       url: `${API}/api/health`,
       reuseExistingServer: false,
     },
+    // The production build, not vite dev: a cold dev server compiles every module on the
+    // first request and hydrates too late for the tests, and only the build enforces the CSP
+    // without inline styles
     {
-      command: `bunx vite dev --port ${WEB_PORT} --strictPort`,
-      env: { API_INTERNAL_URL: API },
-      url: WEB,
+      command: 'bunx vite build --logLevel error && bun build/index.js',
+      env: {
+        NODE_ENV: 'production',
+        PORT: String(WEB_PORT),
+        ORIGIN: WEB,
+        BODY_SIZE_LIMIT: '8M',
+        API_INTERNAL_URL: API,
+      },
+      url: `${WEB}/health`,
+      timeout: 300_000,
       reuseExistingServer: false,
     },
   ],
