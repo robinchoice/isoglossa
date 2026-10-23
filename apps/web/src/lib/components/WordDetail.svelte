@@ -10,6 +10,7 @@
   let selected = $state<Lang | null>(null);
 
   const locale = $derived(page.data.locale);
+  const name = $derived(meaning(word, locale));
   const learned = $derived(!!progress.learned[word.id]);
   const same = $derived(cognateLangs(word).length);
   const groups = $derived(word.groups ? Object.keys(word.groups) : []);
@@ -63,7 +64,7 @@
   <a class="close" href={close} aria-label={t().close}>
     <span class="back">{t().back}</span><span class="x">×</span>
   </a>
-  <h2>{meaning(word, locale)}</h2>
+  <h2>{name}</h2>
   <p class="muted small">{t().sameIn(same)}{learned ? ` · ${t().collected}` : ''}</p>
 
   <svg class="net" viewBox="0 0 {S} {S}" role="img" aria-label={t().sameIn(same)}>
@@ -81,8 +82,8 @@
       {/if}
     {/each}
     <circle cx={C} cy={C} r="46" fill="var(--ink)" />
-    <text x={C} y={C + 7} text-anchor="middle" font-size={meaning(word, locale).length > 8 ? 14 : 19} fill="#f2f0ea">
-      {meaning(word, locale)}
+    <text x={C} y={C + 7} text-anchor="middle" font-size={name.length > 8 ? 14 : 19} fill="#f2f0ea">
+      {name}
     </text>
     {#each nodes as n}
       {@const filled = learned && n.form.cognate}

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { LANGS, RTL } from '@app/shared';
+  import { RTL } from '@app/shared';
   import { page } from '$app/state';
   import { auth } from '$lib/auth.svelte';
   import { t } from '$lib/i18n';
@@ -100,7 +100,7 @@
         <bdi>{form.form}</bdi> = {meaning(word, locale)}
         {#if form.roman}<span class="soft">({form.roman})</span>{/if}
         <div class="forms">
-          {#each LANGS.filter((l) => word.forms[l].cognate) as lang}
+          {#each cognateLangs(word) as lang}
             <span title={t().langs[lang]}><bdi>{word.forms[lang].form}</bdi></span>
           {/each}
         </div>

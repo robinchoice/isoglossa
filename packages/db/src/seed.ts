@@ -10,5 +10,9 @@ export async function seedWords(db: Database) {
   await db
     .insert(words)
     .values((seed as WordData[]).map((data) => ({ id: data.id, data })))
-    .onConflictDoUpdate({ target: words.id, set: { data: sql`excluded.data`, updatedAt: sql`now()` } });
+    .onConflictDoUpdate({
+      target: words.id,
+      set: { data: sql`excluded.data`, updatedAt: sql`now()` },
+      setWhere: sql`${words.data} is distinct from excluded.data`,
+    });
 }

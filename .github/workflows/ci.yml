@@ -51,7 +51,6 @@ jobs:
         working-directory: apps/web
       - run: bun run check
       - run: bun run test
-      - run: bun run build
 
   # Images are built here, not on VPS 1: building there ran it out of memory.
   # One job for both images: every job is billed in whole minutes.

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { APP_NAME, LANGS } from '@app/shared';
+  import { APP_NAME } from '@app/shared';
   import { onMount } from 'svelte';
   import { page } from '$app/state';
   import { auth, checkAuth } from '$lib/auth.svelte';
@@ -8,7 +8,7 @@
   import { openFeedback } from '$lib/feedback.svelte';
   import { t } from '$lib/i18n';
   import { loadProgress, logOut, progress } from '$lib/progress.svelte';
-  import { streak } from '$lib/words';
+  import { cognateLangs, streak } from '$lib/words';
 
   let { data, children } = $props();
 
@@ -21,7 +21,7 @@
   const total = $derived(
     data.words
       .filter((w) => progress.learned[w.id])
-      .reduce((sum, w) => sum + LANGS.filter((l) => w.forms[l].cognate).length, 0),
+      .reduce((sum, w) => sum + cognateLangs(w).length, 0),
   );
   const days = $derived(streak(new Set(progress.days)));
 

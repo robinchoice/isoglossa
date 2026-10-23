@@ -1,6 +1,6 @@
-import { createHash, randomBytes } from 'node:crypto';
 import { expect, type Page, test } from '@playwright/test';
 import postgres from 'postgres';
+import { createUserWithMagicLink } from './helpers';
 
 const sql = postgres(process.env.DATABASE_URL!, { connection: { timezone: 'UTC' }, onnotice: () => {} });
 test.afterAll(() => sql.end());
@@ -46,12 +46,7 @@ test('the language button switches to English and keeps it', async ({ page }) =>
 
 test('a magic link logs in until logout', async ({ page }) => {
   // Stored like the API does it: only the hash of the token
-  const email = freshEmail();
-  const token = randomBytes(32).toString('hex');
-  const tokenHash = createHash('sha256').update(token).digest('hex');
-  await sql`insert into users (email, name) values (${email}, 'Tester')`;
-  await sql`insert into magic_links (email, token_hash, expires_at)
-    values (${email}, ${tokenHash}, ${new Date(Date.now() + 15 * 60_000)})`;
+  const { email, token } = await createUserWithMagicLink(sql);
 
   await page.goto(`/auth/verify?token=${token}`);
   await expect(page).toHaveURL(/\/$/);
