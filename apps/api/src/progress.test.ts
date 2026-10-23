@@ -76,3 +76,47 @@ test('progress rejects malformed days', async () => {
   });
   expect(res.status).toBe(400);
 });
+
+test('progress keeps the earliest day regardless of arrival order or duplicate words', async () => {
+  const headers = { ...(await logIn()), 'content-type': 'application/json' };
+  const send = (words: Progress['words']) =>
+    app.request('/api/v1/progress', { method: 'POST', headers, body: JSON.stringify({ words, days: [] }) });
+
+  expect((await send([{ id: 'coffee', day: '2026-10-05' }])).status).toBe(200);
+  const response = await send([
+    { id: 'coffee', day: '2026-10-03' },
+    { id: 'coffee', day: '2026-10-01' },
+    { id: 'coffee', day: '2026-10-04' },
+    { id: 'taxi', day: '2026-10-04' },
+    { id: 'taxi', day: '2026-10-02' },
+  ]);
+  expect(response.status).toBe(200);
+  expect(((await response.json()) as Progress).words).toEqual([
+    { id: 'coffee', day: '2026-10-01' },
+    { id: 'taxi', day: '2026-10-02' },
+  ]);
+});
+
+test('parallel progress batches converge on the earliest days', async () => {
+  const headers = { ...(await logIn()), 'content-type': 'application/json' };
+  const responses = await Promise.all(
+    Array.from({ length: 8 }, (_, i) => {
+      const words = [
+        { id: 'coffee', day: `2026-10-0${8 - i}` },
+        { id: 'taxi', day: `2026-10-0${i + 1}` },
+      ];
+      if (i % 2) words.reverse();
+      return app.request('/api/v1/progress', {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({ words, days: [] }),
+      });
+    }),
+  );
+  expect(responses.map((response) => response.status)).toEqual(Array(8).fill(200));
+  const response = await app.request('/api/v1/progress', { headers });
+  const result = (await response.json()) as Progress;
+  expect(result.words).toHaveLength(2);
+  expect(result.words).toContainEqual({ id: 'coffee', day: '2026-10-01' });
+  expect(result.words).toContainEqual({ id: 'taxi', day: '2026-10-01' });
+});

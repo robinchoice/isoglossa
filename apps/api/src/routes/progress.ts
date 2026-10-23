@@ -1,6 +1,6 @@
 import { type Database, userDays, userWords, words } from '@app/db';
 import { type Progress, progressSchema } from '@app/shared';
-import { asc, eq, inArray } from 'drizzle-orm';
+import { asc, eq, inArray, sql } from 'drizzle-orm';
 import { Hono } from 'hono';
 import { validJson } from '../lib/validate';
 import { requireAuth } from '../middleware/auth';
@@ -32,12 +32,20 @@ export const progressRoutes = new Hono<AppEnv>()
     const known = new Set(
       ids.length ? (await db.select({ id: words.id }).from(words).where(inArray(words.id, ids))).map((w) => w.id) : [],
     );
-    const learned = body.words.filter((w) => known.has(w.id));
+    const earliest = new Map<string, string>();
+    for (const { id, day } of body.words) {
+      if (known.has(id) && (!earliest.has(id) || day < earliest.get(id)!)) earliest.set(id, day);
+    }
+    // A stable lock order also keeps overlapping batches from deadlocking.
+    const learned = [...earliest].sort(([a], [b]) => a.localeCompare(b));
     if (learned.length) {
       await db
         .insert(userWords)
-        .values(learned.map((w) => ({ userId, wordId: w.id, day: w.day })))
-        .onConflictDoNothing();
+        .values(learned.map(([wordId, day]) => ({ userId, wordId, day })))
+        .onConflictDoUpdate({
+          target: [userWords.userId, userWords.wordId],
+          set: { day: sql`least(${userWords.day}, excluded.day)` },
+        });
     }
     if (body.days.length) {
       await db
