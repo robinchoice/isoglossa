@@ -1,11 +1,9 @@
 import { expect, type Page, test } from '@playwright/test';
 import postgres from 'postgres';
-import { createUserWithMagicLink } from './helpers';
+import { createUserWithMagicLink, freshEmail } from './helpers';
 
 const sql = postgres(process.env.DATABASE_URL!, { connection: { timezone: 'UTC' }, onnotice: () => {} });
 test.afterAll(() => sql.end());
-
-const freshEmail = () => `e2e-${crypto.randomUUID()}@example.com`;
 
 // Console errors fail the test, CSP violations included
 let errors: string[] = [];

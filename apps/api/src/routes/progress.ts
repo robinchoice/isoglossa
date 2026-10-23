@@ -34,7 +34,8 @@ export const progressRoutes = new Hono<AppEnv>()
     );
     const earliest = new Map<string, string>();
     for (const { id, day } of body.words) {
-      if (known.has(id) && (!earliest.has(id) || day < earliest.get(id)!)) earliest.set(id, day);
+      const prev = earliest.get(id);
+      if (known.has(id) && (!prev || day < prev)) earliest.set(id, day);
     }
     // A stable lock order also keeps overlapping batches from deadlocking.
     const learned = [...earliest].sort(([a], [b]) => a.localeCompare(b));

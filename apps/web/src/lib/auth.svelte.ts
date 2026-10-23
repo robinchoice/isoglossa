@@ -6,7 +6,7 @@ export const auth = $state({ user: null as User | null });
 // Pages that depend on the login call this on mount. The verify page doesn't,
 // so a stale "logged out" answer can't race its fresh session.
 export async function checkAuth() {
-  auth.user = (await api.get<{ user: User | null }>('/auth/me', true).catch(() => ({ user: null }))).user;
+  auth.user = (await api.get<{ user: User | null }>('/auth/me', { silent: true }).catch(() => ({ user: null }))).user;
 }
 
 export function sendMagicLink(email: string, next: string | null) {
@@ -15,7 +15,7 @@ export function sendMagicLink(email: string, next: string | null) {
 
 // Silent: the verify page shows the error itself
 export async function verify(token: string) {
-  auth.user = (await api.post<{ user: User }>('/auth/verify', { token }, true)).user;
+  auth.user = (await api.post<{ user: User }>('/auth/verify', { token }, { silent: true })).user;
 }
 
 export async function logout() {

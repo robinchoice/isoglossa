@@ -9,14 +9,15 @@ function noteError(method: string, path: string, status: number | string) {
   recentErrors.length = Math.min(recentErrors.length, 5);
 }
 
+type RequestOptions = { silent?: boolean; signal?: AbortSignal };
+
 // The API answers errors as { error: string } in the current language; they
 // show up as a toast unless silent.
 async function request<T>(
   method: string,
   path: string,
   body?: unknown,
-  silent = false,
-  signal?: AbortSignal,
+  { silent = false, signal }: RequestOptions = {},
 ): Promise<T> {
   const headers: Record<string, string> = { 'accept-language': page.data.locale };
   if (body !== undefined) headers['content-type'] = 'application/json';
@@ -40,9 +41,8 @@ async function request<T>(
 }
 
 export const api = {
-  get: <T>(path: string, silent = false) => request<T>('GET', path, undefined, silent),
-  post: <T>(path: string, body?: unknown, silent = false, signal?: AbortSignal) =>
-    request<T>('POST', path, body, silent, signal),
+  get: <T>(path: string, options?: RequestOptions) => request<T>('GET', path, undefined, options),
+  post: <T>(path: string, body?: unknown, options?: RequestOptions) => request<T>('POST', path, body, options),
   patch: <T>(path: string, body?: unknown) => request<T>('PATCH', path, body),
   delete: <T>(path: string) => request<T>('DELETE', path),
 };

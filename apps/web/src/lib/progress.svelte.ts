@@ -51,7 +51,7 @@ async function sync(part: Progress, signal?: AbortSignal) {
   const userId = auth.user?.id;
   const currentGeneration = generation;
   if (!userId) return;
-  const server = await api.post<Progress>('/progress', part, false, signal);
+  const server = await api.post<Progress>('/progress', part, { signal });
   if (generation !== currentGeneration || auth.user?.id !== userId) return;
   merge(server);
   save();

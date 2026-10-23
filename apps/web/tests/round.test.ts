@@ -1,6 +1,6 @@
 import { expect, type Page, test } from '@playwright/test';
 import postgres from 'postgres';
-import { createUserWithMagicLink } from './helpers';
+import { createUserWithMagicLink, holdProgress } from './helpers';
 
 const sql = postgres(process.env.DATABASE_URL!, { connection: { timezone: 'UTC' }, onnotice: () => {} });
 test.afterAll(() => sql.end());
@@ -73,20 +73,7 @@ test('a new round waits for account progress before choosing fresh words', async
     select u.id, w.id, '2026-10-01' from users u cross join words w
     where u.email = ${email} and w.id not in ${sql(fresh.map((word) => word.id))}`;
 
-  let release!: () => void;
-  const gate = new Promise<void>((resolve) => {
-    release = resolve;
-  });
-  let started!: () => void;
-  const pending = new Promise<void>((resolve) => {
-    started = resolve;
-  });
-  await page.route('**/api/v1/progress', async (route) => {
-    const response = await route.fetch();
-    started();
-    await gate;
-    await route.fulfill({ response });
-  });
+  const { pending, release } = await holdProgress(page);
   await page.goto(`/auth/verify?token=${token}`);
   await pending;
   await expect(page.locator('.opt')).toHaveCount(0);
@@ -116,20 +103,7 @@ test('a delayed progress response cannot restore account data after logout', asy
   await expect(page.locator('.opt')).toHaveCount(4);
   await expect(page.locator('html')).toHaveAttribute('data-progress-responses', '1');
 
-  let release!: () => void;
-  const gate = new Promise<void>((resolve) => {
-    release = resolve;
-  });
-  let started!: () => void;
-  const pending = new Promise<void>((resolve) => {
-    started = resolve;
-  });
-  await page.route('**/api/v1/progress', async (route) => {
-    const response = await route.fetch();
-    started();
-    await gate;
-    await route.fulfill({ response });
-  });
+  const { pending, release } = await holdProgress(page);
   await page.locator('.opt').first().click();
   await pending;
   await page.getByRole('button', { name: 'Abmelden' }).click();
@@ -145,20 +119,7 @@ test('a saved daily round is playable while account sync is pending', async ({ p
   await page.goto('/');
   await expect(page.locator('.opt')).toHaveCount(4);
   const saved = await page.evaluate(() => localStorage.getItem('round'));
-  let release!: () => void;
-  const gate = new Promise<void>((resolve) => {
-    release = resolve;
-  });
-  let started!: () => void;
-  const pending = new Promise<void>((resolve) => {
-    started = resolve;
-  });
-  await page.route('**/api/v1/progress', async (route) => {
-    const response = await route.fetch();
-    started();
-    await gate;
-    await route.fulfill({ response });
-  });
+  const { pending, release } = await holdProgress(page);
   await page.goto(`/auth/verify?token=${token}`);
   await pending;
   await expect(page.locator('.opt')).toHaveCount(4);
@@ -186,5 +147,5 @@ test('a failed account sync still allows a local round', async ({ page }) => {
   await page.locator('.opt').first().click();
   await expect(page.getByText(/^\+1 in \d+ Sprachen$/)).toBeVisible();
   expect(await page.evaluate(() => Object.keys(JSON.parse(localStorage.getItem('progress')!).learned))).toHaveLength(1);
-  errors = errors.filter((error) => error.includes('503 (Service Unavailable)') === false);
+  errors = errors.filter((error) => !error.includes('503 (Service Unavailable)'));
 });
