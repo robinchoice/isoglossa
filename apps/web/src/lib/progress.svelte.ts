@@ -5,6 +5,7 @@ import { localDay, makeRound, type Question } from './words';
 
 const PROGRESS_KEY = 'progress';
 const ROUND_KEY = 'round';
+let generation = 0;
 
 export type Round = {
   // The day, with #2, #3 … for extra rounds
@@ -38,28 +39,40 @@ function merge(server: Progress) {
   progress.days = [...new Set([...progress.days, ...server.days])].sort();
 }
 
-async function sync(part: Progress) {
-  if (!auth.user) return;
-  merge(await api.post<Progress>('/progress', part));
+async function sync(part: Progress, signal?: AbortSignal) {
+  const userId = auth.user?.id;
+  const currentGeneration = generation;
+  if (!userId) return;
+  const server = await api.post<Progress>('/progress', part, false, signal);
+  if (generation !== currentGeneration || auth.user?.id !== userId) return;
+  merge(server);
   save();
 }
 
 // Call after checkAuth. Sends what this browser learned before the login.
 export async function loadProgress() {
+  const currentGeneration = ++generation;
+  progress.ready = false;
   const saved = JSON.parse(localStorage.getItem(PROGRESS_KEY) ?? 'null');
   progress.learned = saved?.learned ?? {};
   progress.days = saved?.days ?? [];
   progress.round = JSON.parse(localStorage.getItem(ROUND_KEY) ?? 'null');
-  progress.ready = true;
-  await sync({
-    words: Object.entries(progress.learned).map(([id, day]) => ({ id, day })),
-    days: progress.days,
-  }).catch(() => {});
+  // An existing round is playable immediately; a new one first tries the account.
+  progress.ready = progress.round?.key.split('#')[0] === localDay();
+  await sync(
+    {
+      words: Object.entries(progress.learned).map(([id, day]) => ({ id, day })),
+      days: progress.days,
+    },
+    AbortSignal.timeout(5000),
+  ).catch(() => {});
+  if (generation === currentGeneration) progress.ready = true;
 }
 
 // Logging out leaves nothing behind for the next person on this browser
 export async function logOut() {
   await logout();
+  generation++;
   clearProgress();
 }
 
@@ -69,6 +82,7 @@ function clearProgress() {
   progress.learned = {};
   progress.days = [];
   progress.round = null;
+  progress.ready = true;
 }
 
 function startRound(words: WordData[], locale: Locale, key: string) {

@@ -11,13 +11,20 @@ function noteError(method: string, path: string, status: number | string) {
 
 // The API answers errors as { error: string } in the current language; they
 // show up as a toast unless silent.
-async function request<T>(method: string, path: string, body?: unknown, silent = false): Promise<T> {
+async function request<T>(
+  method: string,
+  path: string,
+  body?: unknown,
+  silent = false,
+  signal?: AbortSignal,
+): Promise<T> {
   const headers: Record<string, string> = { 'accept-language': page.data.locale };
   if (body !== undefined) headers['content-type'] = 'application/json';
   const res = await fetch(`/api/v1${path}`, {
     method,
     headers,
     body: body === undefined ? undefined : JSON.stringify(body),
+    signal,
   }).catch((err) => {
     noteError(method, path, 'offline');
     throw err;
@@ -34,7 +41,8 @@ async function request<T>(method: string, path: string, body?: unknown, silent =
 
 export const api = {
   get: <T>(path: string, silent = false) => request<T>('GET', path, undefined, silent),
-  post: <T>(path: string, body?: unknown, silent = false) => request<T>('POST', path, body, silent),
+  post: <T>(path: string, body?: unknown, silent = false, signal?: AbortSignal) =>
+    request<T>('POST', path, body, silent, signal),
   patch: <T>(path: string, body?: unknown) => request<T>('PATCH', path, body),
   delete: <T>(path: string) => request<T>('DELETE', path),
 };
