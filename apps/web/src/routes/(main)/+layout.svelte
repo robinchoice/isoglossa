@@ -45,7 +45,7 @@
     {#each tabs as tab}
       <a href={tab.href} class:on={tab.on} aria-current={tab.on ? 'page' : undefined}>{tab.label}</a>
     {/each}
-    <div class="account">
+    <div class="account" data-feedback-ignore>
       {#if auth.user}
         <span class="muted">{t().loggedInAs(auth.user.email)}</span>
         <button type="button" onclick={() => openFeedback('idea')}>{t().giveFeedback}</button>

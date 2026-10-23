@@ -50,6 +50,8 @@ const de = {
   bugPlaceholder: 'Was ist passiert? Was hast du erwartet?',
   ideaPlaceholder: 'Was fehlt dir, was wünschst du dir, was gefällt dir?',
   removeScreenshot: 'Screenshot entfernen',
+  screenshotPublic:
+    'Der Screenshot wird öffentlich im GitHub-Issue angezeigt. Prüfe ihn auf private Daten oder entferne ihn.',
   markSpot: 'Stelle markieren',
   markHint: 'Zieh einen Rahmen um die Stelle, die nicht stimmt.',
   done: 'Fertig',
@@ -180,6 +182,8 @@ const en: Messages = {
   bugPlaceholder: 'What happened? What did you expect?',
   ideaPlaceholder: 'What are you missing, what would you like, what do you enjoy?',
   removeScreenshot: 'Remove screenshot',
+  screenshotPublic:
+    'The screenshot will be shown publicly in the GitHub issue. Check it for private data or remove it.',
   markSpot: 'Mark the spot',
   markHint: "Drag a frame around the spot that isn't right.",
   done: 'Done',

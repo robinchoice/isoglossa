@@ -53,7 +53,7 @@
 {/if}
 
 {#if auth.user}
-  <div class="account">
+  <div class="account" data-feedback-ignore>
     <span class="muted">{t().loggedInAs(auth.user.email)}</span>
     <button type="button" onclick={() => openFeedback('idea')}>{t().giveFeedback}</button>
     <button type="button" onclick={logOut}>{t().logOut}</button>

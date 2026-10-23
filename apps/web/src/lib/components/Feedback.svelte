@@ -183,6 +183,7 @@
         maxlength="5000"
       ></textarea>
       {#if feedback.screenshot}
+        <p class="hint">{t().screenshotPublic}</p>
         <img class="shot" src={feedback.screenshot} alt="Screenshot" />
         <div class="links">
           <button type="button" onclick={() => (feedback.screenshot = null)}>{t().removeScreenshot}</button>
