@@ -1,4 +1,4 @@
-import type { Locale, Progress, WordData } from '@app/shared';
+import { type Locale, type Progress, roundSchema, storedProgressSchema, type WordData } from '@app/shared';
 import { api } from './api';
 import { auth, logout } from './auth.svelte';
 import { localDay, makeRound, type Question } from './words';
@@ -30,6 +30,14 @@ function save() {
   localStorage.setItem(ROUND_KEY, JSON.stringify(progress.round));
 }
 
+function readStored(key: string): unknown {
+  try {
+    return JSON.parse(localStorage.getItem(key) ?? 'null');
+  } catch {
+    return null;
+  }
+}
+
 // A word counts from the first day it was learned
 function merge(server: Progress) {
   for (const { id, day } of server.words) {
@@ -53,10 +61,11 @@ async function sync(part: Progress, signal?: AbortSignal) {
 export async function loadProgress() {
   const currentGeneration = ++generation;
   progress.ready = false;
-  const saved = JSON.parse(localStorage.getItem(PROGRESS_KEY) ?? 'null');
-  progress.learned = saved?.learned ?? {};
-  progress.days = saved?.days ?? [];
-  progress.round = JSON.parse(localStorage.getItem(ROUND_KEY) ?? 'null');
+  const saved = storedProgressSchema.safeParse(readStored(PROGRESS_KEY));
+  progress.learned = saved.success ? saved.data.learned : {};
+  progress.days = saved.success ? saved.data.days : [];
+  const round = roundSchema.safeParse(readStored(ROUND_KEY));
+  progress.round = round.success ? round.data : null;
   // An existing round is playable immediately; a new one first tries the account.
   progress.ready = progress.round?.key.split('#')[0] === localDay();
   await sync(

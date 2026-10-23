@@ -50,3 +50,17 @@ export const progressSchema = z.object({
 });
 
 export type Progress = z.infer<typeof progressSchema>;
+
+export const storedProgressSchema = z.object({
+  learned: z.record(z.string(), day),
+  days: z.array(day),
+});
+
+export const roundSchema = z
+  .object({
+    key: z.string(),
+    questions: z.array(z.object({ id: z.string(), lang: z.enum(LANGS), options: z.array(z.string()) })),
+    index: z.int().nonnegative(),
+    answers: z.array(z.string().nullable()),
+  })
+  .refine((round) => round.index <= round.questions.length && round.answers.length === round.questions.length);
