@@ -77,6 +77,7 @@ export const authRoutes = new Hono<AppEnv>()
 
   .post('/verify', validJson(verifySchema), async (c) => {
     const db = c.get('db');
+    const { token: linkToken, cookie = true } = c.req.valid('json');
 
     // Marking the link as used in the same statement keeps it single-use
     // even when two requests race.
@@ -85,7 +86,7 @@ export const authRoutes = new Hono<AppEnv>()
       .set({ usedAt: new Date() })
       .where(
         and(
-          eq(magicLinks.tokenHash, hashToken(c.req.valid('json').token)),
+          eq(magicLinks.tokenHash, hashToken(linkToken)),
           isNull(magicLinks.usedAt),
           gt(magicLinks.expiresAt, new Date()),
         ),
@@ -95,6 +96,8 @@ export const authRoutes = new Hono<AppEnv>()
 
     if (!(await mayLogIn(db, link.email))) return c.json({ error: t(c).signupClosed }, 403);
 
+    // The CLI asks for the token instead of the cookie and keeps it like the app
+    if (!cookie) return c.json(await startSession(db, link.email, APP_SESSION_DAYS));
     const { user, token } = await startSession(db, link.email, SESSION_DAYS);
     setSessionCookie(c, token);
     return c.json({ user });

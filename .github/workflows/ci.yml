@@ -51,6 +51,11 @@ jobs:
         working-directory: apps/web
       - run: bun run check
       - run: bun run test
+      # The CLI as one file with the live URL baked in, built to check it compiles (README, „CLI“)
+      - run: bun run build
+        working-directory: apps/cli
+        env:
+          APP_URL: ${{ vars.API_URL || format('https://{0}.pleasance.org', github.event.repository.name) }}
 
   # Images are built here, not on VPS 1: building there ran it out of memory.
   # One job for both images: every job is billed in whole minutes.

@@ -4,11 +4,11 @@
 
 - Sprach-Entdeckungs-App: Wer ein Wort lernt, das in vielen Sprachen gleich oder fast gleich ist (Kaffee, Taxi, Schokolade), macht in all diesen Sprachen zugleich Fortschritt. Kein Sprachkurs. Kernabläufe: Tagesrunde mit 5 Lese-Rätseln (`/`), Karte mit 14 Sprachen (`/map`, `/map/<lang>`), Wortliste (`/words`), Wort-Detail mit Netz und Herkunft über jeder Seite als `?word=<id>`.
 - Live: https://isoglossa.pleasance.org. Coolify-Projekt `pleasance-isoglossa`, Ressource `isoglossa`. Domain `isoglossa.app` ist frei, gekauft wird erst zu 1.0.
-- Aus `robinchoice/starter`, nur Web. Eine Flutter-App kommt erst, wenn die Tagesrunde trägt.
+- Aus `robinchoice/starter`, nur Web, dazu die CLI in `apps/cli` (README, „CLI“). Eine Flutter-App kommt erst, wenn die Tagesrunde trägt.
 
 ## Checks
 
-`bun run check && bun run test && bun run build`. Die Browser-Tests starten API und Web auf eigenen Ports (53100, 54100), das Web als Produktions-Build, nicht `vite dev`: Ein kalter Dev-Server hydriert unter Last zu spät für die Tests. Testet ein anderer Worktree gleichzeitig, mit anderen Ports aufrufen: `TEST_API_PORT=53101 TEST_WEB_PORT=54101 bun run test`.
+`bun run check && bun run test && bun run build` (`test` umfasst die CLI gegen die API, `build` baut auch die CLI-Datei). Die Browser-Tests starten API und Web auf eigenen Ports (53100, 54100), das Web als Produktions-Build, nicht `vite dev`: Ein kalter Dev-Server hydriert unter Last zu spät für die Tests. Testet ein anderer Worktree gleichzeitig, mit anderen Ports aufrufen: `TEST_API_PORT=53101 TEST_WEB_PORT=54101 bun run test`.
 
 ## Deploy
 
@@ -29,7 +29,8 @@ Stack und Aufbau: siehe README.md. Gestaltung: siehe DESIGN.md.
 
 - Neue Tabelle: `packages/db/src/schema.ts` ändern, `bun run db:generate`. Die Migration läuft beim nächsten API-Start, `migrateDb` lässt mehrere Instanzen nacheinander migrieren. Jede Migration muss mit dem noch laufenden alten Code funktionieren: Spalten nullable oder mit Default hinzufügen, Umbenennen und Löschen erst im Deploy danach. Nichts von Hand in der Datenbank ändern.
 - Neue Route: Datei in `apps/api/src/routes`, in `app.ts` einhängen. `requireAuth` für eingeloggte Nutzer (danach `c.get('user')`), `validJson(schema)` mit dem Schema aus `packages/shared`.
-- Jeder sichtbare Text steht auf Deutsch und Englisch: für Web und API in `packages/shared/src/messages.ts`, für die App in `lib/core/messages.dart`. Fehlt eine Sprache, schlagen `bun run check` bzw. `flutter analyze` fehl. Im Web `t()` aus `$lib/i18n`, in der API `t(c)` aus `lib/i18n.ts`, in der App `ref.watch(messagesProvider)`. Eigene zod-Meldungen sind Schlüssel aus `messages.ts`. Umgeschaltet wird im `PleasanceFooter`.
+- Jeder sichtbare Text steht auf Deutsch und Englisch: für Web, API und CLI in `packages/shared/src/messages.ts`, für die App in `lib/core/messages.dart`. Fehlt eine Sprache, schlagen `bun run check` bzw. `flutter analyze` fehl. Im Web `t()` aus `$lib/i18n`, in der API `t(c)` aus `lib/i18n.ts`, in der App `ref.watch(messagesProvider)`. Eigene zod-Meldungen sind Schlüssel aus `messages.ts`. Umgeschaltet wird im `PleasanceFooter`.
+- CLI (README, „CLI“): Jedes Kern-Feature bekommt im selben Zug einen Befehl in `apps/cli/src/commands` nach dem Beispiel `progress.ts`, mit Text und `--json` und einem Test in `cli.test.ts`. Die CLI spricht nur mit der HTTP-API, nie mit der Datenbank, so gelten Rechte, Rate-Limits und die Registrierungssperre. Agenten melden sie nur mit admin@pleasance.org an (`login-link isoglossa | isoglossa login --link -`), nie mit Kundenkonten.
 - Fehler antworten immer als `{ error: string }` mit einem Text aus `t(c)`, also in der Sprache, die der Client per `Accept-Language` schickt. Das Web zeigt ihn als Toast.
 - Alles, was Mails verschickt oder Geheimnisse prüft, bekommt ein `rateLimit` aus `lib/rate-limit.ts`. Die Zähler liegen in Postgres und gelten für alle API-Instanzen.
 - Mails über `sendMail` aus `lib/mail.ts`.

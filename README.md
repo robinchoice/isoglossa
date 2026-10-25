@@ -1,6 +1,6 @@
 # Isoglossa
 
-Sprach-Entdeckungs-App: Wer ein Wort lernt, das in vielen Sprachen gleich oder fast gleich ist (Kaffee, Schokolade, Taxi), macht in allen diesen Sprachen gleichzeitig Fortschritt. Der Name kommt von *iso* „gleich“ und *glossa* „Sprache“. Gebaut aus der Vorlage `robinchoice/starter` mit Bun, Hono, SvelteKit, Drizzle und Postgres, nur Web.
+Sprach-Entdeckungs-App: Wer ein Wort lernt, das in vielen Sprachen gleich oder fast gleich ist (Kaffee, Schokolade, Taxi), macht in allen diesen Sprachen gleichzeitig Fortschritt. Der Name kommt von *iso* „gleich“ und *glossa* „Sprache“. Gebaut aus der Vorlage `robinchoice/starter` mit Bun, Hono, SvelteKit, Drizzle und Postgres, nur Web, dazu eine CLI gegen dieselbe API.
 
 Wortdaten aus Wiktionary über [kaikki.org](https://kaikki.org/) (CC BY-SA 4.0), kuratiert in `packages/db/src/seed/words.json`.
 
@@ -23,9 +23,10 @@ Web läuft auf http://localhost:5173, die API auf Port 3000. Ohne `SMTP_HOST` st
 | `apps/api` | Hono-API unter `/api/v1`, Migrationen beim Start, `/api/health` prüft auch die DB |
 | `apps/web` | SvelteKit. Leitet `/api` an die API weiter, im Dev macht das der Vite-Proxy. Seiten hinter dem Login liegen unter `routes/(app)`, `/health` ist der Healthcheck des Web-Servers |
 | `packages/db` | Drizzle-Schema und Migrationen |
-| `packages/shared` | App-Name, zod-Schemas und Typen für API und Web |
+| `apps/cli` | Befehlszeile der App gegen dieselbe API, siehe „CLI“ |
+| `packages/shared` | App-Name, zod-Schemas, Typen und Texte für API, Web und CLI |
 
-Befehle: `bun run dev`, `check` (Biome und Typen), `format`, `test`, `build`, `db:generate`, in `apps/web` außerdem `screenshots` (siehe „Screenshots“) und `og-image` (Vorschaubild für geteilte Links, DESIGN.md). `test` umfasst die API-Tests und Browser-Tests von Login, Feedback und Link-Vorschau (Playwright, startet API und Web selbst auf eigenen Ports 53100 und 54100, nie die laufenden Dev-Server; testen zwei Worktrees gleichzeitig, bekommt einer andere per `TEST_API_PORT` und `TEST_WEB_PORT`). Beide laufen gegen `DATABASE_URL` und legen nur Testkonten mit frischen Adressen an.
+Befehle: `bun run dev`, `check` (Biome und Typen), `format`, `test`, `build`, `db:generate`, in `apps/web` außerdem `screenshots` (siehe „Screenshots“) und `og-image` (Vorschaubild für geteilte Links, DESIGN.md). `build` baut Web und CLI. `test` umfasst die API-Tests, die CLI-Tests und Browser-Tests von Login, Feedback und Link-Vorschau (Playwright, startet API und Web selbst auf eigenen Ports 53100 und 54100, nie die laufenden Dev-Server; testen zwei Worktrees gleichzeitig, bekommt einer andere per `TEST_API_PORT` und `TEST_WEB_PORT`). Alle laufen gegen `DATABASE_URL` und legen nur Testkonten mit frischen Adressen an.
 
 ## Feedback
 
@@ -68,7 +69,19 @@ Nach jedem erfolgreichen Deploy fotografiert der CI-Job `screenshots` die Live-S
 
 ## Login in der Savor-Vorschau
 
-Agenten zeigen Änderungen hinter dem Login in der Savor-Vorschau mit dem Testkonto admin@pleasance.org. `login-link <slug>` aus dem Kontor ruft dafür im API-Container `bun apps/api/src/login-link.ts <email>` auf. Das gibt einen einmaligen Login-Link aus, 15 Minuten gültig wie ein gemailter, den der Agent per `browser_navigate` öffnet. Die Vorschau hat pro Projekt ein festes Profil, und Sessions in Benutzung verlängern sich bei jedem Besuch auf 30 Tage. Also bleibt sie angemeldet.
+Agenten zeigen Änderungen hinter dem Login in der Savor-Vorschau mit dem Testkonto admin@pleasance.org. `login-link <slug>` aus dem Kontor ruft dafür im API-Container `bun apps/api/src/login-link.ts <email>` auf. Das gibt einen einmaligen Login-Link aus, 15 Minuten gültig wie ein gemailter, den der Agent per `browser_navigate` öffnet. Die Vorschau hat pro Projekt ein festes Profil, und Sessions in Benutzung verlängern sich bei jedem Besuch auf 30 Tage. Also bleibt sie angemeldet. Für die CLI nimmt der Agent denselben Link per Pipe, siehe „CLI“.
+
+## CLI
+
+Isoglossa hat eine eigene Befehlszeile in `apps/cli`, damit Agenten, Skripte und Tests die App über Befehle für die Sache selbst bedienen statt über die UI. Sie spricht nur mit der HTTP-API wie das Web, nie mit der Datenbank. So gelten dieselben Rechte, Rate-Limits und die geschlossene Registrierung. Die Argumente liest `parseArgs` aus `node:util`, ohne weitere Abhängigkeit.
+
+- Bauen: `bun run build` kompiliert `apps/cli/build/isoglossa`, eine einzelne Datei mit Bun darin (gut 100 MB). Der Name kommt aus `APP_ID` in `packages/shared`. Die Adresse der App ist eingebacken: `APP_URL` aus der Umgebung beim Bauen (die CI setzt die Live-URL, ab 1.0 `API_URL`), sonst `https://isoglossa.pleasance.org`. `--url` wählt eine andere, etwa `http://localhost:5173` gegen `bun run dev`, danach gilt die Adresse des letzten Logins. Ohne Bauen: `bun apps/cli/src/main.ts <befehl>`.
+- Befehle: `login`, `whoami`, `logout` und `progress`, der Fortschritt des Kontos wie auf der Karte (`/map`): gesammelte Wörter, geschaffte Tagesrunden und wie viele Wörter in jeder der 14 Sprachen zählen. Ohne Login gibt es keinen Fortschritt, der liegt dann nur im Browser.
+- Anmelden: `isoglossa login` fragt nach der Adresse und nach dem Code aus der Mail. `isoglossa login --link <link>` löst einen Login-Link ein, `--link -` liest ihn von stdin. Danach liegt der Token dieses Geräts mit `0600` in `$XDG_CONFIG_HOME/isoglossa/session.json` (sonst `~/.config`, unter macOS `~/Library/Application Support`, unter Windows `%APPDATA%`), zusammen mit der Adresse, an andere Adressen geht er nie. Er ist eine gewöhnliche Session als Bearer: gehasht in `sessions`, 365 Tage, verlängert sich bei Nutzung, jedes Gerät hat seine eigene. `whoami` zeigt das Konto, `logout` widerruft den Token auf dem Server und löscht die Datei, ein neuer Login widerruft den alten.
+- Ausgabe: Text für Menschen, mit `--json` genau ein JSON-Wert auf stdout, auch Fehler als `{ "error": "…" }` und die Hilfe als Liste der Befehle. Exit-Codes: 0 erledigt, 1 Fehler (auch Absagen der API wie die geschlossene Registrierung), 2 falscher Aufruf, 3 nicht angemeldet. Hilfe und Meldungen stehen als `cli…` in `packages/shared/src/messages.ts`, die Sprache kommt aus `LANG` oder `--lang`, die API antwortet per `Accept-Language` in derselben.
+- Eigene Befehle: Datei in `apps/cli/src/commands` nach dem Beispiel `progress.ts` und in `commands` in `src/cli.ts` eintragen. Ein Befehl nennt Hilfezeilen, Optionen und `run`. Das ruft über `ctx.api` die API auf, liest die Antwort mit zod und gibt `{ data, text }` zurück, `data` für `--json`. `currentUser(ctx)` verlangt den Login, Fehler enden als `Failure` mit einem Code aus `EXIT`. Die Tests in `src/cli.test.ts` rufen die CLI im Prozess gegen die echte API mit `DATABASE_URL` auf.
+- Agenten: nur mit dem Testkonto admin@pleasance.org, nie mit Kundenkonten. Den Token holen sie ohne Container über den Login-Link aus dem Kontor, per Pipe, so steht der Link nicht in ihrem Kontext: `login-link isoglossa | apps/cli/build/isoglossa login --link -`. Danach bleibt die CLI auf diesem Rechner angemeldet.
+- Verteilen: Für andere Plattformen `bun run build --target=bun-darwin-arm64` in `apps/cli` (ebenso `bun-linux-x64`, `bun-linux-arm64`, `bun-windows-x64`), das überschreibt `build/isoglossa`. Die CI baut die Datei bei jedem Lauf zur Probe, veröffentlicht sie aber nicht. Release-Artefakte erst, wenn die CLI an Menschen außerhalb des Repos geht.
 
 ## Live als 1.0
 
