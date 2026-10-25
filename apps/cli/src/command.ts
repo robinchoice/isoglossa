@@ -21,6 +21,8 @@ export type Context = {
   // The stored session, only if it belongs to url
   session: Session | null;
   values: Record<string, unknown>;
+  // The positional arguments, as many as the command names in args
+  args: string[];
   m: Messages;
   locale: Locale;
   io: Io;
@@ -33,6 +35,8 @@ export type Command = {
   // Lines in the help: usage and what it does
   help: (m: Messages) => [usage: string, text: string][];
   options?: Record<string, { type: 'string' | 'boolean'; short?: string }>;
+  // Names of positional arguments, all required, e.g. ['id'] for `word <id>`
+  args?: string[];
   run: (ctx: Context) => Promise<Result>;
 };
 

@@ -1,10 +1,9 @@
 <script lang="ts">
-  import { RTL } from '@app/shared';
+  import { cognateLangs, localDay, meaning, RTL } from '@app/shared';
   import { page } from '$app/state';
   import { auth } from '$lib/auth.svelte';
   import { t } from '$lib/i18n';
   import { answer, ensureRound, extraRound, nextQuestion, progress } from '$lib/progress.svelte';
-  import { cognateLangs, localDay, meaning } from '$lib/words';
 
   let { data } = $props();
 

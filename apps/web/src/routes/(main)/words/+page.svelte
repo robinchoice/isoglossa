@@ -1,10 +1,9 @@
 <script lang="ts">
-  import { LANGS, type Lang } from '@app/shared';
+  import { cognateLangs, LANGS, type Lang, meaning } from '@app/shared';
   import { auth } from '$lib/auth.svelte';
   import { openFeedback } from '$lib/feedback.svelte';
   import { t } from '$lib/i18n';
   import { logOut, progress } from '$lib/progress.svelte';
-  import { cognateLangs, meaning } from '$lib/words';
 
   let { data } = $props();
 

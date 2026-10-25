@@ -3,7 +3,7 @@ import { mkdtemp, readFile, stat } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createDb, magicLinks, migrateDb, seedWords, users } from '@app/db';
-import { LANGS, messages } from '@app/shared';
+import { LANGS, localDay, makeRound, messages, type WordData } from '@app/shared';
 import { z } from 'zod';
 import { createApp } from '../../api/src/app';
 import { generateToken, hashToken } from '../../api/src/middleware/auth';
@@ -60,18 +60,18 @@ const lastCode = () =>
     ?.match(/Dein Code: (\d{6})/)?.[1] ?? '';
 
 // One device: its own config folder, so its own token. Answers the code
-// question from the last mail, the email question with `email`.
+// question from the last mail, the round with `answers`, others with `email`.
 async function device(env: Record<string, string> = { LANG: 'de_DE.UTF-8' }) {
   const deviceEnv = { XDG_CONFIG_HOME: await mkdtemp(join(tmpdir(), 'cli-')), ...env };
   // Adds --url of the test API unless raw or the call names one
-  const cli = async (args: string[], { email = '', stdin = '', raw = false } = {}) => {
+  const cli = async (args: string[], { email = '', stdin = '', raw = false, answers = [] as string[] } = {}) => {
     const out: string[] = [];
     const err: string[] = [];
     const code = await run(raw || args.length === 0 || args.includes('--url') ? args : [...args, '--url', url], {
       env: deviceEnv,
       out: (text) => out.push(text),
       err: (text) => err.push(text),
-      ask: async (question) => (question === de.cliAskCode ? lastCode() : email),
+      ask: async (question) => (question === de.cliAskCode ? lastCode() : (answers.shift() ?? email)),
       stdin: async () => stdin,
     });
     return { code, out: out.join('\n'), err: err.join('\n'), json: () => JSON.parse(out.join('\n')) };
@@ -127,6 +127,89 @@ test('progress shows the words of the account in every language', async () => {
   expect(text.out).toContain(`${de.youKnow} ${data.total} ${de.wordsInLangs(LANGS.length)}`);
   expect(text.out).toContain(de.cliProgressSummary(1, 1));
   expect(text.out).toContain(de.langs.ja);
+});
+
+const allWords = async () =>
+  ((await fetch(`${url}/api/v1/words`).then((res) => res.json())) as { words: WordData[] }).words;
+
+// The number of the right option per question, from the same round the CLI makes
+const rightAnswers = (words: WordData[], learned: string[]) =>
+  makeRound(words, new Set(learned), localDay(), 'de').map((q) => String(q.options.indexOf(q.id) + 1));
+
+test('round plays the daily round, logged in it counts for the account', async () => {
+  const words = await allWords();
+  const { cli } = await device();
+
+  const guest = await cli(['round', '--json'], { answers: rightAnswers(words, []) });
+  expect(guest.code).toBe(0);
+  expect(guest.json()).toMatchObject({ day: localDay(), saved: false, streak: null });
+  expect(guest.json().questions).toHaveLength(5);
+  expect(guest.json().questions.every((q: { correct: boolean }) => q.correct)).toBe(true);
+  expect(guest.err).toContain(de.question(1, 5));
+  expect(guest.err).toContain(de.correct);
+  expect((await cli(['round'], { answers: ['1', '1', '1', '1', '1'] })).out).toContain(de.cliRoundNotSaved(SLUG));
+
+  await cli(['login'], { email: freshEmail() });
+  const first = await cli(['round'], { answers: rightAnswers(words, []) });
+  expect(first.code).toBe(0);
+  expect(first.out).toContain(de.roundDone);
+  expect(first.out).toContain(de.streak(1));
+  const learned = (await cli(['progress', '--json'])).json();
+  expect(learned.words).toHaveLength(5);
+  expect(learned.days).toEqual([localDay()]);
+
+  // The next round brings new words, like the extra round in the web
+  const ids = learned.words.map((w: { id: string }) => w.id);
+  const next = (await cli(['round', '--json'], { answers: rightAnswers(words, ids) })).json();
+  expect(next).toMatchObject({ saved: true, streak: 1 });
+  expect(next.questions.some((q: { id: string }) => ids.includes(q.id))).toBe(false);
+
+  // A wrong number ends the round before anything is saved
+  const before = (await cli(['progress', '--json'])).json().words.length;
+  const wrong = await cli(['round'], { answers: ['9'] });
+  expect(wrong.code).toBe(2);
+  expect(wrong.err).toEndWith(de.cliBadChoice(4));
+  expect((await cli(['progress', '--json'])).json().words).toHaveLength(before);
+});
+
+test('words, word and lang show the words, the collected ones marked', async () => {
+  const words = await allWords();
+  const { cli, token } = await device();
+
+  const guest = (await cli(['words', '--json'])).json();
+  expect(guest.words).toHaveLength(words.length);
+  expect(guest.words.every((w: { learned: string | null }) => w.learned === null)).toBe(true);
+
+  await cli(['login'], { email: freshEmail() });
+  await fetch(`${url}/api/v1/progress`, {
+    method: 'POST',
+    headers: { authorization: `Bearer ${await token()}`, 'content-type': 'application/json' },
+    body: JSON.stringify({ words: [{ id: 'coffee', day: '2026-10-01' }], days: [] }),
+  });
+  const list = await cli(['words']);
+  expect(list.out).toContain(de.cliWordsSummary(1, words.length));
+  expect(list.out).toMatch(/✓ coffee +Kaffee/);
+  expect((await cli(['words', '--json'])).json().words[0]).toMatchObject({ id: 'coffee', learned: '2026-10-01' });
+
+  const coffee = words.find((w) => w.id === 'coffee')!;
+  const same = LANGS.filter((lang) => coffee.forms[lang].cognate).length;
+  const detail = await cli(['word', 'coffee']);
+  expect(detail.out).toContain(`${de.sameIn(same)} · ${de.collected}`);
+  expect(detail.out).toMatch(new RegExp(`${de.langs.ja} +コーヒー`));
+  expect(detail.out).toContain(`${de.origin}: `);
+  expect(detail.out).toContain(coffee.fact.de);
+  expect((await cli(['word', 'coffee', '--json'])).json()).toMatchObject({ word: coffee, learned: '2026-10-01' });
+
+  const ja = (await cli(['lang', 'ja', '--json'])).json();
+  expect(ja).toMatchObject({ lang: 'ja', known: 1 });
+  expect(ja.words[0]).toMatchObject({ id: 'coffee', form: 'コーヒー', learned: '2026-10-01' });
+  expect(ja.known + ja.open).toBe(words.filter((w) => w.forms.ja.cognate).length);
+  expect((await cli(['lang', 'ja'])).out).toContain(de.langSummary(1, ja.open));
+
+  expect(await cli(['word', 'nope'])).toMatchObject({ code: 1, err: de.cliUnknownWord('nope', SLUG) });
+  expect(await cli(['word'])).toMatchObject({ code: 2, err: de.cliWrongArgs('word <id>', SLUG) });
+  expect((await cli(['words', 'coffee'])).code).toBe(2);
+  expect(await cli(['lang', 'xx'])).toMatchObject({ code: 2, err: de.cliUnknownLang('xx', LANGS.join(', ')) });
 });
 
 test('every device has its own token, logout revokes only that one', async () => {

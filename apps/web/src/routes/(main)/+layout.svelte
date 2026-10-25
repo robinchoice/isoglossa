@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { APP_NAME } from '@app/shared';
+  import { APP_NAME, cognateLangs, streak } from '@app/shared';
   import { onMount } from 'svelte';
   import { page } from '$app/state';
   import { auth, checkAuth } from '$lib/auth.svelte';
@@ -8,7 +8,6 @@
   import { openFeedback } from '$lib/feedback.svelte';
   import { t } from '$lib/i18n';
   import { loadProgress, logOut, progress } from '$lib/progress.svelte';
-  import { cognateLangs, streak } from '$lib/words';
 
   let { data, children } = $props();
 

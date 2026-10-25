@@ -4,10 +4,12 @@ import { createClient } from './client';
 import { type Command, EXIT, Failure, type Io, type Result } from './command';
 import { auth } from './commands/auth';
 import { progress } from './commands/progress';
+import { round } from './commands/round';
+import { lang, word, words } from './commands/words';
 import { DEFAULT_URL, loadSession, SLUG } from './config';
 
 // Every command of the CLI. A new one goes in here (README, „CLI“).
-export const commands: Record<string, Command> = { ...auth, progress };
+export const commands: Record<string, Command> = { ...auth, progress, round, words, word, lang };
 
 const globalOptions = {
   json: { type: 'boolean' },
@@ -58,20 +60,29 @@ export async function run(args: string[], io: Io): Promise<number> {
     const [name = '', ...rest] = args;
     const command = Object.hasOwn(commands, name) ? commands[name] : undefined;
     if (name && !command && !name.startsWith('-')) throw new Failure(m.cliUnknownCommand(name, SLUG), EXIT.usage);
-    const { values } = parseArgs({ args: command ? rest : args, options: { ...globalOptions, ...command?.options } });
+    const { values, positionals } = parseArgs({
+      args: command ? rest : args,
+      options: { ...globalOptions, ...command?.options },
+      allowPositionals: true,
+    });
     if (typeof values.lang === 'string') {
       locale = pickLocale(values.lang);
       m = messages[locale];
     }
     json = values.json === true;
     if (!command && !values.help && args.length > 0) throw new Failure(m.cliUsage(SLUG), EXIT.usage);
+    if (command && !values.help && positionals.length !== (command.args?.length ?? 0))
+      throw new Failure(m.cliWrongArgs(command.help(m)[0]![0], SLUG), EXIT.usage);
 
     // The address of the last login, unless --url names another
     const stored = await loadSession(io.env);
     const url = (typeof values.url === 'string' ? values.url : (stored?.url ?? DEFAULT_URL)).replace(/\/+$/, '');
     const session = stored?.url === url ? stored : null;
     const api = createClient(url, session?.token, locale, m);
-    const result = command && !values.help ? await command.run({ api, url, session, values, m, locale, io }) : help(m);
+    const result =
+      command && !values.help
+        ? await command.run({ api, url, session, values, args: positionals, m, locale, io })
+        : help(m);
     io.out(json ? JSON.stringify(result.data, null, 2) : result.text);
     return EXIT.ok;
   } catch (error) {

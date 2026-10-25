@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { LANG_SAMPLE, LANGS } from '@app/shared';
+  import { LANG_SAMPLE, LANGS, localDay } from '@app/shared';
   import { t } from '$lib/i18n';
   import { progress } from '$lib/progress.svelte';
-  import { localDay } from '$lib/words';
 
   let { data } = $props();
 

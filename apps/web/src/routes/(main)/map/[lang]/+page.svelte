@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { RTL } from '@app/shared';
+  import { meaning, RTL } from '@app/shared';
   import { t } from '$lib/i18n';
   import { progress } from '$lib/progress.svelte';
-  import { meaning } from '$lib/words';
 
   let { data } = $props();
 

@@ -1,9 +1,8 @@
 <script lang="ts">
-  import { DEEP, LANGS, type Lang, RTL, type WordData } from '@app/shared';
+  import { cognateLangs, DEEP, LANGS, type Lang, meaning, RTL, type WordData } from '@app/shared';
   import { page } from '$app/state';
   import { t } from '$lib/i18n';
   import { progress } from '$lib/progress.svelte';
-  import { cognateLangs, meaning } from '$lib/words';
 
   let { word, close }: { word: WordData; close: string } = $props();
 

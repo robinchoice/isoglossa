@@ -21,7 +21,7 @@
 - Neue Wörter entwirft `bun scripts/kaikki.ts <englische Lemmata>` in `packages/db` aus Wiktionary (kaikki.org). Der Entwurf ist nur ein Anfang: `cognate`, deutsche Bedeutung, Umschrift, Herkunftskette und `fact` (DE/EN) von Hand prüfen und schreiben. Jedes Wort braucht alle 14 Sprachen aus `LANGS`. Die Daten sind CC BY-SA, die Quelle steht auf `/words`. CogNet nicht verwenden, es ist nur NC-lizenziert.
 - `cognate` heißt: man erkennt das Wort wieder. Fernverwandte wie koreanisch 담배 (aus tabaco) zählen nicht.
 - Ohne Login liegt der Fortschritt in `localStorage` (`progress`, `round`). Beim Login schickt der Browser ihn an `POST /api/v1/progress`, die API vereinigt ihn mit dem Konto. Abmelden löscht die lokale Kopie.
-- Tage sind lokale Daten des Browsers (`localDay` in `$lib/words.ts`), keine UTC-Zeitstempel. Die Tagesrunde ist pro Tag fest (Seed aus dem Datum), Extrarunden heißen `<tag>#2` usw.
+- Tage sind lokale Daten des Browsers bzw. Terminals (`localDay` in `packages/shared/src/words.ts`, dort auch `makeRound` und `streak` für Web und CLI), keine UTC-Zeitstempel. Die Tagesrunde ist pro Tag fest (Seed aus dem Datum), Extrarunden heißen `<tag>#2` usw.
 
 ## Konventionen
 

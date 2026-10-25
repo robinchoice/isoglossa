@@ -1,7 +1,15 @@
-import { type Locale, type Progress, roundSchema, storedProgressSchema, type WordData } from '@app/shared';
+import {
+  type Locale,
+  localDay,
+  makeRound,
+  type Progress,
+  type Question,
+  roundSchema,
+  storedProgressSchema,
+  type WordData,
+} from '@app/shared';
 import { api } from './api';
 import { auth, logout } from './auth.svelte';
-import { localDay, makeRound, type Question } from './words';
 
 const PROGRESS_KEY = 'progress';
 const ROUND_KEY = 'round';
