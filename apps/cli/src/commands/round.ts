@@ -1,7 +1,7 @@
 import { cognateLangs, localDay, makeRound, meaning, type Question, streak } from '@app/shared';
 import { type Command, EXIT, Failure } from '../command';
 import { SLUG } from '../config';
-import { progressSchema, wordsAndProgress } from './words';
+import { progressSchema, roman, wordsAndProgress } from './words';
 
 // Today's round of the web (/), in the terminal: the riddles and options go to
 // stderr, the answers come by number from stdin, so `--json` still prints one
@@ -38,7 +38,7 @@ export const round: Command = {
       const langs = cognateLangs(word);
       io.err(
         [
-          `${correct ? m.correct : m.almost} ${form.form}${form.roman ? ` (${form.roman})` : ''} = ${meaning(word, locale)}`,
+          `${correct ? m.correct : m.almost} ${form.form}${roman(form)} = ${meaning(word, locale)}`,
           [...new Set(langs.map((lang) => word.forms[lang].form))].join(' · '),
           m.plusIn(langs.length),
           word.fact[locale],

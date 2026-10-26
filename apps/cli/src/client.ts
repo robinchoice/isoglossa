@@ -1,8 +1,6 @@
-import type { Locale, Messages } from '@app/shared';
-import { z } from 'zod';
+import { errorSchema, type Locale, type Messages } from '@app/shared';
+import type { z } from 'zod';
 import { EXIT, Failure } from './command';
-
-const errorSchema = z.object({ error: z.string() });
 
 // The same HTTP API as web and app, with the token of this device as bearer.
 // Errors come in the CLI's language, the API reads Accept-Language.

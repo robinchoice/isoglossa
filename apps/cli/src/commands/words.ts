@@ -1,26 +1,8 @@
-import { cognateLangs, LANGS, meaning, type WordData } from '@app/shared';
+import { cognateLangs, LANGS, meaning, type WordData, wordSchema } from '@app/shared';
 import { z } from 'zod';
 import { type Command, type Context, EXIT, Failure } from '../command';
 import { SLUG } from '../config';
 
-const text = z.object({ de: z.string(), en: z.string() });
-const wordSchema: z.ZodType<WordData> = z.object({
-  id: z.string(),
-  de: z.string(),
-  en: z.string(),
-  forms: z.record(
-    z.enum(LANGS),
-    z.object({
-      form: z.string(),
-      roman: z.string().exactOptional(),
-      cognate: z.boolean(),
-      group: z.string().exactOptional(),
-    }),
-  ),
-  etymology: z.array(z.object({ form: z.string(), roman: z.string().exactOptional(), lang: text })),
-  fact: text,
-  groups: z.record(z.string(), text).exactOptional(),
-});
 const wordsSchema = z.object({ words: z.array(wordSchema) });
 export const progressSchema = z.object({
   words: z.array(z.object({ id: z.string(), day: z.string() })),
@@ -48,7 +30,7 @@ function byCollected(list: WordData[], learned: Map<string, string>, locale: Con
 }
 
 const mark = (learned: boolean) => (learned ? '✓' : ' ');
-const roman = (form: { roman?: string }) => (form.roman ? ` (${form.roman})` : '');
+export const roman = (form: { roman?: string | null }) => (form.roman ? ` (${form.roman})` : '');
 
 // Like /words in the web, but with every word, so agents find the ids for `word`
 export const words: Command = {
@@ -141,10 +123,7 @@ export const lang: Command = {
         m.langs[code],
         m.langSummary(known, rows.length - known),
         '',
-        ...rows.map(
-          (row) =>
-            `  ${mark(!!row.learned)} ${row.meaning.padEnd(width)}${row.form}${row.roman ? ` (${row.roman})` : ''}`,
-        ),
+        ...rows.map((row) => `  ${mark(!!row.learned)} ${row.meaning.padEnd(width)}${row.form}${roman(row)}`),
       ].join('\n'),
     };
   },

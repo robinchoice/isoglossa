@@ -28,15 +28,21 @@ const payloadSchema = z.object({
 
 const altchaBody = z.looseObject({ altcha: z.string() });
 
-let key: string | undefined;
+let key: Promise<string> | undefined;
 
-async function hmacKey(db: Database) {
-  if (key) return key;
+function hmacKey(db: Database) {
+  key ??= loadHmacKey(db).catch((error: unknown) => {
+    key = undefined;
+    throw error;
+  });
+  return key;
+}
+
+async function loadHmacKey(db: Database) {
   const value = generateToken();
   await db.insert(serverSecrets).values({ name: 'altcha', value }).onConflictDoNothing();
   const [row] = await db.select().from(serverSecrets).where(eq(serverSecrets.name, 'altcha'));
-  key = row!.value;
-  return key;
+  return row!.value;
 }
 
 export async function altchaChallenge(db: Database) {

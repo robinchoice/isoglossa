@@ -1,8 +1,6 @@
-import { z } from 'zod';
+import { errorSchema } from '@app/shared';
 import { page } from '$app/state';
 import { toastError } from './toast.svelte';
-
-const errorAnswer = z.object({ error: z.string() });
 
 // The last failed calls, newest first. Feedback sends them along.
 export const recentErrors: string[] = [];
@@ -36,7 +34,7 @@ async function request<T>(
 
   if (!res.ok) {
     noteError(method, path, res.status);
-    const answer = errorAnswer.safeParse(await res.json().catch(() => null));
+    const answer = errorSchema.safeParse(await res.json().catch(() => null));
     const { error } = answer.data ?? { error: res.statusText };
     if (!silent) toastError(error);
     throw new Error(error);

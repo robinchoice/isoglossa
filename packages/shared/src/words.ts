@@ -26,21 +26,31 @@ export const LANG_SAMPLE: Record<Lang, string> = {
 // Written right to left
 export const RTL: Lang[] = ['ar', 'he'];
 
-type Text = { de: string; en: string };
+const text = z.object({ de: z.string(), en: z.string() });
 
 // One word of the seed in packages/db/src/seed/words.json. cognate is false
 // where a language uses another word, e.g. Hebrew מונית for taxi. group splits
 // the cognates into branches with a name in groups, like te and cha for tea.
-export type WordData = {
-  id: string;
-  de: string;
-  en: string;
-  forms: Record<Lang, { form: string; roman?: string; cognate: boolean; group?: string }>;
+export const wordSchema = z.object({
+  id: z.string(),
+  de: z.string(),
+  en: z.string(),
+  forms: z.record(
+    z.enum(LANGS),
+    z.object({
+      form: z.string(),
+      roman: z.string().exactOptional(),
+      cognate: z.boolean(),
+      group: z.string().exactOptional(),
+    }),
+  ),
   // Oldest first, ends with the English word
-  etymology: { form: string; roman?: string; lang: Text }[];
-  fact: Text;
-  groups?: Record<string, Text>;
-};
+  etymology: z.array(z.object({ form: z.string(), roman: z.string().exactOptional(), lang: text })),
+  fact: text,
+  groups: z.record(z.string(), text).exactOptional(),
+});
+
+export type WordData = z.infer<typeof wordSchema>;
 
 // A learned word and the day of a finished round, both as the browser's local date
 const day = z.iso.date();
@@ -59,12 +69,16 @@ export const storedProgressSchema = z.object({
 
 export const roundSchema = z
   .object({
+    // The day, with #2, #3 … for extra rounds
     key: z.string(),
     questions: z.array(z.object({ id: z.string(), lang: z.enum(LANGS), options: z.array(z.string()) })),
     index: z.int().nonnegative(),
+    // The option picked per question, null until answered
     answers: z.array(z.string().nullable()),
   })
   .refine((round) => round.index <= round.questions.length && round.answers.length === round.questions.length);
+
+export type Round = z.infer<typeof roundSchema>;
 
 export const meaning = (word: WordData, locale: Locale) => (locale === 'de' ? word.de : word.en);
 

@@ -3,7 +3,7 @@ import {
   localDay,
   makeRound,
   type Progress,
-  type Question,
+  type Round,
   roundSchema,
   storedProgressSchema,
   type WordData,
@@ -14,15 +14,6 @@ import { auth, logout } from './auth.svelte';
 const PROGRESS_KEY = 'progress';
 const ROUND_KEY = 'round';
 let generation = 0;
-
-export type Round = {
-  // The day, with #2, #3 … for extra rounds
-  key: string;
-  questions: Question[];
-  index: number;
-  // The option picked per question, null until answered
-  answers: (string | null)[];
-};
 
 // Kept in localStorage, so the round works without login. Logged in, every
 // change also goes to the API, which merges it into the account.
