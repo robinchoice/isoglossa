@@ -18,11 +18,13 @@ services:
 
   api:
     image: ${IMAGE_PREFIX:?IMAGE_PREFIX is required}-api:${IMAGE_TAG:?IMAGE_TAG is required}
+    stop_grace_period: 30s
     environment:
       - DATABASE_URL=postgresql://app:${POSTGRES_PASSWORD}@postgres:5432/app
       - APP_URL=${APP_URL}
       - SIGNUP_ALLOWLIST=${SIGNUP_ALLOWLIST:-}
       - SIGNUP_OPEN=${SIGNUP_OPEN:-}
+      - ADMIN_EMAILS=${ADMIN_EMAILS:-}
       - SMTP_HOST=${SMTP_HOST:-}
       - SMTP_PORT=${SMTP_PORT:-587}
       - SMTP_USER=${SMTP_USER:-}

@@ -10,11 +10,16 @@ const wordSchema: z.ZodType<WordData> = z.object({
   en: z.string(),
   forms: z.record(
     z.enum(LANGS),
-    z.object({ form: z.string(), roman: z.string().optional(), cognate: z.boolean(), group: z.string().optional() }),
+    z.object({
+      form: z.string(),
+      roman: z.string().exactOptional(),
+      cognate: z.boolean(),
+      group: z.string().exactOptional(),
+    }),
   ),
-  etymology: z.array(z.object({ form: z.string(), roman: z.string().optional(), lang: text })),
+  etymology: z.array(z.object({ form: z.string(), roman: z.string().exactOptional(), lang: text })),
   fact: text,
-  groups: z.record(z.string(), text).optional(),
+  groups: z.record(z.string(), text).exactOptional(),
 });
 const wordsSchema = z.object({ words: z.array(wordSchema) });
 export const progressSchema = z.object({

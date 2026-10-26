@@ -1,11 +1,11 @@
-import { afterAll, beforeAll, expect, spyOn, test } from 'bun:test';
-import { createDb, loginCodes, magicLinks, migrateDb, sessions, users } from '@app/db';
+import { afterAll, beforeAll, expect, setSystemTime, spyOn, test } from 'bun:test';
+import { createDb, loginCodes, magicLinks, migrateDb, rateLimits, sessions, users } from '@app/db';
+import { messages } from '@app/shared';
 import { eq } from 'drizzle-orm';
 import { createApp } from './app';
 import { generateToken, hashToken } from './middleware/auth';
+import { altchaPayload } from './testing';
 
-// Runs against DATABASE_URL. Only adds rows with fresh addresses, so the
-// local dev database is safe to use.
 const db = createDb(process.env.DATABASE_URL!);
 const app = createApp(db);
 const log = spyOn(console, 'log');
@@ -26,7 +26,15 @@ const freshEmail = () => {
 // Rate limits live in the database, so each run counts against its own address
 const ip = crypto.randomUUID();
 
-function post(path: string, body: unknown, headers: Record<string, string> = {}) {
+// Login mails need a solved ALTCHA like the login form sends it, the ALTCHA tests post without
+const ALTCHA_PATHS = ['/auth/magic-link', '/auth/code'];
+
+async function post(path: string, body: object, headers: Record<string, string> = {}) {
+  const altcha = ALTCHA_PATHS.includes(path) ? { altcha: await altchaPayload(app) } : {};
+  return send(path, { ...body, ...altcha }, headers);
+}
+
+function send(path: string, body: unknown, headers: Record<string, string> = {}) {
   return app.request(`/api/v1${path}`, {
     method: 'POST',
     headers: { 'content-type': 'application/json', 'x-forwarded-for': ip, ...headers },
@@ -43,6 +51,8 @@ async function body(res: Response | Promise<Response>): Promise<any> {
 function lastMail() {
   return log.mock.calls.map((args) => String(args[0])).findLast((line) => line.startsWith('[mail]'));
 }
+
+const mailCount = () => log.mock.calls.filter((args) => String(args[0]).startsWith('[mail]')).length;
 
 function lastMailedToken() {
   return lastMail()?.match(/token=([0-9a-f]+)/)?.[1];
@@ -88,14 +98,80 @@ test('magic link logs in, creates the account and logs out', async () => {
   expect((await body(after)).user).toBeNull();
 });
 
+test('login mails need an ALTCHA solution that is valid and unused', async () => {
+  const email = freshEmail();
+  const mails = mailCount();
+  const missing = await send('/auth/magic-link', { email }, { 'accept-language': 'en' });
+  expect(missing.status).toBe(403);
+  expect(await body(missing)).toEqual({ error: messages.en.altchaFailed });
+  expect((await send('/auth/code', { email, altcha: btoa('nonsense') })).status).toBe(403);
+
+  const altcha = await altchaPayload(app);
+  const { challenge, solution } = JSON.parse(atob(altcha));
+  const easier = { ...challenge, parameters: { ...challenge.parameters, cost: 1 } };
+  const wrong = { ...solution, counter: solution.counter + 1 };
+  for (const forged of [
+    { challenge: easier, solution },
+    { challenge, solution: wrong },
+  ])
+    expect((await send('/auth/code', { email, altcha: btoa(JSON.stringify(forged)) })).status).toBe(403);
+  expect(mailCount()).toBe(mails);
+
+  expect((await send('/auth/code', { email, altcha })).status).toBe(200);
+  expect((await send('/auth/magic-link', { email, altcha })).status).toBe(403);
+  expect(mailCount()).toBe(mails + 1);
+});
+
+test('an ALTCHA solution expires after ten minutes', async () => {
+  const altcha = await altchaPayload(app);
+  setSystemTime(new Date(Date.now() + 11 * 60 * 1000));
+  try {
+    expect((await send('/auth/magic-link', { email: freshEmail(), altcha })).status).toBe(403);
+  } finally {
+    setSystemTime();
+  }
+});
+
+test('requests without ALTCHA leave the rate limits of an address alone', async () => {
+  const email = freshEmail();
+  for (let i = 0; i < 10; i++) await send('/auth/magic-link', { email });
+  expect((await post('/auth/magic-link', { email })).status).toBe(200);
+});
+
 test('a second login reuses the account', async () => {
   const email = freshEmail();
-  const ids = [];
+  const ids: string[] = [];
   for (let i = 0; i < 2; i++) {
     await post('/auth/magic-link', { email });
     ids.push((await body(post('/auth/verify', { token: lastMailedToken() }))).user.id);
   }
   expect(ids[0]).toBe(ids[1]);
+});
+
+test('magic link checks allow 60 attempts per IP and leave blocked links usable', async () => {
+  // Its own address, so the other tests keep their budget
+  const own = { 'x-forwarded-for': crypto.randomUUID() };
+  const email = freshEmail();
+  expect((await post('/auth/magic-link', { email }, own)).status).toBe(200);
+  const token = lastMailedToken()!;
+
+  const attempts = await Promise.all(Array.from({ length: 60 }, () => post('/auth/verify', { token: 'invalid' }, own)));
+  expect(attempts.map((res) => res.status)).toEqual(Array(60).fill(400));
+  const blocked = await post('/auth/verify', { token }, { ...own, 'accept-language': 'en' });
+  expect(blocked.status).toBe(429);
+  expect(await body(blocked)).toEqual({ error: messages.en.tooManyRequests });
+  expect(blocked.headers.get('set-cookie')).toBeNull();
+
+  expect((await post('/auth/verify', { token }, { 'x-forwarded-for': crypto.randomUUID() })).status).toBe(200);
+
+  expect((await post('/auth/magic-link', { email }, own)).status).toBe(200);
+  const nextToken = lastMailedToken()!;
+  expect((await post('/auth/verify', { token: nextToken }, own)).status).toBe(429);
+  await db
+    .update(rateLimits)
+    .set({ resetAt: new Date(Date.now() - 1) })
+    .where(eq(rateLimits.key, `link-checks-per-ip:${own['x-forwarded-for']}`));
+  expect((await post('/auth/verify', { token: nextToken }, own)).status).toBe(200);
 });
 
 test('protected routes need a session', async () => {
@@ -105,7 +181,7 @@ test('protected routes need a session', async () => {
 
 test('login mails per address are rate limited', async () => {
   const email = freshEmail();
-  const statuses = [];
+  const statuses: number[] = [];
   for (let i = 0; i < 6; i++) statuses.push((await post('/auth/magic-link', { email })).status);
   expect(statuses).toEqual([200, 200, 200, 200, 200, 429]);
 });

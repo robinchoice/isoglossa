@@ -10,6 +10,7 @@ import {
 import { and, eq, gt, isNull, lt, sql } from 'drizzle-orm';
 import { Hono } from 'hono';
 import { deleteCookie } from 'hono/cookie';
+import { requireAltcha } from '../lib/altcha';
 import { t } from '../lib/i18n';
 import { sendLoginCodeEmail, sendMagicLinkEmail } from '../lib/mail';
 import { clientIp, rateLimit, tooManyRequests } from '../lib/rate-limit';
@@ -34,6 +35,7 @@ const CODE_ATTEMPTS = 5;
 const mailsPerAddress = rateLimit('mails-per-address', 5, 60 * MINUTE);
 const mailsPerIp = rateLimit('mails-per-ip', 20, 60 * MINUTE);
 const codeChecksPerIp = rateLimit('code-checks-per-ip', 30, 15 * MINUTE);
+const linkChecksPerIp = rateLimit('link-checks-per-ip', 60, 15 * MINUTE);
 
 const userColumns = { id: users.id, email: users.email, name: users.name };
 
@@ -56,7 +58,7 @@ async function startSession(db: Database, email: string, days: number) {
 }
 
 export const authRoutes = new Hono<AppEnv>()
-  .post('/magic-link', validJson(magicLinkSchema), async (c) => {
+  .post('/magic-link', requireAltcha, validJson(magicLinkSchema), async (c) => {
     const { email, next } = c.req.valid('json');
     if (!(await mailsPerIp.hit(c, clientIp(c))) || !(await mailsPerAddress.hit(c, email))) return tooManyRequests(c);
 
@@ -76,6 +78,7 @@ export const authRoutes = new Hono<AppEnv>()
   })
 
   .post('/verify', validJson(verifySchema), async (c) => {
+    if (!(await linkChecksPerIp.hit(c, clientIp(c)))) return tooManyRequests(c);
     const db = c.get('db');
     const { token: linkToken, cookie = true } = c.req.valid('json');
 
@@ -104,7 +107,7 @@ export const authRoutes = new Hono<AppEnv>()
   })
 
   // Mobile apps: a 6-digit code by mail instead of a link
-  .post('/code', validJson(loginCodeSchema), async (c) => {
+  .post('/code', requireAltcha, validJson(loginCodeSchema), async (c) => {
     const { email } = c.req.valid('json');
     if (!(await mailsPerIp.hit(c, clientIp(c))) || !(await mailsPerAddress.hit(c, email))) return tooManyRequests(c);
 

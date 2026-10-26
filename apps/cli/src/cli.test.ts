@@ -11,7 +11,7 @@ import { run } from './cli';
 import { SLUG, sessionFile } from './config';
 
 // The CLI runs in-process against the real API on a free port, with
-// DATABASE_URL like the API tests. Only adds rows with fresh addresses.
+// the test database of `bun run test` like the API tests.
 const db = createDb(process.env.DATABASE_URL!);
 // Request log and mails stay out of the test output
 const log = spyOn(console, 'log').mockImplementation(() => {});

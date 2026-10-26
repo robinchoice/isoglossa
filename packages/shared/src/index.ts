@@ -39,6 +39,19 @@ export const verifySchema = z.object({
   cookie: z.boolean().optional(),
 });
 
+// An ALTCHA challenge as the API hands it out (README, „ALTCHA“)
+export const altchaChallengeSchema = z.looseObject({
+  parameters: z.looseObject({
+    algorithm: z.string(),
+    nonce: z.string(),
+    salt: z.string(),
+    cost: z.number(),
+    keyLength: z.number(),
+    keyPrefix: z.string(),
+  }),
+  signature: z.string().exactOptional(),
+});
+
 export const loginCodeSchema = z.object({ email });
 
 export const verifyCodeSchema = z.object({

@@ -4,7 +4,6 @@ import type { Progress, WordData } from '@app/shared';
 import { createApp } from './app';
 import { generateToken, hashToken } from './middleware/auth';
 
-// Runs against DATABASE_URL with a fresh user, like auth.test.ts
 const db = createDb(process.env.DATABASE_URL!);
 const app = createApp(db);
 

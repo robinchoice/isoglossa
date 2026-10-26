@@ -36,6 +36,13 @@
       "when": 1791803761932,
       "tag": "0004_words",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1792973397343,
+      "tag": "0005_server_secrets",
+      "breakpoints": true
     }
   ]
 }

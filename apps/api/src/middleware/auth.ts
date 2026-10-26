@@ -4,6 +4,7 @@ import type { Context } from 'hono';
 import { getCookie, setCookie } from 'hono/cookie';
 import { createMiddleware } from 'hono/factory';
 import { t } from '../lib/i18n';
+import { isAdmin } from '../lib/signup';
 import type { AppEnv } from '../types';
 
 export const SESSION_COOKIE = 'session';
@@ -70,6 +71,15 @@ export async function currentUser(c: Context<AppEnv>) {
 export const requireAuth = createMiddleware<AppEnv>(async (c, next) => {
   const user = await currentUser(c);
   if (!user) return c.json({ error: t(c).notLoggedIn }, 401);
+  c.set('user', user);
+  await next();
+});
+
+// Logs in like requireAuth, then asks for ADMIN_EMAILS: 401 without a session, 403 for everyone else
+export const requireAdmin = createMiddleware<AppEnv>(async (c, next) => {
+  const user = await currentUser(c);
+  if (!user) return c.json({ error: t(c).notLoggedIn }, 401);
+  if (!isAdmin(user.email)) return c.json({ error: t(c).adminOnly }, 403);
   c.set('user', user);
   await next();
 });

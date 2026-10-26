@@ -1,4 +1,4 @@
-import { cognateLangs, localDay, makeRound, meaning, streak } from '@app/shared';
+import { cognateLangs, localDay, makeRound, meaning, type Question, streak } from '@app/shared';
 import { type Command, EXIT, Failure } from '../command';
 import { SLUG } from '../config';
 import { progressSchema, wordsAndProgress } from './words';
@@ -16,7 +16,7 @@ export const round: Command = {
     const day = localDay();
     const questions = makeRound(words, new Set(learned.keys()), day, locale);
 
-    const results = [];
+    const results: (Question & { form: string; answer: string; correct: boolean })[] = [];
     for (const [i, question] of questions.entries()) {
       const word = byId.get(question.id)!;
       const form = word.forms[question.lang];

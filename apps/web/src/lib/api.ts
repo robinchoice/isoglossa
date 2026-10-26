@@ -1,5 +1,8 @@
+import { z } from 'zod';
 import { page } from '$app/state';
 import { toastError } from './toast.svelte';
+
+const errorAnswer = z.object({ error: z.string() });
 
 // The last failed calls, newest first. Feedback sends them along.
 export const recentErrors: string[] = [];
@@ -9,7 +12,7 @@ function noteError(method: string, path: string, status: number | string) {
   recentErrors.length = Math.min(recentErrors.length, 5);
 }
 
-type RequestOptions = { silent?: boolean; signal?: AbortSignal };
+type RequestOptions = { silent?: boolean; signal?: AbortSignal | undefined };
 
 // The API answers errors as { error: string } in the current language; they
 // show up as a toast unless silent.
@@ -24,8 +27,8 @@ async function request<T>(
   const res = await fetch(`/api/v1${path}`, {
     method,
     headers,
-    body: body === undefined ? undefined : JSON.stringify(body),
-    signal,
+    body: body === undefined ? null : JSON.stringify(body),
+    signal: signal ?? null,
   }).catch((err) => {
     noteError(method, path, 'offline');
     throw err;
@@ -33,7 +36,8 @@ async function request<T>(
 
   if (!res.ok) {
     noteError(method, path, res.status);
-    const { error } = await res.json().catch(() => ({ error: res.statusText }));
+    const answer = errorAnswer.safeParse(await res.json().catch(() => null));
+    const { error } = answer.data ?? { error: res.statusText };
     if (!silent) toastError(error);
     throw new Error(error);
   }
