@@ -236,6 +236,33 @@ test('every device has its own token, logout revokes only that one', async () =>
   expect(await sessionCount(await server.token())).toBe(1);
 });
 
+test('logging in at another address revokes the old token at its own address', async () => {
+  const app = createApp(db);
+  const seen: (string | null)[] = [];
+  const other = Bun.serve({
+    port: 0,
+    fetch: (req) => {
+      seen.push(req.headers.get('authorization'));
+      return app.fetch(req);
+    },
+  });
+  try {
+    const email = freshEmail();
+    const { cli, token } = await device();
+    expect((await cli(['login', '--link', await issueMagicLink(email)])).code).toBe(0);
+    const oldToken = await token();
+
+    const login = await cli(['login', '--url', other.url.origin, '--link', await issueMagicLink(email)]);
+    expect(login.code).toBe(0);
+    expect(await sessionCount(oldToken)).toBe(0);
+    expect(await sessionCount(await token())).toBe(1);
+    expect(seen).toEqual([null]);
+    expect((await cli(['whoami', '--json'], { raw: true })).json()).toMatchObject({ user: { email } });
+  } finally {
+    await other.stop(true);
+  }
+});
+
 test('a session revoked on the server logs the CLI out', async () => {
   const { cli, token } = await device();
   await cli(['login'], { email: freshEmail() });
@@ -335,13 +362,18 @@ test('help, wrong usage and an unreachable app', async () => {
   });
 });
 
-test('an unwritable config folder ends with an error, not a crash', async () => {
+test('an unwritable config folder ends with an error and revokes the new token', async () => {
   const blocked = join(await mkdtemp(join(tmpdir(), 'cli-')), 'file');
   await Bun.write(blocked, '');
   const { cli } = await device({ LANG: 'de_DE.UTF-8', XDG_CONFIG_HOME: blocked });
-  const login = await cli(['login', '--json'], { email: freshEmail() });
+  const email = freshEmail();
+  const login = await cli(['login', '--json'], { email });
   expect(login.code).toBe(1);
   expect(login.json()).toEqual({ error: expect.any(String) });
+  expect(await db.$client`select id from users where email = ${email}`).toHaveLength(1);
+  expect(
+    await db.$client`select id from sessions where user_id = (select id from users where email = ${email})`,
+  ).toHaveLength(0);
 });
 
 test('the entry point passes the exit code to the shell', async () => {

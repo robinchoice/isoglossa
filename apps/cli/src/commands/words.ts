@@ -1,4 +1,4 @@
-import { cognateLangs, LANGS, type Lang, meaning, type WordData } from '@app/shared';
+import { cognateLangs, LANGS, meaning, type WordData } from '@app/shared';
 import { z } from 'zod';
 import { type Command, type Context, EXIT, Failure } from '../command';
 import { SLUG } from '../config';
@@ -118,8 +118,9 @@ export const lang: Command = {
   args: ['code'],
   async run(ctx) {
     const { m, locale, args } = ctx;
-    const code = args[0] as Lang;
-    if (!LANGS.includes(code)) throw new Failure(m.cliUnknownLang(args[0]!, LANGS.join(', ')), EXIT.usage);
+    const parsed = z.enum(LANGS).safeParse(args[0]);
+    if (!parsed.success) throw new Failure(m.cliUnknownLang(args[0]!, LANGS.join(', ')), EXIT.usage);
+    const code = parsed.data;
     const { words: all, learned } = await wordsAndProgress(ctx);
     const rows = byCollected(
       all.filter((w) => w.forms[code].cognate),
