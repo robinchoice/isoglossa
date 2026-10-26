@@ -12,7 +12,7 @@ function start(setup: string) {
        await import(${JSON.stringify(`${import.meta.dir}/index.ts`)});`,
     ],
     {
-      env: { ...process.env, PORT: '0', SMTP_HOST: '', SENTRY_DSN: '', NODE_ENV: 'test' },
+      env: { ...process.env, APP_URL: 'http://localhost', PORT: '0', SMTP_HOST: '', SENTRY_DSN: '', NODE_ENV: 'test' },
       stdout: 'pipe',
       stderr: 'pipe',
     },
