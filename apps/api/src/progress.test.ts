@@ -1,6 +1,7 @@
 import { afterAll, beforeAll, expect, test } from 'bun:test';
 import { createDb, migrateDb, seedWords, sessions, users } from '@app/db';
-import type { Progress, WordData } from '@app/shared';
+import { type Progress, wordSchema } from '@app/shared';
+import { z } from 'zod';
 import { createApp } from './app';
 import { generateToken, hashToken } from './middleware/auth';
 
@@ -27,7 +28,7 @@ async function logIn() {
 
 test('words come with a form in every language', async () => {
   const res = await app.request('/api/v1/words');
-  const { words } = (await res.json()) as { words: WordData[] };
+  const { words } = z.object({ words: z.array(wordSchema) }).parse(await res.json());
   expect(words.length).toBeGreaterThanOrEqual(50);
   const coffee = words.find((w) => w.id === 'coffee')!;
   expect(coffee.de).toBe('Kaffee');

@@ -1,4 +1,4 @@
-import type { WordData } from '@app/shared';
+import { wordSchema } from '@app/shared';
 import { sql } from 'drizzle-orm';
 import type { Database } from './index';
 import { words } from './schema';
@@ -9,7 +9,12 @@ import seed from './seed/words.json';
 export async function seedWords(db: Database) {
   await db
     .insert(words)
-    .values((seed as WordData[]).map((data) => ({ id: data.id, data })))
+    .values(
+      wordSchema
+        .array()
+        .parse(seed)
+        .map((data) => ({ id: data.id, data })),
+    )
     .onConflictDoUpdate({
       target: words.id,
       set: { data: sql`excluded.data`, updatedAt: sql`now()` },

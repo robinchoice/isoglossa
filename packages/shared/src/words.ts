@@ -93,7 +93,7 @@ export function localDay(date = new Date()) {
 // Scripts other than Latin make the better riddles
 const OTHER_SCRIPT: Lang[] = ['ru', 'el', 'ar', 'he', 'hi', 'ja', 'ko'];
 
-export type Question = { id: string; lang: Lang; options: string[] };
+export type Question = Round['questions'][number];
 
 // Small seeded generator, so a day's round stays the same on reload
 function random(seed: string) {
